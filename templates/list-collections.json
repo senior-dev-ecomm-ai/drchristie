@@ -1,0 +1,73 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-list-collections",
+      "settings": {}
+    },
+    "17825001157df79d20": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_e7fb2d1_cUKJaT": {
+          "type": "ai_gen_block_e7fb2d1",
+          "name": "Product grid",
+          "settings": {
+            "collection": "skincare",
+            "heading": "Shop All Products",
+            "heading_alignment": "center",
+            "heading_size": 36,
+            "heading_spacing": 40,
+            "columns_desktop": 5,
+            "columns_tablet": 3,
+            "columns_mobile": "2",
+            "grid_gap": 30,
+            "max_width": 1400,
+            "card_background": "#ffffff",
+            "card_border_radius": 8,
+            "card_padding": 20,
+            "product_title_size": 16,
+            "product_title_color": "#000000",
+            "product_price_size": 16,
+            "product_price_color": "#333333",
+            "button_text": "Add to Cart",
+            "button_color": "#000000",
+            "button_hover_color": "#333333",
+            "button_text_color": "#ffffff",
+            "button_text_size": 14,
+            "button_padding": 14,
+            "button_border_radius": 4,
+            "input_border_color": "#dddddd",
+            "input_border_radius": 4,
+            "background_color": "#ffffff",
+            "heading_color": "#000000",
+            "section_padding_top": 60,
+            "section_padding_bottom": 60
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_e7fb2d1_cUKJaT"
+      ],
+      "settings": {}
+    },
+    "blocks_FDR9YQ": {
+      "type": "_blocks",
+      "name": "Product grid",
+      "settings": {}
+    }
+  },
+  "order": [
+    "main",
+    "17825001157df79d20",
+    "blocks_FDR9YQ"
+  ]
+}

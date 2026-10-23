@@ -1,0 +1,38 @@
+<article class="core-service bg:base-white flex spacious">
+	<div class="flex spacious bg:soft-lime">
+		<figure class="ar ar:portrait">
+			{% if image != blank %}
+				<img 
+					data-lazy
+					class="cover lazy" 
+					src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" 
+					data-src="{{ image | img_url: 'master' }}" 
+					alt="{{ alt }}"
+				>
+				<noscript>
+					<img 
+						class="cover" 
+						src="{{ image | img_url: 'master' }}" 
+						alt="{{ alt }}" 
+					/>
+				</noscript>
+			{% endif %}
+		</figure>
+		<div class="core-service__content flex spacious border:top__grey">
+			<div class="wrap">
+				{% if heading %}
+					<h2 class="font:fine text:heading-xl">{{ heading }}</h2>
+				{% endif %}
+
+				{% if copy %}
+					<div class="copy text:body-m font:regular">{{ copy }}</div>
+				{% endif %}
+			</div>
+			<div class="wrap">
+				{% if linktext %}
+					<a href="{{ link }}" class="colour:grey underline font:regular text:body-m">{{ linktext }}</a>
+				{% endif %}
+			</div>
+		</div>		
+	</div>
+</article>

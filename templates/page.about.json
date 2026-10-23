@@ -1,0 +1,124 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "full_width_H973N7": {
+      "type": "full-width",
+      "name": "Full Width Media",
+      "settings": {
+        "small_heading": "Our Mantra",
+        "headline": "The future of beauty is personalized—guided by data, powered by methodology, and refined by expertise.",
+        "copy": "",
+        "button_text": "",
+        "button": "",
+        "layout_alignment": "center",
+        "image": "shopify://shop_images/Mask_group_1.png",
+        "image_mobile": "shopify://shop_images/Fanette_Guilloud_Photos_14_1_1.png"
+      }
+    },
+    "checkerboard_bwVNga": {
+      "type": "checkerboard",
+      "name": "Checkerboard",
+      "settings": {
+        "headline": "Meet The Practitioner",
+        "large_headline": "Dr. Christie",
+        "copy": "<p>Dr. Christie Prendergast is a double-board certified plastic surgeon and precision medicine specialist redefining the intersection of health, beauty, and longevity through highly personalized, patient-centered care. Her approach focuses on optimization, maintenance, and disease prevention—blending aesthetic artistry with scientific precision.</p><p>Raised between Asia, Europe, and the United States, Dr. Christie’s global perspective on beauty was shaped by diverse cultural influences and personal experiences. Early in her surgical career, she recognized that conventional, standardized approaches to aesthetics often lacked innovation, inclusivity, and individual nuance. This insight led her to explore a more integrative path—one that embraces the full spectrum of aging, from cellular health to external refinement.</p><p>Driven by her passion for healthspan and longevity science, Dr. Christie integrates plastic surgery, regenerative aesthetics, and precision medicine into a singular, cohesive practice. By combining advanced diagnostics, metabolic and genetic insights, individualized nutrition, and lifestyle optimization, she empowers her patients to take control of their health, enhance their natural beauty, and age with intention and integrity.</p>",
+        "link_text": "",
+        "link": "",
+        "layout_alignment": "standard",
+        "vertical_alignment": "top",
+        "image": "shopify://shop_images/DoctorChristie.png",
+        "image_position": "full-width",
+        "hide_media_mobile": false,
+        "display_as_button_mobile": false
+      }
+    },
+    "checkerboard_ei4BWi": {
+      "type": "checkerboard",
+      "name": "Checkerboard",
+      "settings": {
+        "headline": "About",
+        "large_headline": "Beauty Matrix®",
+        "copy": "<p>Developed by Dr. Christie, the Beauty Matrix<strong>®</strong> is an aesthetic methodology that merges cutting-edge technology, biological data, and clinical expertise to deliver refined, personalized outcomes. Grounded in science and built for long-term impact, it redefines how we approach aesthetic aging.<br/><br/>Designed as a multi-modal strategy, the Beauty Matrix® targets the full spectrum of aging – from skin, hair, and physique to the cellular mechanisms that drive them. By prioritizing optimization, maintenance and early intervention, it enhances natural beauty while minimizing the reliance on invasive procedures over time.<br/><br/>Each Beauty Matrix® journey begins with a comprehensive clinical assessment, integrating advanced imaging and diagnostic tools to measure key markers of skin health and biological aging. This data creates a dynamic framework that is used to craft an individualized plan, combining regenerative procedures, advanced technologies, and targeted therapeutics to restore skin quality, natural volume, improve laxity and support graceful aging.<br/><br/>At its core, the Beauty Matrix® is rooted in innovation, customization, and a commitment to longevity, offering a seamless, results-driven path toward aesthetic goals that evolve with you.</p>",
+        "link_text": "Learn More",
+        "link": "shopify://pages/regenerative-aesthetics",
+        "layout_alignment": "reversed",
+        "vertical_alignment": "top",
+        "image": "shopify://shop_images/About_Image2.png",
+        "image_position": "full-width",
+        "hide_media_mobile": false,
+        "display_as_button_mobile": false
+      }
+    },
+    "full_width_Pz3ACf": {
+      "type": "full-width",
+      "name": "Full Width Media",
+      "settings": {
+        "small_heading": "",
+        "headline": "\"Health, beauty, and longevity are deeply personal journeys. The most effective path is the one tailored to your unique biology and lifestyle.\" — Dr. Christie",
+        "copy": "",
+        "button_text": "Book An Appointment",
+        "button": "shopify://pages/contact",
+        "layout_alignment": "center",
+        "image": "shopify://shop_images/Mask_group_19.webp",
+        "image_mobile": "shopify://shop_images/AboutQuote_MobileCrop_aed24543-1352-4df2-81e7-1abc5e34071e.jpg"
+      }
+    },
+    "checkerboard_Aecf7M": {
+      "type": "checkerboard",
+      "name": "Checkerboard",
+      "settings": {
+        "headline": "About",
+        "large_headline": "QoL Program",
+        "copy": "<p>Dr. Christie’s QoL (Quality of Life) Program is an evidence-based precision medicine model that redefines quality of life as a core metric of healthspan and longevity.<br/><br/>The QoL Program integrates allopathic and osteopathic care with nutrition, genetics, and lifestyle science to address the complex, individualized factors driving both internal and external aging.<br/><br/>Designed to uncover and treat the root causes of aging, the program utilizes advanced diagnostics, comprehensive clinical assessments, and biological analytics to inform highly personalized, results-driven strategies.<br/><br/>Our treatment protocols are crafted not only to optimize health and aesthetic outcomes, but also enhance and support the regenerative systems that sustain them.</p>",
+        "link_text": "",
+        "link": "",
+        "layout_alignment": "standard",
+        "vertical_alignment": "top",
+        "image": "shopify://shop_images/AboutPage_QoLImage.png",
+        "image_position": "full-width",
+        "hide_media_mobile": false,
+        "display_as_button_mobile": false
+      }
+    },
+    "checkerboard_aGazJU": {
+      "type": "checkerboard",
+      "name": "Checkerboard",
+      "settings": {
+        "headline": "Meet The Practitioner",
+        "large_headline": "Daniel Rahmann",
+        "copy": "<p>As a registered dietitian nutritionist, health coach, and QoL Strategic Director, Daniel collaborates closely with Dr. Christie to integrate nutrition therapy and longevity science into personalized strategies that optimize health, enhance cellular function, and reverse biological aging.</p><p>Daniel’s expertise is grounded in his training at the USC Leonard Davis School of Gerontology, where he conducted research on the fasting-mimicking diet and contributed to clinical trials exploring its therapeutic application in breast cancer and autoimmune diseases through the Longo Lab and Create Cures Foundation. His clinical rotations in oncology, across both inpatient and outpatient settings informs his ability to address complex, nutrition-related health challenges with precision and compassion.</p><p>Through data-driven, patient-centered strategies, Daniel develops targeted protocols involving advanced supplementation, therapeutic nutrition, and lifestyle optimization. As your health evolves, he works alongside you to refine, monitor, and adapt your plan, ensuring lasting alignment with Dr. Christie’s comprehensive, globally informed approach to healthy aging.</p>",
+        "link_text": "",
+        "link": "",
+        "layout_alignment": "reversed",
+        "vertical_alignment": "top",
+        "image": "shopify://shop_images/Daniel_Bw2.jpg",
+        "image_position": "framed",
+        "hide_media_mobile": false,
+        "display_as_button_mobile": false
+      }
+    },
+    "featured_insights_Xzr8Ub": {
+      "type": "featured-insights",
+      "disabled": true,
+      "name": "Featured Insights",
+      "settings": {}
+    }
+  },
+  "order": [
+    "full_width_H973N7",
+    "checkerboard_bwVNga",
+    "checkerboard_ei4BWi",
+    "full_width_Pz3ACf",
+    "checkerboard_Aecf7M",
+    "checkerboard_aGazJU",
+    "featured_insights_Xzr8Ub"
+  ]
+}

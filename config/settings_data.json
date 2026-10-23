@@ -1,0 +1,61 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "current": {
+    "ticker": "Precision Medicine  |  Regenerative Aesthetics  |  Plastic Surgery",
+    "footer_headline": "Not sure where to start?",
+    "footer_copy": "Book an initial consultation to explore how we can help.",
+    "footer_link_text": "Book An Inquiry",
+    "footer_link": "shopify://pages/contact",
+    "clinics_heading": "Our Clinics",
+    "clinics_heading_link_text": "Visit us",
+    "clinics_heading_link": "shopify://pages/contact",
+    "clinic_location_one": "Los Angeles",
+    "clinic_phone_one": "+1 310 907 8348",
+    "clinic_address_one": "<p>9201 Sunset Blvd Suite #705, West Hollywood, CA 90069</p>",
+    "clinic_directions_one": "https://maps.app.goo.gl/53pCeehf24gpUo2A6",
+    "clinic_location_two": "Milan",
+    "clinic_phone_two": "+1 310 907 8348",
+    "clinic_address_two": "<p>Via della Posta, 8, <br/>20123 Milano MI<br/>Italy</p>",
+    "clinic_directions_two": "https://maps.app.goo.gl/ruVAJQzRRTojGG688",
+    "clinic_image": "shopify://shop_images/CBRX_03_1.webp",
+    "enquiries_text": "For general inquiries:",
+    "enquiries_email": "hello@drchristie.co",
+    "affiliates_text": "For partnerships/affiliates:",
+    "affiliates_email": "hello@drchristie.co",
+    "sections": {
+      "header": {
+        "type": "header",
+        "settings": {}
+      },
+      "footer": {
+        "type": "footer",
+        "settings": {
+          "signup_text": "Subscribe to receive priority access to updates, insights and special offers."
+        }
+      },
+      "footer-cta": {
+        "type": "footer-cta",
+        "settings": {}
+      }
+    },
+    "content_for_index": [],
+    "blocks": {
+      "9388344762370057067": {
+        "type": "shopify://apps/essential-cart-drawer/blocks/app-embed/824bb1f9-5f36-4608-a60c-1f2b6a6f8834",
+        "disabled": false,
+        "settings": {}
+      }
+    }
+  },
+  "presets": {
+    "Default": {}
+  }
+}

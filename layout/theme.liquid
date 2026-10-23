@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="{{ shop.locale }}">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>{{ page_title }}{% unless page_title contains shop.name %} &ndash; {{ shop.name }}{% endunless %}</title>
+
+    {% if page_description %}
+        <meta name="description" content="{{ page_description | escape }}"/>
+    {% endif %}
+
+    <link rel="canonical" href="{{ canonical_url }}">
+    <link rel="shortcut icon" href="{{ 'favicon.png' | asset_url }}" type="image/png" />
+    <meta name="theme-color" content="">
+
+    {{ content_for_header }}
+
+    {{ 'theme.css' | asset_url | stylesheet_tag }}
+</head>
+
+<body
+    class="{% if customer %}customer-logged-in {% endif %}template-{{ template | replace: '.', ' ' | truncatewords: 1, '' | handle }}{% if template.suffix != blank %} template-suffix-{{ template.suffix }}{% endif %}{% if template contains 'customers' %} template-customer-area{% endif %}">
+{% section 'header' %}
+
+<main>
+    {{ content_for_layout }}
+</main>
+
+{% section 'footer-cta' %}
+{% section 'footer' %}
+
+<script
+  src="https://code.jquery.com/jquery-3.6.0.min.js"
+  crossorigin="anonymous"
+  defer>
+</script>
+
+<script src="https://unpkg.com/headroom.js@0.12.0/dist/headroom.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script src="{{ 'jquery.lazy.js' | asset_url }}" defer></script>
+<script src="{{ 'theme.js' | asset_url }}" defer></script>
+<script async type='text/javascript' src='https://static.klaviyo.com/onsite/js/klaviyo.js?company_id=Vb9fan'></script>
+<script defer src="https://connect.podium.com/widget.js#ORG_TOKEN=b20fb8b2-8383-4111-b4db-616f9ea18d8c" id="podium-widget" data-organization-api-token="b20fb8b2-8383-4111-b4db-616f9ea18d8c"></script></body>
+</html>
+  

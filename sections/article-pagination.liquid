@@ -1,0 +1,49 @@
+{% assign nextarticle=blog.next_article %}
+{% assign previousarticle=blog.previous_article %}
+
+<nav class="article-pagination__wrapper">
+  <div class="flex spacious">
+    <div class="article-pagination__prev">
+      {%  if nextarticle %}
+          <a href="{{ nextarticle.url }}" class="colour:grey font:regular text:body-m wrap flex">
+            <span class="arrow">
+              <svg viewBox="0 0 37 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0.469669 5.46967C0.176777 5.76256 0.176777 6.23743 0.469669 6.53033L5.24264 11.3033C5.53553 11.5962 6.01041 11.5962 6.3033 11.3033C6.59619 11.0104 6.59619 10.5355 6.3033 10.2426L2.06066 6L6.3033 1.75736C6.59619 1.46446 6.59619 0.98959 6.3033 0.696696C6.01041 0.403803 5.53553 0.403803 5.24264 0.696696L0.469669 5.46967ZM37 6L37 5.25L1 5.25L1 6L1 6.75L37 6.75L37 6Z" fill="#66645E"/>
+                </svg>
+            </span>
+            <span>
+              Previous Insight
+            </span>
+          </a>
+      {% endif %}
+    </div>
+    <div class="article-pagination__next">
+      {%  if previousarticle %}
+          <a href="{{ previousarticle.url }}" class="colour:grey font:regular text:body-m wrap flex">
+            <span>
+              Next Insight
+            </span>
+            <span class="arrow">
+              <svg viewBox="0 0 37 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M36.5303 6.53033C36.8232 6.23744 36.8232 5.76257 36.5303 5.46967L31.7574 0.696702C31.4645 0.403808 30.9896 0.403808 30.6967 0.696702C30.4038 0.989595 30.4038 1.46447 30.6967 1.75736L34.9393 6L30.6967 10.2426C30.4038 10.5355 30.4038 11.0104 30.6967 11.3033C30.9896 11.5962 31.4645 11.5962 31.7574 11.3033L36.5303 6.53033ZM0 6L-6.55671e-08 6.75L36 6.75L36 6L36 5.25L6.55671e-08 5.25L0 6Z" fill="#66645E"/>
+              </svg>
+            </span>
+          </a>
+      {% endif %}
+    </div>
+  </div>
+</nav>
+
+{% schema %}
+  {
+    "name": "Article Pagination",
+    "tag": "section",
+    "class": "article-pagination border:bottom__grey",
+    "settings": [],
+    "presets": [
+      {
+        "name": "Article Pagination"
+      }
+    ]
+  }
+{% endschema %}

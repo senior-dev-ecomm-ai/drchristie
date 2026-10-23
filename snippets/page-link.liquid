@@ -1,0 +1,39 @@
+<li class="page-link flex bg:soft-lime border:bottom__grey">
+	<article class="flex spacious">
+		<div class="wrap">
+			{% if headline != blank %}
+				<h2 data-reveal class="font:fine text:heading-xl">{{ headline }}</h2>
+			{% endif %}
+
+			{% if copy != blank %}
+				<div data-reveal class="font:regular text:body-m copy">{{ copy }}</div>
+			{% endif %}
+		</div>
+		<div data-reveal class="wrap">
+			{% if linktext != blank %}
+				<p class="page-link__link"><a href="{{ link }}" class="underline colour:grey font:regular text:body-m">{{ linktext }}</a></p>
+			{% endif %}
+		</div>
+	</article>
+	<a href="{{ link }}">
+		<figure class="ar ar:page-link">
+			{% if image != blank %}
+				<img 
+					data-lazy
+					data-reveal
+					class="cover lazy" 
+					src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" 
+					data-src="{{ image | img_url: 'master' }}" 
+					alt="{{ alt }}"
+				>
+				<noscript>
+					<img 
+						class="cover" 
+						src="{{ image | img_url: 'master' }}" 
+						alt="{{ alt }}" 
+					/>
+				</noscript>
+			{% endif %}
+		</figure>
+	</a>
+</li>

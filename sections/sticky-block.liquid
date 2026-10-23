@@ -1,0 +1,81 @@
+<div class="sticky-block:{{ section.settings.layout_alignment }} flex">
+	<article class="bg:base-white">
+		<div class="sticky-block__content">
+			{% if section.settings.headline != blank %}
+				<h2 class="uppercase text:eyebrow font:regular">{{ section.settings.headline }}</h2>
+			{% endif %}
+
+			{% if section.settings.large_headline != blank %}
+				<p class="font:fine text:heading-display">{{ section.settings.large_headline }}</p>
+			{% endif %}
+
+			{% if section.settings.copy != blank %}
+				<div  class="copy font:regular text:body-article">
+					{{ section.settings.copy }}
+				</div>
+			{% endif %}
+
+			{% if section.settings.link_text != blank %}
+				<a  href="{{ section.settings.link }}" class="colour:grey font:regular underline text-link text:body-article">{{ section.settings.link_text }}</a>
+			{% endif %}			
+		</div>
+	</article>
+	<figure class="bg:base-white ar ar:sticky-block {% if section.settings.image == blank %}hide-content{% endif %} {% if section.settings.hide_media_mobile == true %}hidden{% endif %}">
+		{% if section.settings.video != blank %}
+		    {{ section.settings.video | video_tag: image_size: '400x', loop: true, autoplay: true, muted: true }}
+		{% else if section.settings.image != blank %}
+			{% render 'lazy-image', img: section.settings.image, class: 'cover' %}
+		{% endif %}
+	</figure>
+</div>
+
+{% schema %}
+{
+  "name": "Sticky Block",
+  "tag": "section",
+  "class": "section sticky-block bg:grey",
+  "settings": [
+		{
+			"type": "richtext",
+			"id": "copy",
+			"label": "Copy"
+		},
+		{
+            "type": "select",
+            "id": "layout_alignment",
+            "label": "Layout Alignment",
+            "default": "standard",
+            "options": [
+              {
+                "value": "standard",
+                "label": "Standard"
+              },
+              {
+                "value": "reversed",
+                "label": "Reversed"
+              },
+            ]
+        },
+		{
+			"type": "video",
+			"id": "video",
+			"label": "Video (Takes precedence over image)"
+		},
+		{
+			"type": "image_picker",
+			"id": "image",
+			"label": "Image"
+		},
+		{
+			"type": "checkbox",
+			"id" : "hide_media_mobile",
+			"label": "Hide Media On Mobile"
+		}
+	],
+  "presets": [
+	{
+  		"name": "Sticky Block"
+	}
+  ]
+}
+{% endschema %}

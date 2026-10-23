@@ -1,0 +1,69 @@
+{% if section.settings.insights_archive_heading != blank %}
+	<header class="border:bottom__grey bg:base-white">
+		<h2 data-reveal class="font:fine text:heading-xl colour:grey wrap">{{ section.settings.insights_archive_heading }}</h2>
+	</header>
+{% endif %}
+
+<ul class="insights__archive bg:grey">
+	{% paginate blogs.insights.articles by 3 %}
+	{% for article in blogs.insights.articles %}
+		{% render 'insight-card', article: article %}
+	{% endfor %}
+
+	{%- if paginate.pages > 1 -%}
+    <nav class="insights__pagination bg:base-white border:bottom__grey" role="navigation">
+      <div data-reveal class="insights__pagination--wrapper">
+          <div class="insights__pagination--prev wrap">
+        	{%- if paginate.previous-%}
+            	<a class="colour:grey font:regular text:body-m flex" href="{{ paginate.previous.url }}">Previous Page</a>
+        	{%- endif -%}
+
+          </div>
+        <div class="insights__pagination--index flex font:regular text:body-m">
+
+        {%- for part in paginate.parts -%}
+          {%- if part.is_link -%}
+            <div>
+              <a class="colour:grey" href="{{ part.url }}">
+                {{ part.title }}
+              </a>
+            </div>
+          {%- else -%}
+            {%- if part.title == paginate.current_page -%}
+              <div class="active colour:grey font:medium" aria-current="page">
+                {{ part.title }}
+              </div>
+            {%- else -%}
+              <div class="colour:grey">
+                {{ part.title }}
+              </div>
+            {%- endif -%}
+          {%- endif -%}
+        {%- endfor -%}
+    	</div>
+
+          <div class="insights__pagination--next wrap">
+    		{%- if paginate.next -%}
+	        	<a class="colour:grey font:regular text:body-m flex" href="{{ paginate.next.url }}">Next Page</a>
+    		{%- endif -%}
+          </div>
+      </div>
+    </nav>
+  {%- endif -%}
+	{% endpaginate %}
+</ul>
+
+{% schema %}
+{
+	"name": "Insights Archive",
+	"tag": "section",
+	"class" : "section insights",
+	"settings": [
+		{
+			"type": "text",
+			"id": "insights_archive_heading",
+			"label": "Heading"
+		}
+	]
+}
+{% endschema %}

@@ -1,0 +1,115 @@
+{% if template.name == 'article' %}
+    {% assign found_current = false %}
+    {% assign previous_article = nil %}
+    {% assign next_article = nil %}
+
+    {% for this_article in blog.articles %}
+      {% if this_article.handle == article.handle %}
+        {% assign found_current = true %}
+      {% elsif found_current and next_article == nil %}
+        {% assign next_article = this_article %}
+      {% elsif next_article == nil %}
+        {% assign previous_article = this_article %}
+      {% endif %}
+    {% endfor %}
+
+    <div class="insight__individual wrap border:bottom__grey">
+        <div data-reveal class="insight__pagination--wrapper">
+            {% if previous_article %}
+                <div class="insight__pagination--prev">
+                    <a href="{{ previous_article.url }}" class="colour:grey font:regular text:body-l flex">Previous Insight</a>
+                </div>
+            {% endif %}
+            {% if next_article %}
+                <div class="insight__pagination--next">
+                  <a href="{{ next_article.url }}" class="colour:grey font:regular text:body-l flex">Next Insight</a>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+{% endif %}
+<header class="border:bottom__grey bg:base-white">
+	<h2 data-reveal class="font:fine text:heading-xl colour:grey wrap">Insights</h2>
+	<p><a data-reveal class="colour:grey underline font:regular text:body-m wrap" href="/blogs/insights">Read all</a></p>
+</header>
+
+<div class="featured-insights__wrapper bg:grey desktop">
+	  {% for article in blogs.insights.articles limit: 4 %}
+		    <article class="insight bg:base-white">
+		    	<a href="{{ article.url }}">
+		    		<header data-reveal class="bg:base-white border:bottom__grey">
+		    			<p class="font:regular colour:grey uppercase text:body-l">[{{ article.published_at | date: "%B %Y" }}]</p>
+		    		</header>
+			      <figure class="ar">
+			      	{% render 'lazy-image', 
+			      		img: article.image,
+			      		class: 'cover'
+			      	%}
+			      </figure>
+			      <div class="insight__card flex spacious">
+			        <h2 data-reveal class="font:regular colour:bordeaux text:heading-m">{{ article.title }}</h2>
+			        <div data-reveal class="insight__card--snippet">
+			        	{% if article.excerpt != blank %}
+				        	<div class="copy text:body-m font:regular colour:grey">{{ article.excerpt }}</div>
+			        	{% endif %}
+			        	<p class="underline text:body-m font:regular colour:grey">Read More</p>
+			        </div>
+			      </div>
+		      </a>
+		    </article>
+	  {% endfor %}
+</div>
+
+{% if blogs.insights.articles != blank %}
+	<div class="featured-insights__mobile mobile">
+		<div class="swiper swiper-insights bg:grey">
+			<div class="swiper-wrapper">
+				{% for article in blogs.insights.articles limit: 4 %}
+					<div class="swiper-slide">
+						<article class="insight bg:base-white">
+					    	<a href="{{ article.url }}">
+					    		<header data-reveal class="bg:base-white border:bottom__grey">
+					    			<p class="font:regular colour:grey uppercase text:body-l">[{{ article.published_at | date: "%B %Y" }}]</p>
+					    		</header>
+						      <figure class="ar">
+						      	{% render 'lazy-image', 
+						      		img: article.image,
+						      		class: 'cover'
+						      	%}
+						      </figure>
+						      <div data-reveal class="insight__card flex spacious">
+						        <h2 data-reveal class="font:regular colour:bordeaux text:heading-m">{{ article.title }}</h2>
+						        <div data-reveal class="insight__card--snippet">
+						        	<p class="underline text:body-m colour:grey">Read More</p>
+						        </div>
+						      </div>
+					      </a>
+					    </article>
+					</div>
+				{% endfor %}
+			</div>
+			<div class="swiper-navigation flex spacious">
+				<div class="swiper-button-prev">
+					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 13 25" fill="none"><path stroke="#fff" stroke-linecap="round" stroke-width="1.5" d="M11.939 24 1 13.061M11.94 1.5 1 12.44"/></svg>
+				</div>
+				<div class="swiper-button-next">
+					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 13 25" fill="none"><path stroke="#fff" stroke-linecap="round" stroke-width="1.5" d="M1.061 1 12 11.939M1.06 23.5 12 12.56"/></svg>
+				</div>
+			</div>
+		</div>
+	</div>
+{% endif %}
+
+{% schema %}
+{
+  "name": "Featured Insights",
+  "tag": "section",
+  "class": "section featured-insights border:bottom__grey",
+  "settings": [],
+  "presets": [
+	{
+  		"name": "Featured Insights"
+	}
+  ]
+}
+{% endschema %}

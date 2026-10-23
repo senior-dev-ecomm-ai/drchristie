@@ -1,0 +1,54 @@
+<div data-reveal>
+  <ul>
+    {% for block in section.blocks %}
+      <li>
+        <a
+          href="{{ block.settings.link }}"
+          class="insight-arrow-link underline text:insight-copy font:regular colour:body">
+          <span>→ {{ block.settings.title }}</span>
+        </a>
+      </li>
+    {% endfor %}
+  </ul>
+</div>
+
+{% schema %}
+{
+  "name": "Insight Arrow Links",
+  "tag": "section",
+  "class": "section insight-arrow-links",
+  "settings": [],
+  "blocks": [
+    {
+      "type": "link",
+      "name": "Link",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Link text",
+          "default": "Learn more"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Link"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Insight Arrow Links",
+      "blocks": [
+        {
+          "type": "link"
+        },
+        {
+          "type": "link"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

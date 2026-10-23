@@ -1,0 +1,13 @@
+<div class="post-navigation">
+  {% if article.previous %}
+    <a href="{{ article.previous.url }}" class="prev-post">
+      ← {{ article.previous.title }}
+    </a>
+  {% endif %}
+
+  {% if article.next %}
+    <a href="{{ article.next.url }}" class="next-post">
+      {{ article.next.title }} →
+    </a>
+  {% endif %}
+</div>

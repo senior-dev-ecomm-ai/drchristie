@@ -1,0 +1,45 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "settings": {}
+    },
+    "inquiries_XrhadG": {
+      "type": "inquiries",
+      "name": "Inquiries",
+      "settings": {
+        "inquiries_heading": "Inquiries and Appointments",
+        "inquiries_subheading": "Please complete the form below for appointment requests or general questions.",
+        "inquiries_image": "shopify://shop_images/Mask_group_40.png"
+      }
+    },
+    "contact_block_baHdrD": {
+      "type": "contact-block",
+      "name": "Contact Details",
+      "settings": {}
+    },
+    "clinics_QjXKtH": {
+      "type": "clinics",
+      "name": "Clinics",
+      "settings": {
+        "image": "shopify://shop_images/Mask_group_46.webp",
+        "hide_directions": false
+      }
+    }
+  },
+  "order": [
+    "main",
+    "inquiries_XrhadG",
+    "contact_block_baHdrD",
+    "clinics_QjXKtH"
+  ]
+}

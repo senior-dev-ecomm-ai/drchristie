@@ -1,0 +1,39 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-article",
+      "settings": {
+        "desktop_image": "shopify://shop_images/Mask_group_1_9ab30b00-ac87-4f16-9aa7-c5b7681dba7b.png",
+        "mobile_image": "shopify://shop_images/DTS_DEEP_SPA_Fanette_Guilloud_Photos_ID10967.png"
+      }
+    },
+    "full_width_text_VpNwT8": {
+      "type": "full-width-text",
+      "name": "Full Width Text",
+      "settings": {
+        "headline": "",
+        "large_headline": "",
+        "copy": "<p>At the heart of our <em>Quality of Life (QoL)</em><em><strong> </strong></em>Program is a simple but powerful insight: chronic stress accelerates aging. This is especially true for high-achieving individuals who operate under constant performance pressure and rarely take time to reset.</p><p>In biological terms, stress occurs when your body perceives a threat to its internal balance, or <em>homeostasis</em>. Whether triggered by emotional strain, lack of sleep, or mental overload, the brain responds by activating a cascade of hormonal and neurological responses. While this stress response can be protective in the short term, long-term stress disrupts your brain, immune system, and cellular health ultimately driving inflammation, burnout, and premature aging.</p><p><strong>The Challenge of Managing Stress</strong></p><p>Successfully managing stress requires a comprehensive approach. Practices like mindfulness, cognitive behavioral therapy (CBT), regular movement, restorative sleep, and strong social connection are proven to reduce cortisol levels and restore nervous system balance. Nutritional support like magnesium, omega-3s, and adaptogenic herbs can further support resilience.</p><p>But I also recognize that traditional stress-management tools are not always enough. High-functioning individuals often normalize their stress or resist tools they perceive as passive or slow-acting. Stress also varies from person to person shaped by genetics, life experience, and how each individual’s brain processes and perceives challenge.</p><p>This is why I believe in combining biological insight with personalized, tech-enabled therapy to disrupt the stress-aging cycle at its core.</p><p><strong>Introducing TMS + ExoMind: Brain-Based Stress Resilience</strong></p><p> I am excited to introduce Transcranial Magnetic Stimulation (TMS) into our practice — now enhanced by BTL’s ExoMind interface. This advanced, non-invasive technology offers a cutting-edge way to support emotional health, especially in individuals with high mental demands and limited downtime.</p><p>TMS works by delivering gentle, MRI-strength magnetic pulses to a region of the brain called the dorsolateral prefrontal cortex (DLPFC) — a hub for decision-making, emotional regulation, and executive function. These pulses stimulate neuronal activity and help rebalance brain circuitry involved in stress, anxiety, and depression. The result is enhanced mood, improved clarity, and renewed mental energy.</p><p>TMS is FDA-approved for the treatment of major depressive disorder and generalized anxiety disorder, with decades of clinical data behind its safety and effectiveness. ExoMind modernizes the experience with a more intelligent, personalized interface making this powerful therapy more accessible and precise - in just 30 minutes.</p><p>We encourage all patients to schedule an introductory session to experience the benefits of TMS firsthand and discover how it can positively impact your emotional wellbeing. </p><p><em>Let’s support your brain, reduce stress, and help you age with clarity and calm.</em></p><p><strong>Interested in Participating?</strong></p><p>We are now enrolling patients in a clinical trial exploring the impact of TMS ExoMind on quality of life and aging. If you're interested, please send an email to <a href=\"mailto:qol@drchristiela.com\" target=\"_blank\" title=\"mailto:qol@drchristiela.com\">qol@drchristiela.com</a>.</p>"
+      }
+    },
+    "article-pagination": {
+      "type": "article-pagination",
+      "name": "Article Pagination",
+      "settings": {}
+    }
+  },
+  "order": [
+    "main",
+    "full_width_text_VpNwT8",
+    "article-pagination"
+  ]
+}

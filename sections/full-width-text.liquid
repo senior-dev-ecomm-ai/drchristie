@@ -1,0 +1,47 @@
+<article class="bg:base-white wrap">
+    <div class="sticky-block__content">
+      {% if section.settings.headline != blank %}
+        <h2 class="uppercase text:eyebrow font:regular">{{ section.settings.headline }}</h2>
+      {% endif %}
+
+      {% if section.settings.large_headline != blank %}
+        <p class="font:fine text:heading-display">{{ section.settings.large_headline }}</p>
+      {% endif %}
+
+      {% if section.settings.copy != blank %}
+        <div class="copy font:regular text:body-article">
+          {{ section.settings.copy }}
+        </div>
+      {% endif %} 
+    </div>
+  </article>
+
+{% schema %}
+{
+  "name": "Full Width Text",
+  "tag": "section",
+  "class": "section full-width-text border:bottom__grey bg:grey",
+  "settings": [
+	  {
+	  	"type": "text",
+	  	"id": "headline",
+	  	"label": "Headline"	
+	  },
+	  {
+	  	"type": "text",
+	  	"id": "large_headline",
+	  	"label": "Large Headline"	
+	  },
+		{
+			"type": "richtext",
+			"id": "copy",
+			"label": "Copy"
+		}
+	],
+  "presets": [
+	{
+  		"name": "Full Width Text"
+	}
+  ]
+}
+{% endschema %}

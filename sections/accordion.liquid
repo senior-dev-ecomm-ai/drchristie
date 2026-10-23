@@ -1,0 +1,54 @@
+{% if section.settings.accordion_heading != blank %}
+	<header class="wrap border:bottom__grey">
+		<h2 class="font:fine text:heading-xl colour:grey">{{ section.settings.accordion_heading }}</h2>
+	</header>
+{% endif %}
+
+{% if section.blocks != blank %}
+<ul>
+	{% for accordion in section.blocks %}
+		{% render 'accordion-item',
+			heading: accordion.settings.accordion_item_heading,
+			copy: accordion.settings.accordion_item_content 
+		%}
+	{% endfor %}
+</ul>	
+{% endif %}
+
+{% schema %}
+{
+  "name": "Accordion",
+  "tag": "section",
+  "class": "section accordion border:bottom__grey",
+  "settings": [
+	  	  		{
+  			"type": "text",
+  			"id": "accordion_heading",
+  			"label": "Section Heading"
+  		}
+	],
+    "blocks": [
+	    {
+	       "name": "Slide",
+	       "type": "slide",
+	       "settings": [
+	         {
+	           "type": "text",
+	           "id": "accordion_item_heading",
+	           "label": "Accordion Heading"
+	         },
+	         {
+	         	"type": "richtext",
+	         	"id": "accordion_item_content",
+	         	"label": "Accordion Item Content"
+	         }
+	       ]
+	    }
+	  ],
+  "presets": [
+	{
+  		"name": "Accordion"
+	}
+  ]
+}
+{% endschema %}

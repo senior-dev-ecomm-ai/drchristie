@@ -1,0 +1,138 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "full_width_xq4Mdp": {
+      "type": "full-width",
+      "name": "Full Width Media",
+      "settings": {
+        "small_heading": "",
+        "headline": "Precision Medicine",
+        "copy": "Personalized health strategies tailored to your internal and external pathways of aging.",
+        "button_text": "Book An Inquiry",
+        "button": "shopify://pages/contact",
+        "layout_alignment": "left",
+        "image": "shopify://shop_images/Mask_group_10_1.png",
+        "image_mobile": "shopify://shop_images/Fanette_Guilloud_Photos_8_1.png"
+      }
+    },
+    "checkerboard_gAF6Ty": {
+      "type": "checkerboard",
+      "name": "Checkerboard",
+      "settings": {
+        "headline": "About",
+        "large_headline": "Precision Medicine",
+        "copy": "<p>Designed to identify and target the root causes of aging, we use advanced diagnostics, biomarker analysis and comprehensive clinical assessment to create fully personalized health optimization strategies.<br/><br/>By enhancing your body’s regenerative potential, we can bridge the crucial gap between internal and external health, addressing the full continuum of aging with precision and purpose.</p>",
+        "link_text": "",
+        "link": "",
+        "layout_alignment": "standard",
+        "vertical_alignment": "top",
+        "image": "shopify://shop_images/Mask_group_11.webp",
+        "image_position": "full-width",
+        "hide_media_mobile": false,
+        "display_as_button_mobile": false
+      }
+    },
+    "checkerboard_TwjqKG": {
+      "type": "checkerboard",
+      "name": "Checkerboard",
+      "settings": {
+        "headline": "About",
+        "large_headline": "QoL Program™",
+        "copy": "<p>Our Precision Medicine division is engineered by the QoL (Quality of Life) Program™, a proprietary, data-driven framework and analysis tool for diagnostics and bio-individualization. The QoL Program™ positions quality of life as a cornerstone metric of health.<br/><br/>Grounded in multidimensional markers across mind and body, the QoL Program™ creates a strategic roadmap for optimization, prioritizing nutrition protocols, lifestyle strategies and advanced therapeutics based on a comprehensive inventory of your physiology and quality of life.</p>",
+        "link_text": "Get Started",
+        "link": "shopify://pages/contact",
+        "layout_alignment": "reversed",
+        "vertical_alignment": "top",
+        "image": "shopify://shop_images/PrecisionMedicine_QoLProgram.jpg",
+        "image_position": "full-width",
+        "hide_media_mobile": false,
+        "display_as_button_mobile": false
+      }
+    },
+    "full_width_e8FQXf": {
+      "type": "full-width",
+      "name": "Full Width Media",
+      "settings": {
+        "small_heading": "",
+        "headline": "\"You can’t optimize what you don’t understand. Precision medicine allows us to see clearly, intervene early, and elevate your health with purpose.” — Dr. Christie",
+        "copy": "",
+        "button_text": "Book An Appointment",
+        "button": "shopify://pages/contact",
+        "layout_alignment": "center",
+        "image": "shopify://shop_images/Mask_group_38.png",
+        "image_mobile": "shopify://shop_images/PrecisionMedicineQuote_MobileCrop.png"
+      }
+    },
+    "checkerboard_Vhf8Kb": {
+      "type": "checkerboard",
+      "name": "Checkerboard",
+      "settings": {
+        "headline": "Experience",
+        "large_headline": "QoL Blueprint",
+        "copy": "<p>Your QoL journey begins with a comprehensive evaluation of your health history, including metabolic, hormonal, and nutritional panels, genetics, neurocognitive and brain fitness testing, emotional health screenings and detailed lifestyle and nutrition analyses. This diverse spectrum of data points and clinical insights is synthesized into your personalized QoL Blueprint – a dynamic and evolving profile that informs your personalized strategy for healthy aging.<br/><br/>As you progress through your optimization journey, you’ll gain access to a curated suite of advanced diagnostics and therapeutics, tailored to your unique biology, focus areas, and health goals. Dr. Christie and her team serve as your strategic medical advisors, continuously refining your care plan through the lens of your blueprint, ensuring that every step is intentional, evidence-based and precisely aligned with your evolving needs.<br/><br/>Collaboration is fundamental to our approach. Your active participation is essential to the customization of your Blueprint. As team players, we integrate with your broader care ecosystem, partnering with existing providers and, when needed, referring you to a trusted network of expert specialists. This ensures a seamless, precision-guided model for sustainable, long-term wellness.</p>",
+        "link_text": "Get Started",
+        "link": "shopify://pages/contact-1",
+        "layout_alignment": "standard",
+        "vertical_alignment": "top",
+        "image": "shopify://shop_images/PrecisionMedicine_QoLExperience.jpg",
+        "image_position": "full-width",
+        "hide_media_mobile": false,
+        "display_as_button_mobile": false
+      }
+    },
+    "overview_qXG8HY": {
+      "type": "overview",
+      "name": "Overview",
+      "settings": {
+        "overview_heading": "Overview of Services",
+        "overview_subheading": "Our service menu includes a comprehensive range of advanced diagnostics and personalized therapies designed to optimize health, longevity and aesthetic aging.",
+        "overview_image": "shopify://shop_images/Mask_group_29.png",
+        "overview_headline_one": "Advanced Diagnostics and Specialized Assessments",
+        "overview_copy_one": "<ul><li>Biomarker Testing</li><li>Genetic Testing</li><li>Epigenetic Testing</li><li>NAD Testing</li><li>Skin Health Analysis</li><li>Liquid Biopsy Cancer Surveillance</li><li>Toxin Testing</li><li>Nitric Oxide Testing</li><li>Body Composition Analysis</li><li>Immunosenescence Testing</li><li>Micronutrient Testing</li><li>Microbiome Analysis</li><li>Full-Body MRI</li><li>DEXA Analysis</li><li>AI-assisted Cardiac Imaging</li><li>AI-assisted Brain Imaging</li><li>Emotional Health Screening</li><li>Grip Strength Analysis</li><li>Neurocognitive Testing</li></ul>",
+        "overview_headline_two": "Personalized Optimization Strategies & Therapeutics",
+        "overview_copy_two": "<ul><li>Medical Nutrition Therapy</li><li>Longevity Nutrition with Health and Lifestyle Coaching</li><li>Emotional Health & Energy Coaching with Breathwork, Mindfulness, Meditation & Reiki</li><li>Biometric Monitoring</li><li>Personalized Nutraceutical Prescription and Supplement Protocols</li><li>Pharmacotherapy</li><li>Hormone Replacement Therapy</li><li>Peptide Therapy</li><li>Transcranial Magnetic Stimulation (TMS)</li><li>IV Nutrition Prescriptions</li><li>Regenerative Cell Banking</li><li>Regenerative Autologous Cell Therapy</li><li>Personalized Consultancy and Risk</li><li>Stratification for emerging therapeutics within Aesthetics & Longevity</li><li>Early Access opportunities for first-to-market Therapies and Technologies</li></ul>"
+      }
+    },
+    "page_links_Eqgz33": {
+      "type": "page-links",
+      "name": "Page Links",
+      "settings": {
+        "page_links_heading": "Other Services",
+        "page_link_image_one": "shopify://shop_images/PlasticSurgery_GoToBlock.jpg",
+        "page_link_headline_one": "Plastic Surgery",
+        "page_link_copy_one": "<p>Enhancing aesthetics with precision while honoring what makes you unique.</p>",
+        "page_link_link_text_one": "Learn More",
+        "page_link_link_one": "shopify://pages/plastic-surgery",
+        "page_link_image_bottom": "shopify://shop_images/RegenerativeAesthetics_GoToBlock.jpg",
+        "page_link_headline_bottom": "Regenerative Aesthetics",
+        "page_link_copy_bottom": "<p>Enhancing your skin’s regenerative potential with advanced therapeutics and cutting-edge technology.</p>",
+        "page_link_link_text_bottom": "Learn More",
+        "page_link_link_bottom": "shopify://pages/regenerative-aesthetics"
+      }
+    },
+    "featured_insights_NxU4mg": {
+      "type": "featured-insights",
+      "disabled": true,
+      "name": "Featured Insights",
+      "settings": {}
+    }
+  },
+  "order": [
+    "full_width_xq4Mdp",
+    "checkerboard_gAF6Ty",
+    "checkerboard_TwjqKG",
+    "full_width_e8FQXf",
+    "checkerboard_Vhf8Kb",
+    "overview_qXG8HY",
+    "page_links_Eqgz33",
+    "featured_insights_NxU4mg"
+  ]
+}

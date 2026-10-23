@@ -1,0 +1,210 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-article",
+      "settings": {
+        "desktop_image": "shopify://shop_images/onda2.png",
+        "mobile_image": "shopify://shop_images/onda2.png"
+      }
+    },
+    "insight_copy_section_XiW4Vn": {
+      "type": "insight-copy-section",
+      "name": "Insight Copy Section",
+      "settings": {
+        "large_headline": "",
+        "copy": "<p>Skin laxity is one of the most common concerns I hear, from the face to the arms, abdomen, and flanks. As a plastic surgeon, a significant portion of what I do is about tightening. And for years, I have watched aesthetic technologies overpromise and underdeliver in this space, leaving the most meaningful interventions to the operating room.</p><p><em><strong>OndaPro is different. I do not say that lightly</strong></em></p>"
+      }
+    },
+    "divider_BHLrMx": {
+      "type": "divider",
+      "name": "Divider",
+      "settings": {}
+    },
+    "insight_copy_section_xMkWci": {
+      "type": "insight-copy-section",
+      "name": "Insight Copy Section",
+      "settings": {
+        "large_headline": "The Science",
+        "copy": "<p>OndaPro uses microwave energy at 2.45 GHz, a frequency that selectively targets the dermis and subcutaneous fat with a level of depth precision that radio frequency and ultrasound-based devices cannot reliably achieve.</p><p>At the tissue level, two distinct processes occur simultaneously.</p><p>The first is an immediate thermal effect. Controlled collagen denaturation causes the existing collagen network to contract, producing visible tightening from the first session.</p><p>The second is a regenerative cascade. Thermal injury triggers a wound-healing response, upregulating heat shock proteins involved in collagen synthesis and, critically, downregulating matrix metalloproteinases, the enzymes responsible for collagen breakdown.</p><p>This second point matters. Most technologies stimulate new collagen production. Fewer also reduce collagen degradation. OndaPro does both, which translates to net collagen gain rather than simple turnover.</p>"
+      }
+    },
+    "insight_pull_out_mYWrEd": {
+      "type": "insight-pull-out",
+      "disabled": true,
+      "name": "Insight Pull Out",
+      "settings": {
+        "content": "<p>Q: This is an example of a callout block with a left accent rule. The \"Q:\" and the indented question are being visually separated from the body copy here, to indicate they're a distinct type of content.</p><p>A:  This treatment is commonly used for quotes, FAQs, expert tips, key takeaways, case studies, reader questions that are being addressed within the article, or for common inquiries or other important notes.</p>"
+      }
+    },
+    "insight_copy_section_mw8cE4": {
+      "type": "insight-copy-section",
+      "name": "Insight Copy Section",
+      "settings": {
+        "large_headline": "Depth-Specific Targeting",
+        "copy": "<p>The system's handpiece design allows for tissue-level selectivity. Superficial settings address dermal tightening and skin quality, while deeper settings target subcutaneous adipose tissue for fat reduction and cellulite improvement. This makes it possible to treat skin laxity and localized fat deposits, including hormonally driven accumulation in the flanks, abdomen, and arms, within the same session.</p>"
+      }
+    },
+    "insight_image_QdahEx": {
+      "type": "insight-image",
+      "name": "Insight Image",
+      "settings": {
+        "image": "shopify://shop_images/ONdapor_ff46fef9-86ab-40d9-9280-79bc65607816.png"
+      }
+    },
+    "divider_BfwW6P": {
+      "type": "divider",
+      "name": "Divider",
+      "settings": {}
+    },
+    "insight_copy_section_JaApiq": {
+      "type": "insight-copy-section",
+      "name": "Insight Copy Section",
+      "settings": {
+        "large_headline": "What Treatment Is Like",
+        "copy": "<p>Sessions last approximately 20 minutes. No numbing is required, though pre-treatment analgesia is recommended as heat accumulation toward the end of the session can become intense. Most patients tolerate this well. Results are visible immediately and continue to improve over the following weeks as the regenerative response matures.</p>"
+      }
+    },
+    "insight_copy_section_a9Wtkq": {
+      "type": "insight-copy-section",
+      "name": "Insight Copy Section",
+      "settings": {
+        "large_headline": "What I Am Seeing Clinically",
+        "copy": "<p>This technology is already changing how I approach certain cases. For patients with early skin laxity and good baseline health, strong nutrition, an active lifestyle, and minimal subcutaneous fat, I am achieving results I previously could only obtain in the operating room using subdermal energy devices under anesthesia. No recovery. No downtime. Better patient experience.</p><p>For this population specifically, OndaPro is not a compromise. It is, in many cases, the superior option.</p>"
+      }
+    },
+    "insight_arrow_links_LhxfXX": {
+      "type": "insight-arrow-links",
+      "blocks": {
+        "link_78NfCn": {
+          "type": "link",
+          "settings": {
+            "title": "Read the full spotlight",
+            "link": "https://google.com"
+          }
+        },
+        "link_ipjbbE": {
+          "type": "link",
+          "settings": {
+            "title": "Book an appointment",
+            "link": "https://google.com"
+          }
+        }
+      },
+      "block_order": [
+        "link_78NfCn",
+        "link_ipjbbE"
+      ],
+      "disabled": true,
+      "name": "Insight Arrow Links",
+      "settings": {}
+    },
+    "insight_image_eTnEqt": {
+      "type": "insight-image",
+      "name": "Insight Image",
+      "settings": {
+        "image": "shopify://shop_images/ONDA_PRO_NEWSLETTER.png"
+      }
+    },
+    "divider_mVT7Lx": {
+      "type": "divider",
+      "name": "Divider",
+      "settings": {}
+    },
+    "insight_copy_section_G6tzyd": {
+      "type": "insight-copy-section",
+      "name": "Insight Copy Section",
+      "settings": {
+        "large_headline": "Who Should Consider This",
+        "copy": "<p>I encourage patients to think about OndaPro as a proactive tool, not just a corrective one. The best outcomes in aging skin come from intervening early, before laxity becomes pronounced. If you are in your 40s or 50s, maintaining your body well, and beginning to notice early changes in skin texture or contour, this is precisely the window where this technology performs best.</p><p>It is also well suited for targeted concerns including menopausal fat redistribution, post-weight-loss skin changes, arm laxity, and abdominal skin quality following pregnancy or significant lifestyle changes.</p><p>The goal is to keep patients out of the operating room, not by settling for less, but by having a tool that is genuinely effective at the right stage of intervention. OndaPro is that tool.</p>"
+      }
+    },
+    "insight_highlight_1_dNA9VY": {
+      "type": "insight-highlight-1",
+      "disabled": true,
+      "name": "Insight Highlight 1",
+      "settings": {
+        "heading": "Heading Here",
+        "content": "<p>This is an optional content block for featured messaging. Featured quote, key fact, or supporting text goes here, such as a quote, statistic, or clinical claims. Can also be center justified.</p>"
+      }
+    },
+    "insight_highlight_2_X7BUVL": {
+      "type": "insight-highlight-2",
+      "disabled": true,
+      "name": "Insight Highlight 2",
+      "settings": {
+        "content": "<p>This is an optional content block for featured messaging. Featured quote, key fact, or supporting text goes here, such as a quote, statistic, or clinical claims. Can also be center justified.</p>"
+      }
+    },
+    "divider_h9LUMF": {
+      "type": "divider",
+      "name": "Divider",
+      "settings": {}
+    },
+    "insight_call_to_action_XJNjNr": {
+      "type": "insight-call-to-action",
+      "disabled": true,
+      "name": "Insight Call To Action",
+      "settings": {
+        "call_to_action_link": "https://google.com",
+        "call_to_action_text": "Call To Action"
+      }
+    },
+    "divider_Wxcphd": {
+      "type": "divider",
+      "disabled": true,
+      "name": "Divider",
+      "settings": {}
+    },
+    "insight_disclaimer_xC8hHD": {
+      "type": "insight-disclaimer",
+      "disabled": true,
+      "name": "Insight Disclaimer",
+      "settings": {
+        "content": "<p>This article is protected by copyright. To share or copy this article, please visit copyright.com. Use ISSN#1078-6791. To subscribe, visit alternative-therapies.com<br/><br/>Sheldon Baker is an InnoVision contributing editor. His freelance editorial content can also be found in several lifestyle publications, and as CEO of Baker Dillon Group LLC, he has created numerous brand marketing communications and public relations campaigns for health and wellness organizations. Contact him at Sheldon@NutraInk.com.</p>"
+      }
+    },
+    "featured_insights_DHtrKT": {
+      "type": "featured-insights",
+      "name": "Featured Insights",
+      "settings": {}
+    },
+    "article_pagination_7yGMMW": {
+      "type": "article-pagination",
+      "name": "Article Pagination",
+      "settings": {}
+    }
+  },
+  "order": [
+    "main",
+    "insight_copy_section_XiW4Vn",
+    "divider_BHLrMx",
+    "insight_copy_section_xMkWci",
+    "insight_pull_out_mYWrEd",
+    "insight_copy_section_mw8cE4",
+    "insight_image_QdahEx",
+    "divider_BfwW6P",
+    "insight_copy_section_JaApiq",
+    "insight_copy_section_a9Wtkq",
+    "insight_arrow_links_LhxfXX",
+    "insight_image_eTnEqt",
+    "divider_mVT7Lx",
+    "insight_copy_section_G6tzyd",
+    "insight_highlight_1_dNA9VY",
+    "insight_highlight_2_X7BUVL",
+    "divider_h9LUMF",
+    "insight_call_to_action_XJNjNr",
+    "divider_Wxcphd",
+    "insight_disclaimer_xC8hHD",
+    "featured_insights_DHtrKT",
+    "article_pagination_7yGMMW"
+  ]
+}

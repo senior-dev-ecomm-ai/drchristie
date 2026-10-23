@@ -1,0 +1,25 @@
+<div data-reveal>
+  {% if section.settings.content != blank %}
+    <div class="copy text:copy-insight font:regular">{{ section.settings.content }}</div>
+  {% endif %}
+</div>
+
+{% schema %}
+{
+  "name": "Insight Pull Out",
+  "tag": "section",
+  "class": "section insight-pull-out",
+  "settings": [
+    {
+      "type": "richtext",
+      "id": "content",
+      "label": "Content"  
+    }
+	],
+  "presets": [
+	{
+  		"name": "Insight Pull Out"
+	}
+  ]
+}
+{% endschema %}

@@ -1,0 +1,76 @@
+{% if settings.clinics_heading != blank %}
+	<header id="our-clinics" class="wrap border:bottom__grey">
+		<h2 data-reveal class="font:fine text:heading-xl colour:grey">{{ settings.clinics_heading }}</h2>
+
+		{% if settings.clinics_heading_link_text != blank %}
+			{% unless template != 'index' %}
+				<p><a data-reveal class="colour:grey underline text:body-m font:regular" href="{{ settings.clinics_heading_link }}">{{ settings.clinics_heading_link_text }}</a></p>
+			{% endunless %}
+		{% endif %}
+	</header>
+{% endif %}
+
+
+<div class="clinics__container bg:grey">
+	<article class="clinics__location bg:base-white">
+		<div class="wrap">
+			{% if settings.clinic_location_one %}
+				<h2 data-reveal class="text:heading-m font:regular colour:bordeaux">{{ settings.clinic_location_one }}</h2>
+			{% endif %}
+
+			{% if settings.clinic_address_one %}
+				<div data-reveal class="font:regular text:body-l copy colour:grey">{{ settings.clinic_address_one }}</div>
+			{% endif %}
+
+			{% if section.settings.hide_directions != true %}
+				<p><a data-reveal class="font:regular text:body-l colour:grey copy underline" target="_blank" rel="noreferrer" href="{{ settings.clinic_directions_one }}">Get Directions</a></p>
+			{% endif %}
+		</div>
+	</article>
+	<article class="clinics__location bg:base-white">
+		<div class="wrap">
+			{% if settings.clinic_location_two %}
+				<h2 data-reveal class="text:heading-m font:regular colour:bordeaux">{{ settings.clinic_location_two }}</h2>
+			{% endif %}
+
+			{% if settings.clinic_address_two %}
+				<div data-reveal class="font:regular text:body-l copy colour:grey">{{ settings.clinic_address_two }}</div>
+			{% endif %}
+
+			{% if section.settings.hide_directions != true %}
+				<p><a data-reveal class="font:regular text:body-l copy colour:grey underline" target="_blank" rel="noreferrer" href="{{ settings.clinic_directions_two }}">Get Directions</a></p>
+			{% endif %}
+		</div>
+	</article>
+	<figure class="ar clinics__image bg:base-white">
+		{% if section.settings.image != blank %}
+			{% render 'lazy-image', img: section.settings.image, class: 'cover' %}
+		{% endif %}
+	</figure>
+
+</div>
+
+{% schema %}
+{
+  "name": "Clinics",
+  "tag": "section",
+  "class": "section clinics border:bottom__grey",
+  "settings": [
+	{
+		"type": "image_picker",
+		"id": "image",
+		"label": "Image"
+	},
+	{
+		"type": "checkbox",
+		"id" : "hide_directions",
+		"label": "Hide Directions"
+	}
+  ],
+  "presets": [
+	{
+  		"name": "Clinics"
+	}
+  ]
+}
+{% endschema %}

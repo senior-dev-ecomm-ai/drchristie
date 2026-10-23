@@ -1,0 +1,235 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-article",
+      "settings": {
+        "desktop_image": "shopify://shop_images/Mask_group_16.webp",
+        "mobile_image": "shopify://shop_images/Mask_group_16.webp"
+      }
+    },
+    "insight_copy_section_XiW4Vn": {
+      "type": "insight-copy-section",
+      "name": "Insight Copy Section",
+      "settings": {
+        "large_headline": "",
+        "copy": "<p>For decades, Hollywood has set and reset the standards of beauty. Over recent years, the trend was an almost frozen, smooth face without any lines or wrinkles. Across the global aesthetics landscape today, a new trend is emerging; shifting away from over-corrected appearances in favor of natural facial expression, subtle movement and well-preserved features.</p><p><strong>Botox</strong>, or botulinum toxin type A, is widely known as a wrinkle-reducing treatment and has become a popular entry point into aesthetic medicine, especially for aging prevention. Backed heavily by the aesthetic industry, Botox works by temporarily weakening facial muscles responsible for expression, thereby softening dynamic lines and preventing deeper wrinkles from forming. Studies, including those on identical twins, have demonstrated fewer wrinkles in individuals who regularly used Botox. Advocates argue that by easing facial tension, Botox may not only enhance how others perceive us but also how we perceive ourselves—with some studies linking its use to improved mood and self-confidence.</p>"
+      }
+    },
+    "divider_BHLrMx": {
+      "type": "divider",
+      "name": "Divider",
+      "settings": {}
+    },
+    "insight_copy_section_xMkWci": {
+      "type": "insight-copy-section",
+      "name": "Insight Copy Section",
+      "settings": {
+        "large_headline": "Does Botox prevent Aging? ",
+        "copy": "<p>From a regenerative medicine perspective, Botox may not qualify as a true anti-aging treatment—particularly when aging is evaluated through the lens of biology, long-term function, and cellular health. As Dr. Christie explains, Botox offers aesthetic benefits but does not address the fundamental causes of aging.</p><p><strong>1.&nbsp;Symptom Suppression Rather Than Root Cause Intervention: </strong>Botox treats the&nbsp;<em>visible effects</em>&nbsp;of aging but does not address core biological drivers such as oxidative stress, collagen breakdown, hormonal shifts, and chronic inflammation. It does not stimulate facial rejuvenation through tissue regeneration, reverse cellular aging, or alter the skin’s biological age. In essence, it is a superficial solution—not a cellular one.</p><p><strong>2.&nbsp;Potential for Muscle Atrophy and Skin Thinning: </strong>Long-term use can lead to muscle disuse, contributing to localized atrophy, facial flattening and unintended changes in proportion. Over-relaxed muscles may also reduce trophic signaling to the skin, which plays a key role in maintaining dermal thickness and vitality, potentially accelerating skin thinning over time.</p><p><strong>3.&nbsp;Loss of Expressiveness and Emotional Nuance: </strong>While softening expressions can improve perceived approachability, Dr. Christie emphasizes the importance of facial microexpressions for natural-looking results, conveying emotion, authenticity, and personality. Long-term effects of Botox may include:<br/>a) dull natural emotional signaling,<br/>b) hinder interpersonal connection as others struggle to interpret emotional cues, and<br/>c) result in an unnatural or “overdone” appearance that paradoxically looks&nbsp;<em>less</em>&nbsp;youthful.&nbsp;</p><p>&nbsp;</p>"
+      }
+    },
+    "insight_copy_section_ti3RCw": {
+      "type": "insight-copy-section",
+      "disabled": true,
+      "name": "Insight Copy Section",
+      "settings": {
+        "large_headline": "Please explain The Beauty Matrix™.",
+        "copy": "<p><em>Dr. Prendergast:</em> The Beauty Matrix™ is a methodology I came up with and use in my practice today and addresses the many aspects of aging and beauty. It utilizes an algorithm that helps my patients truly understand their objectives and guides them towards the types of treatments that are most ideally suited to them, based on their aesthetic concerns and personal goals, current state of health, lifestyle and of course genetic skin and age-related predispositions. </p><p>The Beauty Matrix™ allows me to consider all of these factors to create a personalized plan for both corrective and maintenance treatments. As a result, the strategy is more results-oriented and leads to better outcomes in a shorter amount of time, while simultaneously mitigating the need for more drastic interventions down the road.</p>"
+      }
+    },
+    "insight_copy_section_tcBcTe": {
+      "type": "insight-copy-section",
+      "disabled": true,
+      "name": "Insight Copy Section",
+      "settings": {
+        "large_headline": "Discuss your strategy for utilizing neurotoxins to strategically soften wrinkles.",
+        "copy": "<p><em>Dr. Prendergast: </em>Ever since I came into this industry, I have always questioned the use of neuromodulators as an anti- aging strategy. The fact is that facial paralysis doesn’t really slow down the aging process. While it can be a useful tool for a specific situation, in the end it’s more of a temporary fix vs. a long-term solution, since it doesn’t always offer a great return on investment. </p><p>Besides that, we also shouldn’t forget that facial expressions are so important for human connection. There’s even research showing how crucial they are for child development. I’m sure I speak for several moms when I say that sometimes our kids need to see us scowl. The main goal with neurotoxins should be to prevent wrinkles at rest and soften the harshness of certain expressions as we age. </p><p>But what I’m really passionate about is improving skin quality, boosting collagen and elastin, and softening the interface between skin and muscle, which all ties back to overall skin health. Many of my patients are actors and and to them, maintaining their facial expressions are an absolute priority. So, I personally prefer to use neurotoxins selectively, ensuring we always keep the bigger aesthetic picture in mind.</p>"
+      }
+    },
+    "insight_copy_section_gM4ztB": {
+      "type": "insight-copy-section",
+      "disabled": true,
+      "name": "Insight Copy Section",
+      "settings": {
+        "large_headline": "What are the various neuromodulator products?",
+        "copy": "<p><em>Dr. Prendergast: </em>Currently neuromodulators on the U.S. market include botox, dysport, juveau, daxxify, and xeomin. Each neurotoxin has slightly different chemical properties that have pros and cons to be discussed with your physician.</p>"
+      }
+    },
+    "insight_copy_section_4kgEVT": {
+      "type": "insight-copy-section",
+      "disabled": true,
+      "name": "Insight Copy Section",
+      "settings": {
+        "large_headline": "Is there a natural alternative to Botox?",
+        "copy": "<p><em>Dr. Prendergast:</em> Absolutely. There is a lot of confusion around this topic that needs to be clarified. Botox works by inhibiting nerve signals to the muscles, causing temporary paralysis. </p><p>One example of a natural alternative is Argireline, a peptide that mimics Botox by inhibiting neurotransmitter release at the neuromuscular junction, creating a similar effect. Argireline is safer and can reduce wrinkles by up to 48% with twice-daily treatment over four weeks. </p><p>However, there’s a catch. The absorption of this large peptide can be tricky, and this is a reduction, but not what we see in all patients. This highlights the importance of context in developing effective and personalized anti-aging strategies. The absorption and utilization of this alternative is not the same for everyone, making it beneficial for some and useless to others. Thus, the need for expertise in the aging process and a deep understanding of each person’s aging process along with the science behind therapeutic compounds.</p>"
+      }
+    },
+    "insight_pull_out_mYWrEd": {
+      "type": "insight-pull-out",
+      "disabled": true,
+      "name": "Insight Pull Out",
+      "settings": {
+        "content": "<p>Q: This is an example of a callout block with a left accent rule. The \"Q:\" and the indented question are being visually separated from the body copy here, to indicate they're a distinct type of content.</p><p>A:  This treatment is commonly used for quotes, FAQs, expert tips, key takeaways, case studies, reader questions that are being addressed within the article, or for common inquiries or other important notes.</p>"
+      }
+    },
+    "insight_image_QdahEx": {
+      "type": "insight-image",
+      "name": "Insight Image",
+      "settings": {
+        "image": "shopify://shop_images/drcbo.png"
+      }
+    },
+    "divider_BfwW6P": {
+      "type": "divider",
+      "disabled": true,
+      "name": "Divider",
+      "settings": {}
+    },
+    "insight_arrow_links_LhxfXX": {
+      "type": "insight-arrow-links",
+      "blocks": {
+        "link_78NfCn": {
+          "type": "link",
+          "settings": {
+            "title": "Read the full spotlight",
+            "link": "https://google.com"
+          }
+        },
+        "link_ipjbbE": {
+          "type": "link",
+          "settings": {
+            "title": "Book an appointment",
+            "link": "https://google.com"
+          }
+        }
+      },
+      "block_order": [
+        "link_78NfCn",
+        "link_ipjbbE"
+      ],
+      "disabled": true,
+      "name": "Insight Arrow Links",
+      "settings": {}
+    },
+    "insight_highlight_2_X7BUVL": {
+      "type": "insight-highlight-2",
+      "name": "Insight Highlight 2",
+      "settings": {
+        "content": "<p>Looking done is not looking young. A truly youthful face is not only smooth, but expressive and alive.&nbsp;</p>"
+      }
+    },
+    "insight_image_eTnEqt": {
+      "type": "insight-image",
+      "disabled": true,
+      "name": "Insight Image",
+      "settings": {
+        "image": "shopify://shop_images/Mask_group_3.png"
+      }
+    },
+    "insight_highlight_1_dNA9VY": {
+      "type": "insight-highlight-1",
+      "disabled": true,
+      "name": "Insight Highlight 1",
+      "settings": {
+        "heading": "",
+        "content": "<p>\"Looking done is not looking young. A truly youthful face is not only smooth, but expressive and alive.\"</p><p>&nbsp;<em>– Dr. Christie&nbsp;</em></p>"
+      }
+    },
+    "insight_copy_section_mw8cE4": {
+      "type": "insight-copy-section",
+      "name": "Insight Copy Section",
+      "settings": {
+        "large_headline": "Botox vs. Regenerative Medicine",
+        "copy": "<p>In a regenerative approach to aging, the goal is to restore tissue health, activate endogenous repair mechanisms, and enhance cellular resilience. Within this framework, Botox may serve as a short-term adjunct but not a true non-surgical anti-aging intervention. It works by&nbsp;<em>paralyzing</em>&nbsp;rather than stimulating and does not actively engage cellular regeneration and skin vitality.</p><p>While Botox has its place in aesthetic medicine, it should be viewed as a tool—not a strategy. For those seeking to age with vitality, authenticity, and long-term cellular health, regenerative treatments that stimulate and restore is the future of aesthetic medicine.</p>"
+      }
+    },
+    "divider_mVT7Lx": {
+      "type": "divider",
+      "disabled": true,
+      "name": "Divider",
+      "settings": {}
+    },
+    "insight_copy_section_G6tzyd": {
+      "type": "insight-copy-section",
+      "disabled": true,
+      "name": "Insight Copy Section",
+      "settings": {
+        "large_headline": "What is the most common plastic surgery procedure for men or women?",
+        "copy": "<p><em>Dr. Prendergast:</em> According to the American Society of Plastic Surgery’s 2023 report, the top three plastic surgery procedures in the U.S. were liposuction, breast augmentation, and abdominoplasty. On a global scale, the International Society of Plastic Surgeons revealed that liposuction, breast augmentation, and eyelid surgery were the most popular procedures worldwide in 2022. </p><p>Interestingly, the U.S. topped the charts for the highest number of procedures performed globally with a growth of 5% from 2022. Breast surgery continues to be the most common procedure for women around the world which is what I specialize in. These results have been similar for the past few years, and I predict a shift in the types of procedures that will be popular in the future as we apply a more comprehensive approach to aging.<br/></p>"
+      }
+    },
+    "divider_h9LUMF": {
+      "type": "divider",
+      "disabled": true,
+      "name": "Divider",
+      "settings": {}
+    },
+    "insight_call_to_action_XJNjNr": {
+      "type": "insight-call-to-action",
+      "disabled": true,
+      "name": "Insight Call To Action",
+      "settings": {
+        "call_to_action_link": "https://google.com",
+        "call_to_action_text": "Call To Action"
+      }
+    },
+    "divider_Wxcphd": {
+      "type": "divider",
+      "name": "Divider",
+      "settings": {}
+    },
+    "insight_disclaimer_xC8hHD": {
+      "type": "insight-disclaimer",
+      "disabled": true,
+      "name": "Insight Disclaimer",
+      "settings": {
+        "content": "<p>This article is protected by copyright. To share or copy this article, please visit&nbsp;copyright.com. Use ISSN#1078-6791. To subscribe, visit&nbsp;alternative-therapies.com<br/><br/>Sheldon Baker is an InnoVision contributing editor. His freelance editorial content can also be found in several lifestyle publications, and as CEO of Baker Dillon Group LLC, he has created numerous brand marketing communications and public relations campaigns for health and wellness organizations. Contact him at&nbsp;Sheldon@NutraInk.com.</p>"
+      }
+    },
+    "featured_insights_DHtrKT": {
+      "type": "featured-insights",
+      "name": "Featured Insights",
+      "settings": {}
+    },
+    "article_pagination_7yGMMW": {
+      "type": "article-pagination",
+      "name": "Article Pagination",
+      "settings": {}
+    }
+  },
+  "order": [
+    "main",
+    "insight_copy_section_XiW4Vn",
+    "divider_BHLrMx",
+    "insight_copy_section_xMkWci",
+    "insight_copy_section_ti3RCw",
+    "insight_copy_section_tcBcTe",
+    "insight_copy_section_gM4ztB",
+    "insight_copy_section_4kgEVT",
+    "insight_pull_out_mYWrEd",
+    "insight_image_QdahEx",
+    "divider_BfwW6P",
+    "insight_arrow_links_LhxfXX",
+    "insight_highlight_2_X7BUVL",
+    "insight_image_eTnEqt",
+    "insight_highlight_1_dNA9VY",
+    "insight_copy_section_mw8cE4",
+    "divider_mVT7Lx",
+    "insight_copy_section_G6tzyd",
+    "divider_h9LUMF",
+    "insight_call_to_action_XJNjNr",
+    "divider_Wxcphd",
+    "insight_disclaimer_xC8hHD",
+    "featured_insights_DHtrKT",
+    "article_pagination_7yGMMW"
+  ]
+}

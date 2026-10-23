@@ -1,0 +1,69 @@
+<header class="wrap border:bottom__grey">
+	<h2 class="font:fine text:heading-xl colour:grey">Contact</h2>
+</header>
+
+
+<div class="contact-block__wrapper bg:base-white">
+	<article class="contact-block__location bg:base-white">
+		<div class="wrap">
+				<h2 data-reaveal class="text:heading-m font:regular colour:bordeaux">Email</h2>
+
+				<div data-reveal class="font:regular text:body-l">
+					{% if settings.enquiries_text != blank %}
+						<p class="colour:grey">{{ settings.enquiries_text }}</p>
+					{% endif %}
+
+					{% if settings.enquiries_email != blank %}
+						<p><a class="colour:grey underline" href="mailto:{{ settings.enquiries_email }}">{{ settings.enquiries_email }}</a></p>
+					{% endif %}
+				</div>
+
+				<div data-reveal class="font:regular text:body-l">
+					{% if settings.affiliates_text != blank %}
+						<p class="colour:grey">{{ settings.affiliates_text }}</p>
+					{% endif %}
+
+					{% if settings.affiliates_email != blank %}
+						<p><a class="colour:grey underline" href="mailto:{{ settings.affiliates_email }}">{{ settings.affiliates_email }}</a></p>
+					{% endif %}
+				</div>
+		</div>
+	</article>
+	<article class="contact-block__location bg:base-white">
+		<div class="wrap">
+			<h2 data-reveal class="text:heading-m font:regular colour:bordeaux">Phone</h2>
+			<div data-reveal>
+				{% if settings.clinic_location_one %}
+					<p class="text:body-l font:regular colour:grey">{{ settings.clinic_location_one }}:</p>
+				{% endif %}	
+
+				{% if settings.clinic_phone_one %}
+					<div class="text:body-l font:regular text:body-l"><a class="colour:grey" href="tel:{{ settings.clinic_phone_one }}">{{ settings.clinic_phone_one }}</a></div>
+				{% endif %}
+			</div>
+			<div data-reveal>
+				{% if settings.clinic_location_two %}
+					<p class="text:body-l font:regular colour:grey">{{ settings.clinic_location_two }}:</p>
+				{% endif %}				
+
+				{% if settings.clinic_phone_two %}
+					<div class="text:body-l font:regular text:body-l"><a class="colour:grey" href="tel:{{ settings.clinic_phone_two }}">{{ settings.clinic_phone_two }}</a></div>
+				{% endif %}
+			</div>
+		</div>
+	</article>
+</div>
+
+{% schema %}
+{
+  "name": "Contact Details",
+  "tag": "section",
+  "class": "section contact-block border:bottom__grey",
+  "settings": [],
+  "presets": [
+	{
+  		"name": "Contact Details"
+	}
+  ]
+}
+{% endschema %}

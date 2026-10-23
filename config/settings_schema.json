@@ -1,0 +1,155 @@
+[
+  {
+    "name": "theme_info",
+    "theme_name": "Dr Christie",
+    "theme_version": "1.0.0",
+    "theme_author": "Sam Watts",
+    "theme_documentation_url": "https:\/\/THEME_DOCUMENTATION_URL.com\/",
+    "theme_support_url": "https:\/\/THEME_SUPPORT_URL.com\/"
+  },
+  {
+    "name": "Site Settings",
+    "settings": [
+      {
+        "type": "text",
+        "id": "ticker",
+        "label": "Ticker Text"
+      },
+      {
+        "type": "url",
+        "id": "instagram",
+        "label": "Instagram URL"
+      },
+      {
+        "type": "url",
+        "id": "facebook",
+        "label": "Facebook URL"
+      },
+      {
+        "type": "url",
+        "id": "x",
+        "label": "X URL"
+      },
+      {
+        "type": "url",
+        "id": "contact_email",
+        "label": "Contact Email"
+      },
+      {
+        "type": "text",
+        "id": "contact_phone",
+        "label": "Contact Phone"
+      }
+    ]
+  },
+  {
+    "name": "Footer CTA",
+    "settings": [
+      {
+        "type": "text",
+        "id": "footer_headline",
+        "label": "Headline"
+      },
+      {
+        "type": "textarea",
+        "id": "footer_copy",
+        "label": "Copy"
+      },
+      {
+        "type": "text",
+        "id": "footer_link_text",
+        "label": "Link Text"
+      },
+      {
+        "type": "url",
+        "id": "footer_link",
+        "label": "Link"
+      },
+    ]
+  },
+  {
+    "name": "Clinics",
+    "settings": [
+      {
+        "type": "text",
+        "id": "clinics_heading",
+        "label": "Section Heading"
+      },
+      {
+        "type": "text",
+        "id": "clinics_heading_link_text",
+        "label": "Section Heading Link Text"
+      },
+      {
+        "type": "url",
+        "id": "clinics_heading_link",
+        "label": "Section Heading Link"
+      },
+      {
+        "type": "text",
+        "id": "clinic_location_one",
+        "label": "Clinic Location"
+      },
+      {
+        "type": "text",
+        "id": "clinic_phone_one",
+        "label": "Clinic Phone Numner"
+      },
+      {
+        "type": "richtext",
+        "id": "clinic_address_one",
+        "label": "Clinic Address"
+      },
+      {
+        "type": "url",
+        "id": "clinic_directions_one",
+        "label": "Clinic Directions"
+      },
+      {
+        "type": "text",
+        "id": "clinic_location_two",
+        "label": "Clinic Location"
+      },
+      {
+        "type": "text",
+        "id": "clinic_phone_two",
+        "label": "Clinic Phone Number"
+      },
+      {
+        "type": "richtext",
+        "id": "clinic_address_two",
+        "label": "Clinic Address"
+      },
+      {
+        "type": "url",
+        "id": "clinic_directions_two",
+        "label": "Clinic Directions"
+      },
+      {
+        "type": "image_picker",
+        "id": "clinic_image",
+        "label": "Clinic Image"
+      },
+      {
+        "type": "text",
+        "id": "enquiries_text",
+        "label": "Enquiries Text"
+      },
+      {
+        "type": "text",
+        "id": "enquiries_email",
+        "label": "Enquiries Email Address"
+      },
+      {
+        "type": "text",
+        "id": "affiliates_text",
+        "label": "Affiliates Text"
+      },
+      {
+        "type": "text",
+        "id": "affiliates_email",
+        "label": "Affiliates Email Address"
+      }
+    ]
+  }
+]

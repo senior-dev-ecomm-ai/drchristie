@@ -1,0 +1,5 @@
+{% for link in linklists.main-menu.links %}
+	<li>
+      <a class="colour:grey text:nav font:medium uppercase" href="{{ link.url }}"><span>{{ link.title }}</span></a>
+	</li>
+{% endfor %}

@@ -1,0 +1,15 @@
+<img 
+	data-lazy
+	data-reveal
+	class="{{ class }} lazy" 
+	src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" 
+	data-src="{{ img | img_url: 'master' }}" 
+	alt="{{ alt }}"
+>
+<noscript>
+	<img 
+		class="cover" 
+		src="{{ img | img_url: 'master' }}" 
+		alt="{{ alt }}" 
+	/>
+</noscript>

@@ -1,0 +1,126 @@
+{% if section.settings.page_links_heading != blank %}
+	<header class="wrap border:bottom__grey bg:base-white">
+		<h2 data-reveal class="font:fine text:heading-xl colour:grey">{{ section.settings.page_links_heading }}</h2>
+	</header>
+{% endif %}
+
+<div class="results__wrapper">
+	<div class="flex">
+		<figure class="ar ar:checkerboard uppercase font:medium">
+			{% if section.settings.before_image != blank %}
+				{% render 'lazy-image', 
+					class: 'cover'
+					img: section.settings.before_image 
+				%}
+			{% endif %}		
+		</figure>
+		<figure class="ar ar:checkerboard uppercase font:medium">
+			{% if section.settings.after_image != blank %}
+				{% render 'lazy-image', 
+					class: 'cover'
+					img: section.settings.after_image 
+				%}
+			{% endif %}		
+		</figure>		
+	</div>
+
+	<a class="hotspot hotspot:1" href="">
+		<div>
+			
+		</div>
+		{% if section.settings.hotspot_one != blank %}
+			<article>
+				{% if section.settings.hotspot_one_heading != blank %}
+					<h2 class="font:regular colour:bordeaux text:heading-m">{{ section.settings.hotspot_one_heading }}</h2>
+				{% endif %}
+				<div class="colour:grey font:regular text:body-l"><p>{{ section.settings.hotspot_one }}</p></div>
+			</article>
+		{% endif %}
+	</a>
+	<a class="hotspot hotspot:2" href="">
+		<div>
+			
+		</div>
+		{% if section.settings.hotspot_two != blank %}
+			<article>
+				{% if section.settings.hotspot_two_heading != blank %}
+					<h2 class="font:regular colour:bordeaux text:heading-m">{{ section.settings.hotspot_two_heading }}</h2>
+				{% endif %}
+				<div class="colour:grey font:regular text:body-l"><p>{{ section.settings.hotspot_two }}</p></div>
+			</article>
+		{% endif %}
+	</a>
+	<a class="hotspot hotspot:3" href="">
+		<div>
+			
+		</div>
+		{% if section.settings.hotspot_three != blank %}
+			<article>
+				{% if section.settings.hotspot_three_heading != blank %}
+					<h2 class="font:regular colour:bordeaux text:heading-m">{{ section.settings.hotspot_three_heading }}</h2>
+				{% endif %}
+				<div class="colour:grey font:regular text:body-l"><p>{{ section.settings.hotspot_three }}</p></div>
+			</article>
+		{% endif %}
+	</a>
+</div>
+
+{% schema %}
+{
+  "name": "Results",
+  "tag": "section",
+  "class": "section results border:bottom__grey",
+  "settings": [
+  		{
+  			"type": "text",
+  			"id": "page_links_heading",
+  			"label": "Section Heading"
+  		},
+  		{
+	  		"type": "image_picker",
+	  		"id": "before_image",
+	  		"label": "Before"	
+	  	},
+	  	{
+	  		"type": "image_picker",
+	  		"id": "after_image",
+	  		"label": "After"	
+	  	},
+	  	{
+	  		"type": "text",
+	  		"id": "hotspot_one_heading",
+	  		"label": "Hotspot One Heading"
+	  	},
+	  	{
+	  		"type": "text",
+	  		"id": "hotspot_one",
+	  		"label": "Hotspot One"
+	  	},
+	  	{
+	  		"type": "text",
+	  		"id": "hotspot_two_heading",
+	  		"label": "Hotspot Two Heading"
+	  	},
+	  	{
+	  		"type": "text",
+	  		"id": "hotspot_two",
+	  		"label": "Hotspot Two"
+	  	},
+	  	{
+	  		"type": "text",
+	  		"id": "hotspot_three_heading",
+	  		"label": "Hotspot Three Heading"
+	  	},
+	  	{
+	  		"type": "text",
+	  		"id": "hotspot_three",
+	  		"label": "Hotspot Three"
+	  	}
+	],
+  "presets": [
+	{
+  		"name": "Results"
+	}
+  ]
+}
+{% endschema %}

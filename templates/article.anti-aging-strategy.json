@@ -1,0 +1,86 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-article",
+      "settings": {}
+    },
+    "full_width_text_3iD4Tt": {
+      "type": "full-width-text",
+      "name": "Full Width Text",
+      "settings": {
+        "headline": "",
+        "large_headline": "",
+        "copy": "<p>For decades, Hollywood has set and reset the standards of beauty. Over recent years, the trend was an almost frozen, smooth face without any lines or wrinkles. </p><p>Across the global aesthetics landscape today, a new trend is emerging; shifting away from over-corrected appearances in favor of natural facial expression, subtle movement and well-preserved features.<strong> </strong></p><p><strong>Botox</strong>, or botulinum toxin type A, is widely known as a wrinkle-reducing treatment and has become a popular entry point into aesthetic medicine, especially for aging prevention. Backed heavily by the aesthetic industry, Botox works by temporarily weakening facial muscles responsible for expression, thereby softening dynamic lines and preventing deeper wrinkles from forming. Studies, including those on identical twins, have demonstrated fewer wrinkles in individuals who regularly used Botox. Advocates argue that by easing facial tension, Botox may not only enhance how others perceive us but also how we perceive ourselves—with some studies linking its use to improved mood and self-confidence.</p>"
+      }
+    },
+    "two_column_media_VKD8Qi": {
+      "type": "two-column-media",
+      "name": "Two Column Media",
+      "settings": {
+        "section_heading": "",
+        "vertical_alignment_left": "top",
+        "image_left": "shopify://shop_images/drcbo.png",
+        "vertical_alignment_right": "bottom",
+        "text_left_richtext": "",
+        "small_text_left": "",
+        "image_right": "shopify://shop_images/drcbo2.png",
+        "text_right_richtext": "",
+        "small_text_right": ""
+      }
+    },
+    "full_width_text_a6ReyG": {
+      "type": "full-width-text",
+      "name": "Full Width Text",
+      "settings": {
+        "headline": "",
+        "large_headline": "",
+        "copy": "<p><strong>Does Botox prevent aging?</strong></p><p>From a regenerative medicine perspective, Botox may not qualify as a true anti-aging treatment—particularly when aging is evaluated through the lens of biology, long-term function, and cellular health. As Dr. Christie explains, Botox offers aesthetic benefits but does not address the fundamental causes of aging.</p><p><em>1 .Symptom Suppression Rather Than Root Cause Intervention</em></p><p>Botox treats the <em>visible effects</em> of aging but does not address core biological drivers such as oxidative stress, collagen breakdown, hormonal shifts, and chronic inflammation. It does not stimulate facial rejuvenation through tissue regeneration, reverse cellular aging, or alter the skin’s biological age. In essence, it is a superficial solution—not a cellular one.</p><p><em>2. Potential for Muscle Atrophy and Skin Thinning</em></p><p>Long-term use can lead to muscle disuse, contributing to localized atrophy, facial flattening and unintended changes in proportion. Over-relaxed muscles may also reduce trophic signaling to the skin, which plays a key role in maintaining dermal thickness and vitality, potentially accelerating skin thinning over time.</p><p><em>3. Loss of Expressiveness and Emotional Nuance</em></p><p>While softening expressions can improve perceived approachability, Dr. Christie emphasizes the importance of facial microexpressions for natural-looking results, conveying emotion, authenticity, and personality. Long-term effects of Botox may include:<br/><br/>a) dull natural emotional signaling,<br/><br/>b) hinder interpersonal connection as others struggle to interpret emotional cues, and<br/><br/>c) result in an unnatural or “overdone” appearance that paradoxically looks <em>less</em> youthful. </p>"
+      }
+    },
+    "full_width_text_TM7zCe": {
+      "type": "full-width-text",
+      "name": "Full Width Text",
+      "settings": {
+        "headline": "",
+        "large_headline": "",
+        "copy": "<p><strong>Botox vs. Regenerative Medicine</strong></p><p>In a regenerative approach to aging, the goal is to restore tissue health, activate endogenous repair mechanisms, and enhance cellular resilience. Within this framework, Botox may serve as a short-term adjunct but not a true non-surgical anti-aging intervention. It works by <em>paralyzing</em> rather than stimulating and does not actively engage cellular regeneration and skin vitality.</p><p> While Botox has its place in aesthetic medicine, it should be viewed as a tool—not a strategy. For those seeking to age with vitality, authenticity, and long-term cellular health, regenerative treatments that stimulate and restore is the future of aesthetic medicine.</p>"
+      }
+    },
+    "full_width_EFGgGb": {
+      "type": "full-width",
+      "name": "Full Width Media",
+      "settings": {
+        "small_heading": "",
+        "headline": "\"Looking done is not looking young. A truly youthful face is not only smooth, but expressive and alive.\" – Dr. Christie ",
+        "copy": "",
+        "button_text": "",
+        "button": "",
+        "layout_alignment": "center",
+        "image": "shopify://shop_images/PlasticSurgery_QuoteDesktop.jpg"
+      }
+    },
+    "article_pagination_gKVLV6": {
+      "type": "article-pagination",
+      "name": "Article Pagination",
+      "settings": {}
+    }
+  },
+  "order": [
+    "main",
+    "full_width_text_3iD4Tt",
+    "two_column_media_VKD8Qi",
+    "full_width_text_a6ReyG",
+    "full_width_text_TM7zCe",
+    "full_width_EFGgGb",
+    "article_pagination_gKVLV6"
+  ]
+}

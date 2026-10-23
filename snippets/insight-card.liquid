@@ -1,0 +1,55 @@
+{% assign day = article.published_at | date: "%-d" %}
+{% assign month = article.published_at | date: "%B" %}
+{% assign year = article.published_at | date: "%Y" %}
+
+{% assign last_digit = day | slice: -1 %}
+{% assign last_two = day | modulo: 100 %}
+
+{% if last_two == 11 or last_two == 12 or last_two == 13 %}
+  {% assign suffix = "th" %}
+{% elsif last_digit == "1" %}
+  {% assign suffix = "st" %}
+{% elsif last_digit == "2" %}
+  {% assign suffix = "nd" %}
+{% elsif last_digit == "3" %}
+  {% assign suffix = "rd" %}
+{% else %}
+  {% assign suffix = "th" %}
+{% endif %}
+<li class="insight-card">
+	<a href="{{ article.url }}" class="insight-card__wrapper border:bottom__grey">
+		<figure class="ar bg:soft-lime">
+	      	{% render 'lazy-image', 
+	      		img: article.image,
+	      		class: 'cover'
+	      	%}
+	    </figure>
+	    <div class="insight-card__details flex spacious bg:base-white">
+	    	<header class="insight-card__header wrap">
+	    		{% if article.tags.size > 0 %}
+				  <p data-reveal class="insight-card__tag colour:grey uppercase font:regular text:eyebrow">{{ article.tags.first }}</p>
+				{% endif %}
+
+	    		{% if article.title %}
+	    			<h2 data-reveal class="colour:bordeaux font:regular text:heading-m">{{ article.title }}</h2>
+	    		{% endif %}
+
+	    		<p>
+	    			<time data-reveal class="colour:grey font:regular text:eyebrow">{{ month }} {{ day }}{{ suffix }}, {{ year }}</time>
+	    		</p>
+	    	</header>
+	    	<div class="insight-card__excerpt wrap font:regular colour:grey text:body-m flex spacious">
+	    		<div data-reveal>
+		    		{% if article.excerpt != blank %}
+					  {{ article.excerpt }}
+					{% else %}
+					  {{ article.content | strip_html | truncatewords: 30, "..." }}
+					{% endif %}	    			
+	    		</div>
+	    		<p data-reveal class="underline font:regular colour:grey text:body-m">
+	    			Read Article
+	    		</p>
+	    	</div>
+	    </div>
+	</a>
+</li>

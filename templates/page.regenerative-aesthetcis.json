@@ -1,0 +1,124 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "full_width_d6Vpxw": {
+      "type": "full-width",
+      "name": "Full Width Media",
+      "settings": {
+        "small_heading": "",
+        "headline": "Regenerative Aesthetics",
+        "copy": "With a built in future-focused strategy, we use evidence-based regenerative medicine to serve your long-term aesthetic vision. Our skin-first methodology prioritizes skin health, cellular vitality, and structural integrity–effectively slowing aging at the source.",
+        "button_text": "Book An Inquiry",
+        "button": "shopify://pages/contact",
+        "layout_alignment": "left",
+        "image": "shopify://shop_images/Mask_group_1.png",
+        "image_mobile": "shopify://shop_images/Fanette_Guilloud_Photos_14_1_1.png"
+      }
+    },
+    "checkerboard_GmVd4t": {
+      "type": "checkerboard",
+      "disabled": true,
+      "name": "Checkerboard",
+      "settings": {
+        "headline": "About",
+        "large_headline": "Regenerative Aesthetics",
+        "copy": "<p>With a built in future-focused strategy, we use evidence-based regenerative medicine to serve your long-term aesthetic vision. Our skin-first methodology prioritizes skin health, cellular vitality, and structural integrity–effectively slowing aging at the source.</p>",
+        "link_text": "",
+        "link": "",
+        "layout_alignment": "standard",
+        "vertical_alignment": "top",
+        "image": "shopify://shop_images/Mask_group_8_1.png",
+        "image_position": "full-width",
+        "hide_media_mobile": false,
+        "display_as_button_mobile": false
+      }
+    },
+    "checkerboard_KQfGhx": {
+      "type": "checkerboard",
+      "name": "Checkerboard",
+      "settings": {
+        "headline": "About",
+        "large_headline": "Beauty Matrix® Strategy",
+        "copy": "<p>Regenerative aesthetic medicine fuses scientific innovation with artistic precision. With this in mind, Dr. Christie developed the Beauty Matrix®, a methodology that interprets the complexities of human biology and the individual’s unique patterns of aesthetic aging. The Beauty Matrix® treats aging as a continuous, evolving, deeply personal process.<br/><br/>By targeting cellular function with advanced regenerative therapeutics, technology, and refined surgical techniques, we deliver a personalized, results-driven strategy that restores structural harmony, preserves vitality, and addresses the full spectrum of aging.</p>",
+        "link_text": "Get Started",
+        "link": "shopify://pages/contact",
+        "layout_alignment": "reversed",
+        "vertical_alignment": "top",
+        "image": "shopify://shop_images/Homepage_RegenerativeAesthetics.png",
+        "image_position": "full-width",
+        "hide_media_mobile": false,
+        "display_as_button_mobile": false
+      }
+    },
+    "full_width_66ipTf": {
+      "type": "full-width",
+      "name": "Full Width Media",
+      "settings": {
+        "small_heading": "",
+        "headline": "\"True beauty isn’t achieved in a single treatment—it’s cultivated through a comprehensive system that begins at the cellular level.\" — Dr. Christie",
+        "copy": "",
+        "button_text": "Book An Appointment",
+        "button": "shopify://pages/contact",
+        "layout_alignment": "center",
+        "image": "shopify://shop_images/Mask_group_36.png",
+        "image_mobile": "shopify://shop_images/Mask_group_37.png"
+      }
+    },
+    "results_B4g8Gn": {
+      "type": "results",
+      "disabled": true,
+      "name": "Results",
+      "settings": {
+        "page_links_heading": "Clinically Proven Results",
+        "before_image": "shopify://shop_images/Mask_group_43.png",
+        "after_image": "shopify://shop_images/Mask_group_44.png",
+        "hotspot_one_heading": "Biostumulators",
+        "hotspot_one": "Collagen production to lift and volumizeover time. Increased plumpness and structure.",
+        "hotspot_two_heading": "Biostumulators",
+        "hotspot_two": "Collagen production to lift and volumizeover time. Increased plumpness and structure.",
+        "hotspot_three_heading": "Biostumulators",
+        "hotspot_three": "Collagen production to lift and volumizeover time. Increased plumpness and structure."
+      }
+    },
+    "page_links_meQcFK": {
+      "type": "page-links",
+      "name": "Page Links",
+      "settings": {
+        "page_links_heading": "Other Services",
+        "page_link_image_one": "shopify://shop_images/PlasticSurgery_GoToBlock.jpg",
+        "page_link_headline_one": "Plastic Surgery",
+        "page_link_copy_one": "<p>Enhancing aesthetics with precision while honoring what makes you unique.</p>",
+        "page_link_link_text_one": "Learn More",
+        "page_link_link_one": "shopify://pages/plastic-surgery",
+        "page_link_image_bottom": "shopify://shop_images/Precision_GoToBlock_fe453130-d11b-451c-830b-cfad1cf46973.jpg",
+        "page_link_headline_bottom": "Precision Medicine",
+        "page_link_copy_bottom": "<p>Personalized health strategies tailored to your internal and external pathways of aging.</p>",
+        "page_link_link_text_bottom": "Learn More",
+        "page_link_link_bottom": "shopify://pages/precision-medicine"
+      }
+    },
+    "featured_insights_HYiktK": {
+      "type": "featured-insights",
+      "disabled": true,
+      "name": "Featured Insights",
+      "settings": {}
+    }
+  },
+  "order": [
+    "full_width_d6Vpxw",
+    "checkerboard_GmVd4t",
+    "checkerboard_KQfGhx",
+    "full_width_66ipTf",
+    "results_B4g8Gn",
+    "page_links_meQcFK",
+    "featured_insights_HYiktK"
+  ]
+}

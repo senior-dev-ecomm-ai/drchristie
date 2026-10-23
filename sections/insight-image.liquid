@@ -1,0 +1,27 @@
+{% if section.settings.image != empty %}
+  <figure data-reveal class="ar ar:landscape">
+    {% if section.settings.image != blank %}
+      {% render 'lazy-image', img: section.settings.image, class: 'cover' %}
+    {% endif %}
+  </figure>
+{% endif %}
+
+{% schema %}
+{
+  "name": "Insight Image",
+  "tag": "section",
+  "class": "section insight-image",
+  "settings": [
+	  {
+	  	"type": "image_picker",
+	  	"id": "image",
+	  	"label": "Image"	
+	  },
+	],
+  "presets": [
+	{
+  		"name": "Insight Image"
+	}
+  ]
+}
+{% endschema %}

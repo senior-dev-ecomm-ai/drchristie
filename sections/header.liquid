@@ -1,0 +1,84 @@
+{% if settings.ticker != blank %}
+	<div class="site-header__ticker site-header__ticker-wrapper bg:soft-lime">
+		<div class="site-header__ticker-track">
+			<p class="site-header__ticker-item colour:grey font:regular">{{ settings.ticker | replace: " | ", ' <span class="pipe">|</span> ' }}</p>
+			<p class="site-header__ticker-item colour:grey font:regular">{{ settings.ticker | replace: " | ", ' <span class="pipe">|</span> ' }}</p>			
+		</div>
+	</div>
+{% endif %}
+
+<div class="site-header__main bg:base-white">
+	<div class="wrap flex spacious">
+		<nav class="desktop">
+			<ul class="flex spacious">
+				{% render 'nav-links' %}
+			</ul>
+		</nav>
+
+		<a href="#" class="navicon"></a>
+
+		<a href="{{ shop.url }}" class="site-logo">
+			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 195 16" fill="none"><path fill="#66645E" d="M0 15.648V.352h6.923c4.849 0 8.028 2.88 8.028 7.584 0 4.747-3.243 7.712-8.156 7.712H0ZM6.519 2.912H2.7v10.176h3.818c4.232 0 5.689-2.4 5.689-5.11 0-2.709-1.468-5.066-5.69-5.066ZM20.973 15.648V.352h8.614c3.03 0 5.019 1.995 5.019 4.725 0 2.251-1.361 4.192-3.541 4.843l3.52 5.728h-3.19l-3.33-5.483h-4.391v5.483h-2.701Zm8.316-12.736h-5.615v4.725h5.423c1.542 0 2.776-.938 2.776-2.421 0-1.45-1.18-2.304-2.584-2.304ZM40.527 12.459h3.148v3.189h-3.148v-3.19ZM82.055 4.864l-2.605.565c-.532-1.898-2.36-2.901-4.785-2.901-3.52 0-5.658 2.144-5.658 5.504 0 3.435 2.223 5.44 5.605 5.44 2.648 0 4.413-1.216 4.86-3.285l2.668.618c-.69 3.2-3.53 5.195-7.635 5.195-4.976 0-8.241-2.933-8.241-7.883 0-5.013 3.36-8.117 8.369-8.117 3.85 0 6.71 1.824 7.422 4.864ZM90.745 9.237v6.411h-2.7V.352h2.7v6.325H99.7V.352h2.701v15.296h-2.7v-6.41h-8.955ZM108.531 15.648V.352h8.613c3.031 0 5.019 1.995 5.019 4.725 0 2.251-1.361 4.192-3.541 4.843l3.52 5.728h-3.19l-3.329-5.483h-4.391v5.483h-2.701Zm8.315-12.736h-5.614v4.725h5.423c1.542 0 2.775-.938 2.775-2.421 0-1.45-1.18-2.304-2.584-2.304ZM128.117 15.648V.352h2.701v15.296h-2.701ZM149.724 4.384l-2.627.608c-.446-1.675-1.903-2.592-4.253-2.592-2.053 0-3.499.704-3.499 2.112 0 1.685 2.053 1.952 4.349 2.25 2.957.385 6.37.822 6.37 4.331 0 3.19-2.85 4.907-6.508 4.907-3.732 0-6.614-1.792-7.337-4.928l2.722-.533c.51 2.037 2.244 3.072 4.743 3.072 2.201 0 3.647-.811 3.647-2.187 0-1.653-2.031-1.93-4.328-2.261-2.956-.427-6.391-.918-6.391-4.448 0-3.19 2.808-4.715 6.349-4.715 3.743 0 6.135 1.707 6.763 4.384ZM159.902 2.912h-6.221V.352h15.143v2.56h-6.221v12.736h-2.701V2.912ZM173.507 15.648V.352h2.701v15.296h-2.701ZM195 .352v2.56h-9.049v3.595h8.294v2.56h-8.294v4.021H195v2.56h-11.75V.352H195Z"/></svg>
+		</a>
+
+		<p>
+			<a class="colour:grey text:nav font:medium uppercase desktop" href="/pages/contact">Book An Inquiry</a>
+			<a class="colour:bordeaux text:nav font:regular flex mobile site-header__book" href="/pages/contact">Book</a>
+			<a style="margin-left: 1.875rem;" href="/cart" class="desktop cart-link colour:grey text:nav font:medium uppercase">
+			Cart (<span id="cart-count">{{ cart.item_count }}</span>)
+			</a>
+			<a style="margin-left: 1.875rem;" href="/cart" class="colour:bordeaux text:nav font:regular flex mobile">
+			Cart (<span id="cart-count">{{ cart.item_count }}</span>)
+			</a>
+		</p>
+	</div>	
+</div>
+
+<nav class="site-nav bg:bordeaux">
+	<header class="wrap">
+		<a href="#" class="site-nav__close">
+			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 17 17" fill="none"><path stroke="#fff" stroke-width="1.083" d="m1 1 15 15m0-15L1 16"/></svg>
+		</a>
+	</header>
+	<div class="site-nav__wrapper">
+		<div class="site-nav__section">
+			<h2 class="colour:base-white uppercase text:heading-s font:medium wrap">Services</h2>
+			<ul>
+				{% for link in linklists.services.links %}
+					<li>
+				      <a class="text:body-m colour:base-white" href="{{ link.url }}"><span>{{ link.title }}</span></a>
+					</li>
+				{% endfor %}
+			</ul>
+		</div>
+		<div class="site-nav__section">
+			<h2 class="colour:base-white uppercase text:heading-s font:medium wrap">Practice</h2>
+			<ul>
+				{% for link in linklists.clinic.links %}
+					<li>
+				      <a class="text:body-m colour:base-white" href="{{ link.url }}"><span>{{ link.title }}</span></a>
+					</li>
+				{% endfor %}
+			</ul>
+		</div>
+	</div>
+	<footer class="site-nav__footer bg:soft-lime">
+		<div class="wrap">
+			<a class="flex spacious" href="/pages/contact">
+				<p class="colour:bordeaux font:regular text:heading-m">Book an Inquiry</p>
+			</a>
+		</div>
+	</footer>
+</nav>
+<div class="site-nav__underlay">
+	
+</div>
+
+{% schema %}
+	{
+	  "name": "Header",
+	  "tag": "header",
+	  "class": "site-header border:bottom__grey",
+	  "settings": []
+	}
+{% endschema %}

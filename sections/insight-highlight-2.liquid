@@ -1,0 +1,26 @@
+<div data-reveal class="bg:soft-lime">
+  {% if section.settings.content != blank %}
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 14"><path fill="#66645e" d="M12.36 6.12h1.74c1.5.3 2.94 1.44 2.94 3.36 0 2.22-1.62 3.66-3.72 3.66-2.52 0-4.02-2.16-4.02-4.86C9.3 3.72 13.44.42 17.94 0v.3c-2.7.9-5.28 2.88-5.58 5.82m-9.3 0H4.8c1.5.3 2.94 1.44 2.94 3.36 0 2.22-1.62 3.66-3.72 3.66C1.5 13.14 0 10.98 0 8.28 0 3.72 4.14.42 8.64 0v.3c-2.7.9-5.28 2.88-5.58 5.82"/></svg>
+    <div class="copy font:fine">{{ section.settings.content }}</div>
+  {% endif %}
+</div>
+
+{% schema %}
+{
+  "name": "Insight Highlight 2",
+  "tag": "section",
+  "class": "section insight-highlight insight-highlight-2",
+  "settings": [
+    {
+      "type": "richtext",
+      "id": "content",
+      "label": "Content"  
+    }
+	],
+  "presets": [
+	{
+  		"name": "Insight Highlight 2"
+	}
+  ]
+}
+{% endschema %}

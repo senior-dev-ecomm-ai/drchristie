@@ -1,0 +1,206 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-article",
+      "settings": {
+        "desktop_image": "shopify://shop_images/drexc_98f57940-e883-4883-ad21-118bb18ed46f.png",
+        "mobile_image": "shopify://shop_images/V_V_2352_ret_bw.jpg"
+      }
+    },
+    "insight_copy_section_XiW4Vn": {
+      "type": "insight-copy-section",
+      "name": "Insight Copy Section",
+      "settings": {
+        "large_headline": "",
+        "copy": "<p>At the heart of our Quality of Life (QoL) Program is a simple but powerful insight: chronic stress accelerates aging. This is especially true for high-achieving individuals who operate under constant pressure to exceed expectations in the workplace, while simultaneously trying to keep up with the demands of their personal life.</p><p>In biological terms, stress occurs when your body perceives a threat to its internal balance, or homeostasis.<em>&nbsp;</em>Maintaining homeostasis involves a series of tightly regulated physiological processes (temperature regulation, blood glucose, fluid balance and other important systems that keep the body’s internal environment safe and healthy.</p><p>When triggered by stress, such as emotional strain, lack of sleep or mental overload, the brain responds by activating a cascade of hormonal and neurological responses&nbsp;&nbsp;to maintain homeostasis. From an evolutionary standpoint, a stress response (often referred to as a&nbsp;<em>fight or flight&nbsp;</em>response), is designed to provide short-term benefits, such as increased blood flow, alertness and energy mobilization). While these are protective in temporary situations, long-term chronic stress disrupts cognition, emotional regulation, digestion, metabolism, immunity and overall cellular health, ultimately driving inflammation, burnout, and premature aging.</p>"
+      }
+    },
+    "divider_BHLrMx": {
+      "type": "divider",
+      "name": "Divider",
+      "settings": {}
+    },
+    "insight_copy_section_tjyiqa": {
+      "type": "insight-copy-section",
+      "name": "Insight Copy Section",
+      "settings": {
+        "large_headline": "The Challenge of Managing Stress",
+        "copy": "<p>Successfully managing stress requires a comprehensive approach. Practices like mindfulness, cognitive behavioral therapy (CBT), regular movement, restorative sleep, and strong social connections are proven to reduce cortisol levels and restore nervous system balance. Nutritional support like magnesium, omega-3s, and adaptogenic herbs have also been shown to support stress resilience.</p><p>Although many modalities for stress management exist,&nbsp;&nbsp;lifestyle changes can be hard to set in motion, and many traditional tools may feel challenging to implement. High-functioning individuals often normalize stress or resist tools they perceive as passive or slow-acting. Stress is shaped by genetics, life experiences, and how each individual’s brain processes and perceives challenge.&nbsp;</p><p>This is why I believe in combining&nbsp;<strong>biological insight with personalized, tech-enabled therapy&nbsp;</strong>to disrupt the stress-aging cycle at its core.</p>"
+      }
+    },
+    "insight_copy_section_xMkWci": {
+      "type": "insight-copy-section",
+      "name": "Insight Copy Section",
+      "settings": {
+        "large_headline": "Introducing TMS + ExoMind: Brain-Based Stress Resilience",
+        "copy": "<p>I am excited to introduce transcranial magnetic stimulation (TMS) into our practice—now enhanced by BTL’s ExoMind interface. This advanced, non-invasive technology offers a cutting-edge way to support cognitive and emotional health, especially in individuals with high life demands and limited time.</p><p>TMS works by delivering gentle, MRI-strength magnetic pulses to a region of the brain called the dorsolateral prefrontal cortex—a hub for decision-making, emotional regulation, and executive function. These pulses stimulate neuronal activity and help rebalance brain circuitry involved in stress, anxiety, and depression. The result is enhanced mood, improved clarity, and renewed mental energy.</p><p>TMS is FDA-approved for the treatment of major depressive disorder and generalized anxiety disorder, with decades of clinical data behind its safety and effectiveness. ExoMind modernizes the experience with a more intelligent, efficient and personalized interface, making this powerful therapy more accessible and precise—in just 30 minutes.</p><p>We encourage all patients to schedule an introductory session to experience the benefits of TMS firsthand and discover how it can positively impact your emotional wellbeing.</p><p><em>Let’s support your brain, reduce stress, and help you age with clarity and calm.</em></p>"
+      }
+    },
+    "insight_pull_out_mYWrEd": {
+      "type": "insight-pull-out",
+      "disabled": true,
+      "name": "Insight Pull Out",
+      "settings": {
+        "content": "<p>Q: This is an example of a callout block with a left accent rule. The \"Q:\" and the indented question are being visually separated from the body copy here, to indicate they're a distinct type of content.</p><p>A:  This treatment is commonly used for quotes, FAQs, expert tips, key takeaways, case studies, reader questions that are being addressed within the article, or for common inquiries or other important notes.</p>"
+      }
+    },
+    "insight_image_QdahEx": {
+      "type": "insight-image",
+      "disabled": true,
+      "name": "Insight Image",
+      "settings": {
+        "image": "shopify://shop_images/Mask_group_2.png"
+      }
+    },
+    "divider_BfwW6P": {
+      "type": "divider",
+      "disabled": true,
+      "name": "Divider",
+      "settings": {}
+    },
+    "insight_copy_section_mw8cE4": {
+      "type": "insight-copy-section",
+      "disabled": true,
+      "name": "Insight Copy Section",
+      "settings": {
+        "large_headline": "Are you an advocate for using dietary supplements to combat anti-aging?",
+        "copy": "<p><em>Dr. Prendergast: </em>I am a huge advocate for supplements to combat aging, however in combination with testing whenever possible. On one hand, I see how effective they can be in synergy with aesthetic treatments. Our skin is an organ, and just like any other organ, it needs proper nourishment and protection. In fact, our skin often bears the brunt of the aging process. By understanding my patients genetic susceptibilities and nutritional deficiencies, I can optimize skin health and better combat the aging process.</p>"
+      }
+    },
+    "insight_arrow_links_LhxfXX": {
+      "type": "insight-arrow-links",
+      "blocks": {
+        "link_78NfCn": {
+          "type": "link",
+          "settings": {
+            "title": "Read the full spotlight",
+            "link": "https://google.com"
+          }
+        },
+        "link_ipjbbE": {
+          "type": "link",
+          "settings": {
+            "title": "Book an appointment",
+            "link": "https://google.com"
+          }
+        }
+      },
+      "block_order": [
+        "link_78NfCn",
+        "link_ipjbbE"
+      ],
+      "disabled": true,
+      "name": "Insight Arrow Links",
+      "settings": {}
+    },
+    "insight_image_eTnEqt": {
+      "type": "insight-image",
+      "name": "Insight Image",
+      "settings": {
+        "image": "shopify://shop_images/exomind.png"
+      }
+    },
+    "divider_mVT7Lx": {
+      "type": "divider",
+      "disabled": true,
+      "name": "Divider",
+      "settings": {}
+    },
+    "insight_copy_section_G6tzyd": {
+      "type": "insight-copy-section",
+      "disabled": true,
+      "name": "Insight Copy Section",
+      "settings": {
+        "large_headline": "What is the most common plastic surgery procedure for men or women?",
+        "copy": "<p><em>Dr. Prendergast:</em> According to the American Society of Plastic Surgery’s 2023 report, the top three plastic surgery procedures in the U.S. were liposuction, breast augmentation, and abdominoplasty. On a global scale, the International Society of Plastic Surgeons revealed that liposuction, breast augmentation, and eyelid surgery were the most popular procedures worldwide in 2022. </p><p>Interestingly, the U.S. topped the charts for the highest number of procedures performed globally with a growth of 5% from 2022. Breast surgery continues to be the most common procedure for women around the world which is what I specialize in. These results have been similar for the past few years, and I predict a shift in the types of procedures that will be popular in the future as we apply a more comprehensive approach to aging.<br/></p>"
+      }
+    },
+    "insight_highlight_1_dNA9VY": {
+      "type": "insight-highlight-1",
+      "disabled": true,
+      "name": "Insight Highlight 1",
+      "settings": {
+        "heading": "Heading Here",
+        "content": "<p>This is an optional content block for featured messaging. Featured quote, key fact, or supporting text goes here, such as a quote, statistic, or clinical claims. Can also be center justified.</p>"
+      }
+    },
+    "insight_highlight_2_X7BUVL": {
+      "type": "insight-highlight-2",
+      "disabled": true,
+      "name": "Insight Highlight 2",
+      "settings": {
+        "content": "<p>This is an optional content block for featured messaging. Featured quote, key fact, or supporting text goes here, such as a quote, statistic, or clinical claims. Can also be center justified.</p>"
+      }
+    },
+    "divider_h9LUMF": {
+      "type": "divider",
+      "disabled": true,
+      "name": "Divider",
+      "settings": {}
+    },
+    "insight_call_to_action_XJNjNr": {
+      "type": "insight-call-to-action",
+      "disabled": true,
+      "name": "Insight Call To Action",
+      "settings": {
+        "call_to_action_link": "https://google.com",
+        "call_to_action_text": ""
+      }
+    },
+    "divider_Wxcphd": {
+      "type": "divider",
+      "name": "Divider",
+      "settings": {}
+    },
+    "insight_disclaimer_xC8hHD": {
+      "type": "insight-disclaimer",
+      "disabled": true,
+      "name": "Insight Disclaimer",
+      "settings": {
+        "content": "<p>This article is protected by copyright. To share or copy this article, please visit copyright.com. Use ISSN#1078-6791. To subscribe, visit alternative-therapies.com<br/><br/>Sheldon Baker is an InnoVision contributing editor. His freelance editorial content can also be found in several lifestyle publications, and as CEO of Baker Dillon Group LLC, he has created numerous brand marketing communications and public relations campaigns for health and wellness organizations. Contact him at Sheldon@NutraInk.com.</p>"
+      }
+    },
+    "featured_insights_DHtrKT": {
+      "type": "featured-insights",
+      "name": "Featured Insights",
+      "settings": {}
+    },
+    "article_pagination_7yGMMW": {
+      "type": "article-pagination",
+      "name": "Article Pagination",
+      "settings": {}
+    }
+  },
+  "order": [
+    "main",
+    "insight_copy_section_XiW4Vn",
+    "divider_BHLrMx",
+    "insight_copy_section_tjyiqa",
+    "insight_copy_section_xMkWci",
+    "insight_pull_out_mYWrEd",
+    "insight_image_QdahEx",
+    "divider_BfwW6P",
+    "insight_copy_section_mw8cE4",
+    "insight_arrow_links_LhxfXX",
+    "insight_image_eTnEqt",
+    "divider_mVT7Lx",
+    "insight_copy_section_G6tzyd",
+    "insight_highlight_1_dNA9VY",
+    "insight_highlight_2_X7BUVL",
+    "divider_h9LUMF",
+    "insight_call_to_action_XJNjNr",
+    "divider_Wxcphd",
+    "insight_disclaimer_xC8hHD",
+    "featured_insights_DHtrKT",
+    "article_pagination_7yGMMW"
+  ]
+}

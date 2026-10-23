@@ -1,0 +1,14 @@
+<li class="accordion__item">
+	<header class="accordion__heading wrap">
+		{% if heading != blank %}
+			<h2 class="text:heading-m colour:bordeaux font:regular">{{ heading }}</h2>
+		{% endif %}
+	</header>
+	{% if copy != blank %}
+		<div class="accordion__content">
+			<div class="copy wrap text:body-m font:regular">
+				{{ copy }}
+			</div>
+		</div>
+	{% endif %}
+</li>

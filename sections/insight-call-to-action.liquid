@@ -1,0 +1,30 @@
+<div data-reveal>
+    <a class="bg:bordeaux button" href="{{ section.settings.call_to_action_link }}">
+      <span class="colour:base-white uppercase text:heading-s font:medium">{{ section.settings.call_to_action_text }}</span>
+    </a>
+</div>
+
+{% schema %}
+{
+  "name": "Insight Call To Action",
+  "tag": "section",
+  "class": "section insight-call-to-action",
+  "settings": [
+    {
+      "type": "url",
+      "id": "call_to_action_link",
+      "label": "Call To Action Link"
+    },
+    {
+      "type": "text",
+      "id": "call_to_action_text",
+      "label": "Call To Action Text (25 Chars Max)"
+    }
+	],
+  "presets": [
+	{
+  		"name": "Insight Call To Action"
+	}
+  ]
+}
+{% endschema %}

@@ -1,0 +1,15 @@
+<div class="bg:soft-lime site-footer__cta">
+	<div class="wrap">
+		{% if settings.footer_headline != blank %}
+			<p data-reveal class="font:fine site-footer__cta-call-out">{{ settings.footer_headline }}</p>
+		{% endif %}
+
+		{% if settings.footer_copy != blank %}
+			<div data-reveal class="copy font:regular text:body-l">{{ settings.footer_copy }}</div>
+		{% endif %}
+
+		{% if settings.footer_link_text != blank %}
+			<a data-reveal href="{{ settings.footer_link }}" class="button colour:grey"><span class="font:medium uppercase text:cta-primary">{{ settings.footer_link_text }}</span></a>
+		{% endif %}
+	</div>
+</div>

@@ -1,0 +1,219 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "blocks_4HGcxC": {
+      "type": "_blocks",
+      "name": "Collection product grid",
+      "settings": {}
+    },
+    "full_width_XakHXR": {
+      "type": "full-width",
+      "name": "Full Width Media",
+      "settings": {
+        "small_heading": "",
+        "headline": "Redefining Beauty",
+        "copy": "A total systems approach to aesthetic aging.",
+        "button_text": "Learn More",
+        "button": "shopify://pages/about",
+        "layout_alignment": "center",
+        "video": "shopify://files/videos/DRCHRISTIE_1440x645.mp4",
+        "video_mobile": "shopify://files/videos/DRCHRISTIE_RESIZE- (780x1201).mov"
+      }
+    },
+    "checkerboard_3iQz3e": {
+      "type": "checkerboard",
+      "name": "Checkerboard",
+      "settings": {
+        "headline": "About",
+        "large_headline": "",
+        "copy": "<p>Powered by scientific methodology and personalized care, our world-class approach blends innovation, technology and expertise to deliver targeted optimization strategies across health and aesthetics.</p>",
+        "link_text": "Get Started",
+        "link": "shopify://pages/contact",
+        "layout_alignment": "standard",
+        "vertical_alignment": "top",
+        "image": "shopify://shop_images/Homepage_AboutImage_9649b0af-e8be-416f-8ca4-98d2f9f43a14.png",
+        "image_position": "full-width",
+        "hide_media_mobile": true,
+        "display_as_button_mobile": true
+      }
+    },
+    "core_services_XXDYFh": {
+      "type": "core-services",
+      "name": "Core Services",
+      "settings": {
+        "service_image_left": "shopify://shop_images/Mask_group_21.webp",
+        "service_headline_left": "Plastic Surgery",
+        "service_copy_left": "<p>Enhancing aesthetics with precision while honoring what makes you unique.</p>",
+        "service_link_text_left": "Learn More",
+        "service_link_left": "shopify://pages/plastic-surgery",
+        "service_image_center": "shopify://shop_images/Mask_group_22.webp",
+        "service_headline_center": "Precision Medicine",
+        "service_copy_center": "<p>Personalized health strategies tailored to your internal and external pathways of aging.</p>",
+        "service_link_text_center": "Learn More",
+        "service_link_center": "shopify://pages/precision-medicine",
+        "service_image_right": "shopify://shop_images/Mask_group_23.webp",
+        "service_headline_right": "Regenerative Aesthetics",
+        "service_copy_right": "<p>Enhancing your skin’s regenerative potential with advanced therapeutics and cutting-edge technology.</p>",
+        "service_link_text_right": "Learn More",
+        "service_link_right": "shopify://pages/regenerative-aesthetics"
+      }
+    },
+    "full_width_4emH9G": {
+      "type": "full-width",
+      "disabled": true,
+      "name": "Full Width Media",
+      "settings": {
+        "small_heading": "New At Our Practice",
+        "headline": "ONDA PRO",
+        "copy": "The new generation technology for body contouring and skin tightening",
+        "button_text": "",
+        "button": "https://booking.podium.com/medspa/019d21f6-c2b9-7ee3-98dd-1dfaf3bc6ecf",
+        "layout_alignment": "center",
+        "image": "shopify://shop_images/OP_BW_web.jpg",
+        "image_mobile": "shopify://shop_images/OP_BW_webph.jpg"
+      }
+    },
+    "full_width_CUhxz7": {
+      "type": "full-width",
+      "disabled": true,
+      "name": "Full Width Media",
+      "settings": {
+        "small_heading": "",
+        "headline": "Personalized care meets regenerative science for beauty, balance, and longevity.",
+        "copy": "",
+        "button_text": "About Us",
+        "button": "shopify://pages/about",
+        "layout_alignment": "center",
+        "image": "shopify://shop_images/Mask_group_2_1.png",
+        "image_mobile": "shopify://shop_images/HomepageQuote_MobileCrop_e9b1cb73-52e8-4c3a-9ded-449e82ad76da.png"
+      }
+    },
+    "checkerboard_rwpHmi": {
+      "type": "checkerboard",
+      "name": "Checkerboard",
+      "settings": {
+        "headline": "Meet The Practitioner",
+        "large_headline": "Dr. Christie",
+        "copy": "<p>As a double-board certified plastic surgeon and precision medicine specialist, Dr. Christie’s practice philosophy targets aging from the inside-out. Her integrative model combines advanced diagnostics, regenerative medicine and targeted therapeutics to deliver a  patient-centered experience that optimizes healthspan and aesthetic outcomes.</p>",
+        "link_text": "Learn More",
+        "link": "shopify://pages/about",
+        "layout_alignment": "reversed",
+        "vertical_alignment": "bottom",
+        "image": "shopify://shop_images/Mask_group_47.png",
+        "image_position": "full-width",
+        "hide_media_mobile": false,
+        "display_as_button_mobile": false
+      }
+    },
+    "checkerboard_FJFpFz": {
+      "type": "checkerboard",
+      "name": "Checkerboard",
+      "settings": {
+        "headline": "",
+        "large_headline": "Regenerative Aesthetics",
+        "copy": "<p>Our aesthetic treatments are powered by results-driven, personalized strategies and evidence-based protocols to optimize skin health at a cellular level – slowing aging directly at the source.</p>",
+        "link_text": "Learn More",
+        "link": "shopify://pages/regenerative-aesthetics",
+        "layout_alignment": "standard",
+        "vertical_alignment": "bottom",
+        "image": "shopify://shop_images/Homepage_RegenerativeAesthetics.png",
+        "image_position": "full-width",
+        "hide_media_mobile": false,
+        "display_as_button_mobile": false
+      }
+    },
+    "four_column_BDYcKY": {
+      "type": "four-column",
+      "name": "Four Column",
+      "settings": {
+        "image_column_one": "shopify://shop_images/DrChristieLA_OurMethod_Homepage_6971878d-45d5-4cd4-a18a-65a28f930e74.jpg",
+        "heading_column_one": "Our method",
+        "copy_column_one": "<p>We’re reframing the traditional approach to aesthetics, positioning skin health and integrity as the foundation of true beauty.</p>",
+        "link_text_column_one": "About Us",
+        "link_column_one": "shopify://pages/about",
+        "image_column_two": "shopify://shop_images/DrChristieLA_OurResearch_Homepage_30c1830c-263b-4f8e-8bfa-737620ecd236.jpg",
+        "heading_column_two": "Our research",
+        "copy_column_two": "<p>We rely on science as a catalyst for innovation and personalization, grounding evidence-based therapeutics in data-driven strategies.</p>",
+        "image_column_three": "shopify://shop_images/DTS_The_Scientist_Fanette_Guilloud_Photos_ID11872.webp",
+        "heading_column_three": "Our practice",
+        "copy_column_three": "<p>We believe that looking your best is synonymous with feeling your best. Our proprietary, evidence-based methodologies are designed to make you thrive both inside and out.</p>",
+        "image_column_four": "shopify://shop_images/Frame_260.webp",
+        "heading_column_four": "Our experts",
+        "copy_column_four": "<p>We are a passionate and collaborative team whose expertise spans multiple disciplines. We are committed to optimizing your health through the integration of cutting-edge science, personalized lifestyle insights and impactful nutrition strategies for a comprehensive approach to care.</p>",
+        "link_text_column_four": "Meet Our Practitioners",
+        "link_column_four": "shopify://pages/about"
+      }
+    },
+    "full_width_XTcC6h": {
+      "type": "full-width",
+      "name": "Full Width Media",
+      "settings": {
+        "small_heading": "",
+        "headline": "\"Aesthetic medicine is no longer one-size-fits-all. It’s bespoke, data-informed, and strategic.\" — Dr. Christie",
+        "copy": "",
+        "button_text": "About Us",
+        "button": "shopify://pages/about",
+        "layout_alignment": "center",
+        "image": "shopify://shop_images/Homepage_RegenerativeAestheticsQuote.jpg",
+        "image_mobile": "shopify://shop_images/Homepage_QuoteMobile.jpg"
+      }
+    },
+    "clinics_AjrYpR": {
+      "type": "clinics",
+      "name": "Clinics",
+      "settings": {
+        "image": "shopify://shop_images/Homepage_OurClinics.png",
+        "hide_directions": true
+      }
+    },
+    "two_column_media_8kLBN7": {
+      "type": "two-column-media",
+      "name": "Two Column Media",
+      "settings": {
+        "section_heading": "Reviews",
+        "vertical_alignment_left": "top",
+        "image_left": "shopify://shop_images/Mask_group_25.png",
+        "vertical_alignment_right": "bottom",
+        "text_left_richtext": "<p>“A team of professionals who are passionate about what they do.”</p>",
+        "small_text_left": "ELIZABETH A.",
+        "image_right": "shopify://shop_images/Mask_group_26.png",
+        "text_right_richtext": "<p>“You couldn't find a better doctor in<br/>all of Los Angeles!”</p>",
+        "small_text_right": "HANNAH S."
+      }
+    },
+    "featured_insights_eRdBTd": {
+      "type": "featured-insights",
+      "disabled": true,
+      "name": "Featured Insights",
+      "settings": {}
+    },
+    "17824998546f0b614d": {
+      "type": "apps",
+      "settings": {}
+    }
+  },
+  "order": [
+    "blocks_4HGcxC",
+    "full_width_XakHXR",
+    "checkerboard_3iQz3e",
+    "core_services_XXDYFh",
+    "full_width_4emH9G",
+    "full_width_CUhxz7",
+    "checkerboard_rwpHmi",
+    "checkerboard_FJFpFz",
+    "four_column_BDYcKY",
+    "full_width_XTcC6h",
+    "clinics_AjrYpR",
+    "two_column_media_8kLBN7",
+    "featured_insights_eRdBTd",
+    "17824998546f0b614d"
+  ]
+}

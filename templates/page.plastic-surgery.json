@@ -1,0 +1,320 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "full_width_y4qYYG": {
+      "type": "full-width",
+      "name": "Full Width Media",
+      "settings": {
+        "small_heading": "",
+        "headline": "Plastic Surgery",
+        "copy": "Enhancing your aesthetic goals with precision while honoring the features that make you unique.",
+        "button_text": "Book An Inquiry",
+        "button": "shopify://pages/contact",
+        "layout_alignment": "left",
+        "image": "shopify://shop_images/Mask_group_14.webp",
+        "image_mobile": "shopify://shop_images/ChatGPT_Image_May_14_2025_01_53_26_PM.webp"
+      }
+    },
+    "full_width_text_zCyyyc": {
+      "type": "full-width-text",
+      "name": "Full Width Text",
+      "settings": {
+        "headline": "",
+        "large_headline": "",
+        "copy": "<p>As a double-board certified plastic and general surgeon, Dr. Christie uses plastic surgery as a strategic and highly individualized tool for aesthetic transformation. Informed by international clinical experience and a global perspective on beauty and aging, she prioritizes harmony, refinement, and the preservation of each patient’s natural identity.<br/><br/>Dr. Christie’s expertise spans a range of procedures, including breast augmentation and reconstruction, facial and body lifting, contouring, revision, and reparative surgery. Her practice also includes minimally invasive, in-office solutions that support prevention, longevity, and graceful maintenance.  <br/><br/>Surgical protocols are enhanced by the advanced therapeutics in regenerative and precision medicine, allowing for optimized results, faster recovery, and long-term skin and tissue support. Every procedure is thoughtfully integrated into a larger continuum of care, designed with your health, lifestyle and personal goals in mind, delivering exceptional outcomes with safety, subtlety, and intention.</p>"
+      }
+    },
+    "full_width_text_k8MqxR": {
+      "type": "full-width-text",
+      "disabled": true,
+      "name": "Full Width Text",
+      "settings": {
+        "headline": "Plastic surgery",
+        "large_headline": "Services and Procedures",
+        "copy": ""
+      }
+    },
+    "accordion_34EhyW": {
+      "type": "accordion",
+      "blocks": {
+        "slide_EXj8zL": {
+          "type": "slide",
+          "settings": {
+            "accordion_item_heading": "Facial Rejuvenation",
+            "accordion_item_content": "<p>Restorative procedures that address aging across skin, structure, and volume, blending regenerative therapies with surgical precision.</p><ul><li><strong>Non-Invasive Therapies: </strong>Skin-first regenerative treatments for radiance and tone</li><li><strong>Minimal-Access Face & Neck Surgery: </strong>Subtle enhancement with minimal downtime</li><li><strong>Minimal-Access Mid-Facelift: </strong>Targets early mid-face volume loss and sagging</li><li><strong>Facial Fat Transfer: </strong>Restores youthful contour using your own regenerative tissue</li><li><strong>Mini-Necklift: </strong>Precision lifting of the lower face and neck</li><li><strong>Facelift / Necklift:</strong> Comprehensive rejuvenation for structural harmony</li><li><strong>Upper Eyelid Surgery: </strong>Refreshes tired or hooded eyes</li><li><strong>Chin Augmentation: </strong>Refines balance and definition</li><li><strong>Facial Scar Optimization: </strong>Advanced techniques to minimize facial scarring</li></ul>"
+          }
+        },
+        "slide_k8VgFm": {
+          "type": "slide",
+          "settings": {
+            "accordion_item_heading": "Specialized Rejuvenation",
+            "accordion_item_content": "<p>Targeted procedures to restore natural harmony and skin quality in commonly overlooked areas.</p><ul><li><strong>Ear Rejuvenation:</strong> Refines earlobe contour and volume</li><li><strong>Décolleté Rejuvenation: </strong>Improves tone, texture, and pigmentation</li><li><strong>Hand Rejuvenation: </strong>Restores volume and smooths aging hands</li><li><strong>Inner Thigh, Knee & Elbow Rejuvenation: </strong>Tightens, smooths, and refines crepey or sagging skin</li><li><strong>Customized Corrective Procedures: </strong>Tailored solutions for unique concerns.</li></ul>"
+          }
+        },
+        "slide_xdhDjB": {
+          "type": "slide",
+          "settings": {
+            "accordion_item_heading": "Breast Surgery",
+            "accordion_item_content": "<p>Aesthetic and reconstructive procedures designed for symmetry, support, and long-term confidence.</p><ul><li><strong>Augmentation: </strong>Natural-looking enhancement with implants</li><li><strong>Breast Lift (Mastopexy): </strong>Restores shape and firmness</li><li><strong>Revision Surgery:</strong> Corrects or updates previous procedures</li><li><strong>Implant Maintenance: </strong>Ongoing care and optimization of implants</li><li><strong>Breast Cancer Reconstruction: </strong>Restorative options post-mastectomy</li><li><strong>Scar Optimization: </strong>Minimizes and improves appearance of surgical scars</li></ul>"
+          }
+        },
+        "slide_f4NikA": {
+          "type": "slide",
+          "settings": {
+            "accordion_item_heading": "Body Contouring & Surgery",
+            "accordion_item_content": "<p>Precision reshaping and restoration for body confidence at every stage of life.</p><ul><li><strong>Mommy Makeover: </strong>Restorative, multi-area approach post-pregnancy</li><li><strong>Minimal-Access Abdominoplasty: </strong>Flattens and firms with umbilical preservation</li><li><strong>Corrective Body Contouring: </strong>Improves results from past procedures</li><li><strong>Body Contouring for Aging: </strong>Targets laxity and loss of definition over time</li><li><strong>Minimally Invasive Sculpting: </strong>Subtle reshaping with reduced downtime</li><li><strong>Upper Extremity Contouring: </strong>Addresses arms and upper body with finesse</li></ul>"
+          }
+        },
+        "slide_GpMVTQ": {
+          "type": "slide",
+          "settings": {
+            "accordion_item_heading": "Personal & Intimate Surgery",
+            "accordion_item_content": "<p>Empowering, discreet procedures designed to restore comfort, function, and aesthetic confidence.</p><ul><li><strong>Comprehensive Vaginal Rejuvenation: </strong>Full-spectrum restoration of form and function</li><li><strong>Corrective Vaginal Rejuvenation: </strong>Addresses concerns from previous procedures</li><li><strong>Labiaplasty: </strong>Refines labial contour and symmetry</li><li><strong>Clitoral Hood Reduction: </strong>Enhances balance and sensitivity</li><li><strong>Perineal Skin Rejuvenation: </strong>Smooths and refines the perineal area</li><li><strong>Mini-Labiaplasty with Perineal Refinement: </strong>Subtle reshaping with soft tissue enhancement</li></ul>"
+          }
+        }
+      },
+      "block_order": [
+        "slide_EXj8zL",
+        "slide_k8VgFm",
+        "slide_xdhDjB",
+        "slide_f4NikA",
+        "slide_GpMVTQ"
+      ],
+      "name": "Accordion",
+      "settings": {
+        "accordion_heading": "Services and Procedures"
+      }
+    },
+    "checkerboard_yrMxBp": {
+      "type": "checkerboard",
+      "disabled": true,
+      "name": "Checkerboard",
+      "settings": {
+        "headline": "",
+        "large_headline": "Facial Rejuvenation",
+        "copy": "<p>Restorative procedures that address aging across skin, structure, and volume, blending regenerative therapies with surgical precision.</p><ul><li><strong>Non-Invasive Therapies: </strong>Skin-first regenerative treatments for radiance and tone</li><li><strong>Minimal-Access Face & Neck Surgery: </strong>Subtle enhancement with minimal downtime</li><li><strong>Minimal-Access Mid-Facelift: </strong>Targets early mid-face volume loss and sagging</li><li><strong>Facial Fat Transfer: </strong>Restores youthful contour using your own regenerative tissue</li><li><strong>Mini-Necklift: </strong>Precision lifting of the lower face and neck</li><li><strong>Facelift / Necklift:</strong> Comprehensive rejuvenation for structural harmony</li><li><strong>Upper Eyelid Surgery: </strong>Refreshes tired or hooded eyes</li><li><strong>Chin Augmentation: </strong>Refines balance and definition</li><li><strong>Facial Scar Optimization: </strong>Advanced techniques to minimize facial scarring</li></ul>",
+        "link_text": "",
+        "link": "",
+        "layout_alignment": "reversed",
+        "vertical_alignment": "top",
+        "image": "shopify://shop_images/Mask_group_15_6d2ab423-45d5-4b4d-b414-86c1043d96b3.webp",
+        "image_position": "full-width",
+        "hide_media_mobile": true,
+        "display_as_button_mobile": false
+      }
+    },
+    "checkerboard_nnn47p": {
+      "type": "checkerboard",
+      "disabled": true,
+      "name": "Checkerboard",
+      "settings": {
+        "headline": "",
+        "large_headline": "Specialized Rejuvenation",
+        "copy": "<p>Targeted procedures to restore natural harmony and skin quality in commonly overlooked areas.</p><ul><li><strong>Ear Rejuvenation:</strong> Refines earlobe contour and volume</li><li><strong>Décolleté Rejuvenation: </strong>Improves tone, texture, and pigmentation</li><li><strong>Hand Rejuvenation: </strong>Restores volume and smooths aging hands</li><li><strong>Inner Thigh, Knee & Elbow Rejuvenation: </strong>Tightens, smooths, and refines crepey or sagging skin</li><li><strong>Customized Corrective Procedures: </strong>Tailored solutions for unique concerns.</li></ul>",
+        "link_text": "",
+        "link": "",
+        "layout_alignment": "reversed",
+        "vertical_alignment": "top",
+        "image": "shopify://shop_images/ChatGPT_Image_May_14_2025_01_53_26_PM.webp",
+        "image_position": "full-width",
+        "hide_media_mobile": false,
+        "display_as_button_mobile": false
+      }
+    },
+    "checkerboard_FcAWmX": {
+      "type": "checkerboard",
+      "disabled": true,
+      "name": "Checkerboard",
+      "settings": {
+        "headline": "",
+        "large_headline": "Breast Surgery",
+        "copy": "<p>Aesthetic and reconstructive procedures designed for symmetry, support, and long-term confidence.</p><ul><li><strong>Augmentation: </strong>Natural-looking enhancement with implants</li><li><strong>Breast Lift (Mastopexy): </strong>Restores shape and firmness</li><li><strong>Revision Surgery:</strong> Corrects or updates previous procedures</li><li><strong>Implant Maintenance: </strong>Ongoing care and optimization of implants</li><li><strong>Breast Cancer Reconstruction: </strong>Restorative options post-mastectomy</li><li><strong>Scar Optimization: </strong>Minimizes and improves appearance of surgical scars</li></ul>",
+        "link_text": "",
+        "link": "",
+        "layout_alignment": "standard",
+        "vertical_alignment": "top",
+        "image": "shopify://shop_images/ps2.png",
+        "image_position": "full-width",
+        "hide_media_mobile": false,
+        "display_as_button_mobile": false
+      }
+    },
+    "checkerboard_Qwf3Kt": {
+      "type": "checkerboard",
+      "disabled": true,
+      "name": "Checkerboard",
+      "settings": {
+        "headline": "",
+        "large_headline": "Body Contouring & Surgery",
+        "copy": "<p>Precision reshaping and restoration for body confidence at every stage of life.</p><ul><li><strong>Mommy Makeover:&nbsp;</strong>Restorative, multi-area approach post-pregnancy</li><li><strong>Minimal-Access Abdominoplasty:&nbsp;</strong>Flattens and firms with umbilical preservation</li><li><strong>Corrective Body Contouring:&nbsp;</strong>Improves results from past procedures</li><li><strong>Body Contouring for Aging:&nbsp;</strong>Targets laxity and loss of definition over time</li><li><strong>Minimally Invasive Sculpting:&nbsp;</strong>Subtle reshaping with reduced downtime</li><li><strong>Upper Extremity Contouring:&nbsp;</strong>Addresses arms and upper body with finesse</li></ul>",
+        "link_text": "",
+        "link": "",
+        "layout_alignment": "reversed",
+        "vertical_alignment": "top",
+        "image": "shopify://shop_images/LAD_Y.jpg",
+        "image_position": "full-width",
+        "hide_media_mobile": false,
+        "display_as_button_mobile": false
+      }
+    },
+    "checkerboard_xnWpdq": {
+      "type": "checkerboard",
+      "disabled": true,
+      "name": "Checkerboard",
+      "settings": {
+        "headline": "",
+        "large_headline": "Personal & Intimate Surgery",
+        "copy": "<p>Empowering, discreet procedures designed to restore comfort, function, and aesthetic confidence.</p><ul><li><strong>Comprehensive Vaginal Rejuvenation: </strong>Full-spectrum restoration of form and function</li><li><strong>Corrective Vaginal Rejuvenation: </strong>Addresses concerns from previous procedures</li><li><strong>Labiaplasty: </strong>Refines labial contour and symmetry</li><li><strong>Clitoral Hood Reduction: </strong>Enhances balance and sensitivity</li><li><strong>Perineal Skin Rejuvenation: </strong>Smooths and refines the perineal area</li><li><strong>Mini-Labiaplasty with Perineal Refinement: </strong>Subtle reshaping with soft tissue enhancement</li></ul>",
+        "link_text": "",
+        "link": "",
+        "layout_alignment": "reversed",
+        "vertical_alignment": "top",
+        "image": "shopify://shop_images/Mask_group_9_1.png",
+        "image_position": "full-width",
+        "hide_media_mobile": true,
+        "display_as_button_mobile": false
+      }
+    },
+    "checkerboard_TyTC9R": {
+      "type": "checkerboard",
+      "disabled": true,
+      "name": "Checkerboard",
+      "settings": {
+        "headline": "About",
+        "large_headline": "Plastic Surgery",
+        "copy": "<p>As a double-board certified plastic and general surgeon, Dr. Christie uses plastic surgery as a strategic and highly individualized tool for aesthetic transformation. Informed by international clinical experience and a global perspective on beauty and aging, she prioritizes harmony, refinement, and the preservation of each patient’s natural identity.<br/><br/>Dr. Christie’s expertise spans a range of procedures, including breast augmentation and reconstruction, facial and body lifting, contouring, revision, and reparative surgery. Her practice also includes minimally invasive, in-office solutions that support prevention, longevity, and graceful maintenance.  <br/><br/>Surgical protocols are enhanced by the advanced therapeutics in regenerative and precision medicine, allowing for optimized results, faster recovery, and long-term skin and tissue support. Every procedure is thoughtfully integrated into a larger continuum of care, designed with your health, lifestyle and personal goals in mind, delivering exceptional outcomes with safety, subtlety, and intention.</p>",
+        "link_text": "",
+        "link": "",
+        "layout_alignment": "standard",
+        "vertical_alignment": "top",
+        "image": "shopify://shop_images/Mask_group_15.webp",
+        "image_position": "full-width",
+        "hide_media_mobile": false,
+        "display_as_button_mobile": false
+      }
+    },
+    "checkerboard_QMyX4W": {
+      "type": "checkerboard",
+      "disabled": true,
+      "name": "Checkerboard",
+      "settings": {
+        "headline": "SERVICES AND PROCEDURES",
+        "large_headline": "Facial Rejuvenation",
+        "copy": "<p>Restorative procedures that address aging across skin, structure, and volume, blending regenerative therapies with surgical precision.</p><ul><li><strong>Non-Invasive Therapies: </strong>Skin-first regenerative treatments for radiance and tone</li></ul><p></p><ul><li><strong>Minimal-Access Face & Neck Surgery: </strong>Subtle enhancement with minimal downtime</li></ul><p></p><ul><li><strong>Minimal-Access Mid-Facelift: </strong>Targets early mid-face volume loss and sagging</li></ul><p></p><ul><li><strong>Facial Fat Transfer: </strong>Restores youthful contour using your own regenerative tissue</li></ul><p></p><ul><li><strong>Mini-Necklift: </strong>Precision lifting of the lower face and neck</li></ul><p></p><ul><li><strong>Facelift / Necklift:</strong> Comprehensive rejuvenation for structural harmony</li></ul><p></p><ul><li><strong>Upper Eyelid Surgery: </strong>Refreshes tired or hooded eyes</li></ul><p></p><ul><li><strong>Chin Augmentation: </strong>Refines balance and definition</li></ul><p></p><ul><li><strong>Facial Scar Optimization: </strong>Advanced techniques to minimize facial scarring</li></ul>",
+        "link_text": "",
+        "link": "",
+        "layout_alignment": "reversed",
+        "vertical_alignment": "top",
+        "image": "shopify://shop_images/Mask_group_15_6d2ab423-45d5-4b4d-b414-86c1043d96b3.webp",
+        "image_position": "full-width",
+        "hide_media_mobile": false,
+        "display_as_button_mobile": false
+      }
+    },
+    "checkerboard_RV8Jpi": {
+      "type": "checkerboard",
+      "disabled": true,
+      "name": "Checkerboard",
+      "settings": {
+        "headline": "",
+        "large_headline": "Specialized Rejuvenation",
+        "copy": "<p>Targeted procedures to restore natural harmony and skin quality in commonly overlooked areas.</p><ul><li><strong>Ear Rejuvenation:</strong> Refines earlobe contour and volume</li><li><strong>Décolleté Rejuvenation: </strong>Improves tone, texture, and pigmentation</li><li><strong>Hand Rejuvenation: </strong>Restores volume and smooths aging hands</li><li><strong>Inner Thigh, Knee & Elbow Rejuvenation: </strong>Tightens, smooths, and refines crepey or sagging skin</li><li><strong>Customized Corrective Procedures: </strong>Tailored solutions for unique concerns.</li></ul>",
+        "link_text": "",
+        "link": "",
+        "layout_alignment": "standard",
+        "vertical_alignment": "top",
+        "image_position": "full-width",
+        "hide_media_mobile": false,
+        "display_as_button_mobile": false
+      }
+    },
+    "two_column_media_7CpGVC": {
+      "type": "two-column-media",
+      "disabled": true,
+      "name": "Two Column Media",
+      "settings": {
+        "section_heading": "",
+        "vertical_alignment_left": "top",
+        "image_left": "shopify://shop_images/Mask_group_27.png",
+        "vertical_alignment_right": "bottom",
+        "text_left_richtext": "<p>“She is a true artist and perfectionist.”</p>",
+        "small_text_left": "Kylie L.",
+        "image_right": "shopify://shop_images/Mask_group_28.png",
+        "text_right_richtext": "<p>“Attentive, compassionate, incredibly knowledgeable and a phenomenal surgeon.”</p>",
+        "small_text_right": "April R."
+      }
+    },
+    "full_width_ge7VQU": {
+      "type": "full-width",
+      "name": "Full Width Media",
+      "settings": {
+        "small_heading": "",
+        "headline": "\"My goal isn’t to change how you look. It’s to future-proof what makes you uniquely beautiful.\" — Dr. Christie",
+        "copy": "",
+        "button_text": "Book An Appointment",
+        "button": "shopify://pages/contact",
+        "layout_alignment": "center",
+        "image": "shopify://shop_images/PlasticSurgery_QuoteDesktop.jpg",
+        "image_mobile": "shopify://shop_images/PlasticSurgeryQuote_MobileCrop.jpg"
+      }
+    },
+    "page_links_pirKtn": {
+      "type": "page-links",
+      "name": "Page Links",
+      "settings": {
+        "page_links_heading": "Other Services",
+        "page_link_image_one": "shopify://shop_images/Precision_GoToBlock_fe453130-d11b-451c-830b-cfad1cf46973.jpg",
+        "page_link_headline_one": "Precision Medicine",
+        "page_link_copy_one": "<p>Personalized health strategies tailored to your internal and external pathways of aging.</p>",
+        "page_link_link_text_one": "Learn More",
+        "page_link_link_one": "shopify://pages/precision-medicine",
+        "page_link_image_bottom": "shopify://shop_images/RegenerativeAesthetics_GoToBlock.jpg",
+        "page_link_headline_bottom": "Regenerative Aesthetics",
+        "page_link_copy_bottom": "<p>Enhancing your skin’s regenerative potential with advanced therapeutics and cutting-edge technology.</p>",
+        "page_link_link_text_bottom": "Learn More",
+        "page_link_link_bottom": "shopify://pages/regenerative-aesthetics"
+      }
+    },
+    "featured_insights_Gjzkwn": {
+      "type": "featured-insights",
+      "disabled": true,
+      "name": "Featured Insights",
+      "settings": {}
+    },
+    "accordion_jU39aa": {
+      "type": "accordion",
+      "disabled": true,
+      "name": "Accordion",
+      "settings": {
+        "accordion_heading": ""
+      }
+    }
+  },
+  "order": [
+    "full_width_y4qYYG",
+    "full_width_text_zCyyyc",
+    "full_width_text_k8MqxR",
+    "accordion_34EhyW",
+    "checkerboard_yrMxBp",
+    "checkerboard_nnn47p",
+    "checkerboard_FcAWmX",
+    "checkerboard_Qwf3Kt",
+    "checkerboard_xnWpdq",
+    "checkerboard_TyTC9R",
+    "checkerboard_QMyX4W",
+    "checkerboard_RV8Jpi",
+    "two_column_media_7CpGVC",
+    "full_width_ge7VQU",
+    "page_links_pirKtn",
+    "featured_insights_Gjzkwn",
+    "accordion_jU39aa"
+  ]
+}

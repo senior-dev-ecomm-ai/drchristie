@@ -1,0 +1,100 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-article",
+      "settings": {}
+    },
+    "full_width_text_WCycEw": {
+      "type": "full-width-text",
+      "name": "Full Width Text",
+      "settings": {
+        "headline": "",
+        "large_headline": "",
+        "copy": "<p>Skin laxity is one of the most common concerns I hear, from the face to the arms, abdomen, and flanks. As a plastic surgeon, a significant portion of what I do is about tightening. And for years, I have watched aesthetic technologies overpromise and underdeliver in this space, leaving the most meaningful interventions to the operating room.</p><p><em><strong>OndaPro is different. I do not say that lightly</strong></em></p>"
+      }
+    },
+    "full_width_LCn9Jf": {
+      "type": "full-width",
+      "name": "Full Width Media",
+      "settings": {
+        "small_heading": "",
+        "headline": "",
+        "copy": "",
+        "button_text": "",
+        "button": "",
+        "layout_alignment": "center",
+        "image": "shopify://shop_images/ONdapor_ff46fef9-86ab-40d9-9280-79bc65607816.png",
+        "image_mobile": "shopify://shop_images/ONdapor_ff46fef9-86ab-40d9-9280-79bc65607816.png"
+      }
+    },
+    "full_width_text_xyfhCe": {
+      "type": "full-width-text",
+      "name": "Full Width Text",
+      "settings": {
+        "headline": "ONDA PRO",
+        "large_headline": "",
+        "copy": "<p><strong>The Science</strong></p><p>OndaPro uses microwave energy at 2.45 GHz, a frequency that selectively targets the dermis and subcutaneous fat with a level of depth precision that radio frequency and ultrasound-based devices cannot reliably achieve.</p><p>At the tissue level, two distinct processes occur simultaneously.</p><p>The first is an immediate thermal effect. Controlled collagen denaturation causes the existing collagen network to contract, producing visible tightening from the first session.</p><p>The second is a regenerative cascade. Thermal injury triggers a wound-healing response, upregulating heat shock proteins involved in collagen synthesis and, critically, downregulating matrix metalloproteinases, the enzymes responsible for collagen breakdown.</p><p>This second point matters. Most technologies stimulate new collagen production. Fewer also reduce collagen degradation. OndaPro does both, which translates to net collagen gain rather than simple turnover.</p><p><strong>Depth-Specific Targeting</strong></p><p>The system's handpiece design allows for tissue-level selectivity. Superficial settings address dermal tightening and skin quality, while deeper settings target subcutaneous adipose tissue for fat reduction and cellulite improvement. This makes it possible to treat skin laxity and localized fat deposits, including hormonally driven accumulation in the flanks, abdomen, and arms, within the same session.</p><p></p>"
+      }
+    },
+    "full_width_3zKJch": {
+      "type": "full-width",
+      "name": "Full Width Media",
+      "settings": {
+        "small_heading": "",
+        "headline": "",
+        "copy": "",
+        "button_text": "",
+        "button": "",
+        "layout_alignment": "center",
+        "image": "shopify://shop_images/ONDA_PRO_NEWSLETTER.png",
+        "image_mobile": "shopify://shop_images/ONDA_PRO_NEWSLETTER.png"
+      }
+    },
+    "full_width_text_cVgGMH": {
+      "type": "full-width-text",
+      "name": "Full Width Text",
+      "settings": {
+        "headline": "",
+        "large_headline": "",
+        "copy": "<p><strong>What Treatment Is Like</strong></p><p>Sessions last approximately 20 minutes. No numbing is required, though pre-treatment analgesia is recommended as heat accumulation toward the end of the session can become intense. Most patients tolerate this well. Results are visible immediately and continue to improve over the following weeks as the regenerative response matures.</p><p><strong>What I Am Seeing Clinically</strong></p><p>This technology is already changing how I approach certain cases. For patients with early skin laxity and good baseline health, strong nutrition, an active lifestyle, and minimal subcutaneous fat, I am achieving results I previously could only obtain in the operating room using subdermal energy devices under anesthesia. No recovery. No downtime. Better patient experience.</p><p>For this population specifically, OndaPro is not a compromise. It is, in many cases, the superior option.</p><p><strong>Who Should Consider This</strong></p><p>I encourage patients to think about OndaPro as a proactive tool, not just a corrective one. The best outcomes in aging skin come from intervening early, before laxity becomes pronounced. If you are in your 40s or 50s, maintaining your body well, and beginning to notice early changes in skin texture or contour, this is precisely the window where this technology performs best.</p><p>It is also well suited for targeted concerns including menopausal fat redistribution, post-weight-loss skin changes, arm laxity, and abdominal skin quality following pregnancy or significant lifestyle changes.</p><p>The goal is to keep patients out of the operating room, not by settling for less, but by having a tool that is genuinely effective at the right stage of intervention. OndaPro is that tool.</p>"
+      }
+    },
+    "full_width_hBf96f": {
+      "type": "full-width",
+      "name": "Full Width Media",
+      "settings": {
+        "small_heading": "",
+        "headline": "\"You can't wait for aging to happen and then reverse it all in one go.\"",
+        "copy": "",
+        "button_text": "",
+        "button": "",
+        "layout_alignment": "center",
+        "image": "shopify://shop_images/404Error_Banner.png"
+      }
+    },
+    "article_pagination_tqCf7T": {
+      "type": "article-pagination",
+      "name": "Article Pagination",
+      "settings": {}
+    }
+  },
+  "order": [
+    "main",
+    "full_width_text_WCycEw",
+    "full_width_LCn9Jf",
+    "full_width_text_xyfhCe",
+    "full_width_3zKJch",
+    "full_width_text_cVgGMH",
+    "full_width_hBf96f",
+    "article_pagination_tqCf7T"
+  ]
+}

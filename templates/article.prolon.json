@@ -1,0 +1,200 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-article",
+      "settings": {
+        "desktop_image": "shopify://shop_images/PrecisionMedicine_QoLExperience.jpg",
+        "mobile_image": "shopify://shop_images/PrecisionMedicine_QoLExperience.jpg"
+      }
+    },
+    "insight_copy_section_XiW4Vn": {
+      "type": "insight-copy-section",
+      "name": "Insight Copy Section",
+      "settings": {
+        "large_headline": "What is the Prolon Fastiming Mimicking Diet (FMD)?  ",
+        "copy": "<p></p><p><strong>FMD&nbsp;is&nbsp;a 5-day diet&nbsp;specifically designed to reproduce&nbsp;(mimic)&nbsp;the metabolic effects of water-only fasting</strong>,&nbsp;inducing ketogenesis and autophagy through very low-calorie meals&nbsp;while&nbsp;carrying a lower safety and nutritional risk.&nbsp;&nbsp;(<em>Wei et al., Science Translational Medicine, 2017; Brandhorst et al., Cell Metabolism, 2015)&nbsp;</em></p><p><strong>The formulation is the intervention:</strong>&nbsp;What makes the FMD work is not simply the calorie&nbsp;count&nbsp;but the macronutrient design: plant-based, deliberately low in protein and simple sugars, and&nbsp;relatively high&nbsp;in unsaturated fat. Low protein is the critical variable, because it is amino acid availability — not calories alone — that keeps IGF-1 and mTOR signaling elevated. A 750-calorie day of chicken and rice would not reproduce these effects.<em> (Brandhorst et al., Cell Metabolism, 2015)&nbsp;</em></p><p><strong>The 5-day shape:&nbsp;</strong>Day 1 delivers&nbsp;roughly 1,100&nbsp;kcal and functions as the transition into the fast; days 2 through 5 drop to&nbsp;roughly 750&nbsp;kcal. Ketosis typically becomes measurable around day 3 as glycogen stores deplete. Day 6 is a structured refeeding day, and it is not an afterthought — much of the regenerative&nbsp;signaling&nbsp;described below is triggered by refeeding after the fast, not by the fast itself. <em>(Brandhorst et al., Cell Metabolism, 2015; Wei et al., Science Translational Medicine, 2017)&nbsp;</em></p><p><strong>What’s&nbsp;in the box:</strong>&nbsp;plant-based soups, nut bars, olives, crackers, kale crackers, herbal teas, an algal oil (DHA) supplement, a micronutrient and omega blend, and a glycerol-based drink to preserve muscle glycogen.&nbsp;&nbsp;</p><p>The standard research protocol is three consecutive monthly cycles, followed by maintenance cycles every three to four months, or monthly in clinical populations. Between cycles, participants in the trials returned to their normal diets. <em>(Wei et al., Science Translational Medicine, 2017; Brandhorst et al., Nature Communications, 2024)&nbsp;</em></p><p></p>"
+      }
+    },
+    "divider_BHLrMx": {
+      "type": "divider",
+      "name": "Divider",
+      "settings": {}
+    },
+    "insight_copy_section_xMkWci": {
+      "type": "insight-copy-section",
+      "name": "Insight Copy Section",
+      "settings": {
+        "large_headline": "Why We Like It: Practicality",
+        "copy": "<p><strong>Feasibility</strong>: As a&nbsp;low-calorie diet, the FMD still includes 3 structured meals per day. This not only makes the dietsafer than water-only fasting&nbsp;(which has been known to increase&nbsp;the risk of hypoglycemia&nbsp;as well as&nbsp;certaininflammatory markers),&nbsp;but more importantly more tolerable.&nbsp;&nbsp;(Ezpeleta et al., Nutrition Reviews, 2024)&nbsp;</p><p>The fasting mimicking diet can be easily integrated into&nbsp;your daily life, and while&nbsp;of course a 5-day low-calorie diet is still challenging,&nbsp;it&nbsp;doesn’t&nbsp;require you to be&nbsp;in&nbsp;a medically&nbsp;supervised clinical retreat setting.&nbsp;</p><p><strong>More effective than other forms of caloric restriction:</strong>&nbsp;While certain less restrictive approaches like intermittent fasting, constant caloric&nbsp;restriction&nbsp;and time-&nbsp;restricted&nbsp;eating&nbsp;(e.g.&nbsp;eating during an 8-hour window)&nbsp;or&nbsp;alternate day fasting&nbsp;may be considered safer and more&nbsp;feasiblethan the&nbsp;FMD,&nbsp;these methods&nbsp;don’t&nbsp;demonstrate&nbsp;the&nbsp;significant improvements&nbsp;across a range of&nbsp;diseases&nbsp;like the FMD.&nbsp;No&nbsp;other periodic dietary protocol has been tested across cardiometabolic risk, glycemic control, autoimmune disease activity, chemotherapy response, and biological-age markers within a single body of randomized evidence. (Mediterranean-diet comparison:&nbsp;npj&nbsp;Metabolic Health and Disease, 2023)&nbsp;</p><p><strong>Easiest nutritional intervention:&nbsp;</strong>The FMD design is explicitly intended to work \"without requiring but while preferring improvements in the daily eating habits,\"&nbsp;(applied only ~3–4 times per year or monthly). In trials where participants otherwise continued their usual, unrestricted diet and only added periodic FMD cycles, the diet produced measurable improvements in body&nbsp;composition, cardiometabolic risk factors, glycemic&nbsp;control&nbsp;and biological-age markers. Benefits persisted for weeks after resuming normal eating and were driven by the FMD cycles themselves rather than any sustained change in daily eating habits. (Brandhorst et al., Nature Communications, 2024).&nbsp;In other words,&nbsp;the FMD is&nbsp;an ideal first line dietary intervention,&nbsp;even&nbsp;if you do nothing else&nbsp;</p><p>&nbsp;</p>"
+      }
+    },
+    "insight_pull_out_mYWrEd": {
+      "type": "insight-pull-out",
+      "disabled": true,
+      "name": "Insight Pull Out",
+      "settings": {
+        "content": "<p>Q: This is an example of a callout block with a left accent rule. The \"Q:\" and the indented question are being visually separated from the body copy here, to indicate they're a distinct type of content.</p><p>A: &nbsp;This treatment is commonly used for quotes, FAQs, expert tips, key takeaways, case studies, reader questions that are being addressed within the article, or for common inquiries or other important notes.</p>"
+      }
+    },
+    "insight_image_QdahEx": {
+      "type": "insight-image",
+      "name": "Insight Image",
+      "settings": {
+        "image": "shopify://shop_images/prol.jpg"
+      }
+    },
+    "divider_BfwW6P": {
+      "type": "divider",
+      "name": "Divider",
+      "settings": {}
+    },
+    "insight_copy_section_mw8cE4": {
+      "type": "insight-copy-section",
+      "name": "Insight Copy Section",
+      "settings": {
+        "large_headline": "Why we like it: Health Benefits ",
+        "copy": "<p><strong>Rigorously tested across many different disease pathologies</strong>,&nbsp;especially cardiovascular disease, diabetes, cognitive impairment including Alzheimer’s dementia, and autoimmune diseases including multiple sclerosis, Crohn’s&nbsp;disease&nbsp;and various cancers. As of&nbsp;2025&nbsp;the human&nbsp;literature includes at least eleven randomized controlled trials, pooled in a systematic review and meta-analysis. (Diabetology & Metabolic Syndrome, 2025)&nbsp;</p><p><strong>Cardiovascular Risk:&nbsp;</strong>In a 100-participant crossover&nbsp;trial, the&nbsp;FMD simultaneously improved multiple modifiable risk factors associated with cardiovascular disease, including blood pressure, adiposity (trunk/visceral fat), fasting glucose and insulin resistance, atherogenic lipids (triglycerides, total and LDL cholesterol), IGF-1, and CRP.  (Wei et al., Science Translational Medicine, 2017)&nbsp;</p><p><strong>Glycemic Control:</strong>&nbsp;In a 12-month randomized controlled trial, monthly FMD cycles integrated into routine primary care for 100 patients with type 2 diabetes reduced the need for glucose-lowering medication while simultaneously improving HbA1c and body weight. Glycemic management&nbsp;improved in&nbsp;53% of FMD participants versus 8% of controls. (Diabetologia, 2024)&nbsp;</p><p><strong>Body Composition:&nbsp;</strong>The fasting mimicking diet is also great for&nbsp;optimizing&nbsp;body composition, reducing&nbsp;adiposityand preserving muscle mass.&nbsp;&nbsp;(Wei et al., Science Translational Medicine, 2017; Sadeghian et al., Obesity Surgery, 2021;&nbsp;npj&nbsp;Metabolic Health and Disease, 2023)&nbsp;</p><p><strong>Skin Health:</strong>&nbsp;In&nbsp;a first ever clinical trial on skin health,&nbsp;3 monthly cycles of the&nbsp;FMD demonstrated improvements in skin hydration&nbsp;and&nbsp;preservation of skin texture.  (Maloh&nbsp;et al., Journal of Clinical Medicine, 2023)&nbsp;</p><p><strong>Hunger & Satiety Regulation:</strong>&nbsp;&nbsp;FMD&nbsp;lowers leptin (reflecting fat loss and improved sensitivity) and, per pooled fasting-regimen data, may lower rather than raise ghrelin, with ketosis providing a mechanistic basis for appetite suppression.&nbsp;&nbsp;(Sadeghian et al., Obesity Surgery, 2021; Tavakoli et al., Journal of Health, Population and Nutrition, 2025)&nbsp;</p><p><strong>Gut Microbiome Health:</strong>&nbsp;While research on this area is&nbsp;emerging&nbsp;(mostly preclinical), studies show that&nbsp;FMD cycles remodel gut bacterial composition toward an anti-inflammatory, barrier-protective profile, most reproducibly by expanding&nbsp;Lactobacillaceae&nbsp;and short-chain-fatty-acid (SCFA)–producing commensals.&nbsp;&nbsp;(Rangan et al., Cell Reports, 2019)&nbsp;</p><p><strong>Biological age.&nbsp;</strong>While biological-age clocks are surrogate markers&nbsp;rather than a firm indicator or mortality, pooled analysis of two trials (n=100 and n=44; Brandhorst et al., Nature Communications, 2024) found a median 2.5-year reduction in biological age after three cycles, independent of weight loss. Hepatic fat fraction fell by&nbsp;roughly half&nbsp;in participants with fatty liver (14.3% → 7.9%), insulin resistance improved, and the lymphoid&nbsp;to-myeloid ratio rose — a marker of immune profile shifting toward a younger phenotype&nbsp;</p><p><strong>Autoimmune and inflammatory&nbsp;disease.&nbsp;</strong>In a recent randomized controlled trial in 97 adults with mild-to-moderate Crohn’s disease (Kulkarni&nbsp;et. Al.,&nbsp;Nature Medicine, 2026),&nbsp;three monthly FMD cycles&nbsp;in combination with medical interventions significantly&nbsp;improved the disease state (CDAI)&nbsp;compared to a control group that&nbsp;did not make changes to their dietary&nbsp;pattern.&nbsp;These benefits were&nbsp;achieved without increased therapy escalation.&nbsp;&nbsp;</p><p><strong>Overall</strong>:&nbsp;The FMD is one of few nutrition interventions that addresses foundational metabolic health, body composition and aesthetic aging within a single protocol — and one of very few dietary interventions of any kind with randomized evidence spanning healthy adults, type 2 diabetes, autoimmune disease and oncology.&nbsp;</p>"
+      }
+    },
+    "insight_arrow_links_LhxfXX": {
+      "type": "insight-arrow-links",
+      "blocks": {
+        "link_78NfCn": {
+          "type": "link",
+          "settings": {
+            "title": "Read the full spotlight",
+            "link": "https://google.com"
+          }
+        },
+        "link_ipjbbE": {
+          "type": "link",
+          "settings": {
+            "title": "Book an appointment",
+            "link": "https://google.com"
+          }
+        }
+      },
+      "block_order": [
+        "link_78NfCn",
+        "link_ipjbbE"
+      ],
+      "disabled": true,
+      "name": "Insight Arrow Links",
+      "settings": {}
+    },
+    "insight_image_eTnEqt": {
+      "type": "insight-image",
+      "name": "Insight Image",
+      "settings": {
+        "image": "shopify://shop_images/ProLon-phases-dark.jpg"
+      }
+    },
+    "divider_mVT7Lx": {
+      "type": "divider",
+      "name": "Divider",
+      "settings": {}
+    },
+    "insight_copy_section_G6tzyd": {
+      "type": "insight-copy-section",
+      "name": "Insight Copy Section",
+      "settings": {
+        "large_headline": "How it works: Overview of key concepts ",
+        "copy": "<p><strong>Ketogenesis:</strong>&nbsp;Around day 2 to 3, depleted glycogen forces a shift from glucose to fatty acid oxidation, and the liver begins producing ketone bodies. Ketones are not only an alternative fuel: beta-hydroxybutyrate is a signaling molecule and an endogenous histone deacetylase inhibitor, influencing gene expression related to oxidative stress resistance. This is the biochemical evidence that the FMD reproduces a genuine fasting state rather than merely restricting calories. <em>(Shimazu et al., Science, 2013)&nbsp;</em></p><p><strong>Modulating&nbsp;IGF-1:&nbsp;</strong>Insulin-like growth factor-1 (IGF-1), often described as the body’s primary growth messenger, is a peptide hormone produced&nbsp;mainly by&nbsp;the liver and responsible for upregulating growth and proliferative pathways. It is particularly important during growth and development, playing a role in muscle growth, bone building, cellular&nbsp;regeneration&nbsp;and wound healing. While IGF-1 continues to support structural and tissue integrity as we age, staying within a normal range (not too low, not too high) becomes increasingly important, as elevated IGF-1 has been consistently associated with several cancers as well as cardiometabolic disease (type 2 diabetes, coronary artery disease), essentially accelerating&nbsp;the aging process.&nbsp;IGF-1 and the pro-aging cellular pathways downstream of it (RAS, PI3K, AKT and MAPK) all depend on the body’s supply of glucose and amino acids — the same supply that provides cancer cells with a consistent source of energy. The FMD&nbsp;emerged&nbsp;from lab research showing that by lowering circulating glucose, IGF-1 and insulin, prolonged fasting modulates oncogenic pathways, disrupts the&nbsp;tumour&nbsp;microenvironment, and activates protective effects including cellular turnover and regeneration of healthy cells.&nbsp;IGF-1 suppression is the most consistently replicated biochemical effect of the FMD: circulating IGF-1, glucose and insulin fall after roughly&nbsp;48 hours&nbsp;without food <em>(Lee et al., Science Translational Medicine, 2012; Brandhorst et al., Cell Metabolism, 2015; Diabetology & Metabolic Syndrome, 2025)&nbsp;</em></p><p><strong>Autophagy:&nbsp;</strong>Autophagy is the cell’s self-digestion and recycling program&nbsp;(controlled breakdown of damaged proteins, dysfunctional&nbsp;mitochondria&nbsp;and cellular debris, which are then reused as raw material).&nbsp;mTOR, a nutrient-sensing kinase&nbsp;which down-regulates this process, becomes active during nutrition abundance.&nbsp;When amino acids,&nbsp;glucose&nbsp;and insulin decrease in the body, so does mTOR activity, allowing for autophagy&nbsp;to take place.&nbsp;Autophagy declines with age, and its impairment is implicated in neurodegenerative,&nbsp;metabolicand oncological disease. <em>(GeroScience, 2025)&nbsp;</em></p><p><strong>Differential Stress Resistance:&nbsp;</strong>DSR is the observation that not all cells respond to nutrient scarcity the same way. When food is withdrawn, a healthy cell reads the signal correctly,&nbsp;downregulates growth pathways, enters a protected low-metabolism state, and diverts energy&nbsp;from proliferation into repair, antioxidant&nbsp;defense&nbsp;and DNA maintenance. Cells with dysregulated growth signaling cannot make that switch. The mutations driving them (in RAS, PI3K/AKT and related pathways) hold the growth machinery in the on position regardless of whether fuel is&nbsp;actually available, so they keep dividing into a stress they have no protection against.&nbsp;Everyone accumulates damaged,&nbsp;senescent&nbsp;and dysfunctional cells with age, and DSR describes a selective pressure that healthy cells pass and compromised ones fail. This is the mechanistic case for periodic fasting as a form of cellular quality control rather than simple calorie reduction:&nbsp;it imposes a test that only metabolically flexible cells can pass.<em> (Raffaghello et al., PNAS, 2008; Lee et al., Science Translational Medicine, 2012)&nbsp;</em></p><p><strong>Differential Stress Sensitization</strong>:&nbsp;Where DSR describes healthy cells becoming more resistant, DSS describes compromised cells becoming more vulnerable&nbsp;due to lacking&nbsp;metabolic flexibility. A healthy cell can switch from glucose to fatty acids and ketones when glucose runs short. Cells with dysregulated growth signaling are locked into glucose dependence and cannot. Remove the glucose and growth signals they rely on, and they are left exposed with no adaptive response available,&nbsp;prompting to&nbsp;the progressively weaken and ‘self-destruct’.&nbsp;The same five days that move healthy cells into a protected maintenance state move dysfunctional ones toward failure. This&nbsp;asymmetryis what separates periodic fasting from ordinary&nbsp;caloric restriction. Paired with autophagy, which clears damaged cellular components, and the regeneration that follows refeeding, DSS completes a clear-out-and-rebuild cycle: apply&nbsp;a stress&nbsp;that disadvantages what is broken, then supply the conditions to replace it. <em>(Lee et al., Science Translational Medicine, 2012)&nbsp;</em></p><p>The direct evidence&nbsp;for DSS and DSR&nbsp;was&nbsp;established&nbsp;through&nbsp;cancer research, where&nbsp;cytotoxic drugs like chemotherapy&nbsp;make the sensitization visible in a way that fasting alone does not.&nbsp;The fasting mimicking diet continues to be explored as a supportive (adjunct) therapy to cancer therapy,&nbsp;retarding&nbsp;tumor growth and sensitizinga range of cancer cell types to chemotherapy.&nbsp;&nbsp;<em>(Lee et al., Science Translational Medicine, 2012; de Groot et al., Nature Communications, 2020)</em>&nbsp;</p><p><strong>Stem cell activation and the refeeding phase.&nbsp;</strong>While the fast drives catabolic breakdown and clearance over a 5-day period,&nbsp;the&nbsp;refeeding&nbsp;period&nbsp;drives regeneration. In the preclinical&nbsp;research, FMD cycles followed by refeeding produced a five-fold increase in mesenchymal stem/progenitor cells and a 45-fold increase in actively dividing ones, alongside hippocampal neurogenesis and a ten-fold induction of hepatic proliferation markers.&nbsp;Related biomarkers&nbsp;observed&nbsp;in&nbsp;human data on immune profiling&nbsp;(the shift in lymphoid-to-myeloid ratio)&nbsp;shows&nbsp;consistencywith this regenerative model.&nbsp;This is why in our practice, we&nbsp;emphasize the importance of a transition diet, during which&nbsp;minimally processed, nutrient-dense and antioxidant rich foods are prioritized.&nbsp;&nbsp;<em>(Cheng et al., Cell Stem Cell, 2014; Brandhorst et al., Cell Metabolism, 2015)&nbsp;</em></p>"
+      }
+    },
+    "insight_highlight_1_dNA9VY": {
+      "type": "insight-highlight-1",
+      "name": "Insight Highlight 1",
+      "settings": {
+        "heading": "",
+        "content": "<p>The fasting mimicking diet is one of the few nutrition interventions that, through a repeatable five-day commitment, has&nbsp;accumulated randomized evidence across genuinely distinct clinical domains: glycemic control, cardiovascular risk, autoimmune&nbsp;inflammation&nbsp;and oncology adjunct therapy. Very few dietary protocols of any kind have been tested that broadly.&nbsp;&nbsp;</p>"
+      }
+    },
+    "insight_copy_section_GHXkmT": {
+      "type": "insight-copy-section",
+      "name": "Insight Copy Section",
+      "settings": {
+        "large_headline": "Conclusion",
+        "copy": "<p>The fasting mimicking diet is one of the few nutrition interventions that, through a repeatable five-day commitment, has&nbsp;accumulated randomized evidence across genuinely distinct clinical domains: glycemic control, cardiovascular risk, autoimmune&nbsp;inflammation&nbsp;and oncology adjunct therapy. Very few dietary protocols of any kind have been tested that broadly.&nbsp;&nbsp;</p><p>The evidence is also more specific than the marketing around it.&nbsp;Cumulative&nbsp;data is most robust on biomarkers&nbsp;(HbA1c, IGF-1, blood pressure)&nbsp;and least consistent on the outcomes people most often&nbsp;buy it&nbsp;for: weight, waist&nbsp;circumference&nbsp;and lipids. This distinction is worth reading as a signal&nbsp;rather than a shortfall.<strong> The FMD behaves like a metabolic and cellular intervention that happens to produce weight loss, not a weight-loss product.&nbsp;&nbsp;</strong></p><p>It also works hardest where there is most to correct.&nbsp;The largest effects appear in people who start furthest from a healthy baseline&nbsp;(patients with type 2 diabetes reducing medication while improving control, Crohn's patients reaching remission at&nbsp;nearly twice&nbsp;the control rate, participants with fatty liver halving hepatic fat fraction). In already-healthy&nbsp;people&nbsp;the effects are real but more modest, which makes the FMD better understood as a restorative intervention than an optimizing one.&nbsp;</p><p>While few clinical trials on the FMD have&nbsp;follow&nbsp;participants beyond a year, which for now means we should continue repeating FMD cycles periodically as a maintenance approach.&nbsp;&nbsp;&nbsp;</p><p>For now, the FMD is the most rigorously studied periodic fasting protocol available, and one of the few dietary interventions whose mechanism is characterized well enough to predict who will benefit and why.&nbsp;&nbsp;</p><p>The FMD&nbsp;does not replace the&nbsp;important daily habits (nutrition, sleep, movement)&nbsp;that determine long-term health. It is a time-bound, well-evidenced addition to them, and for the right person, an unusually efficient place to begin.&nbsp;</p>"
+      }
+    },
+    "insight_highlight_2_X7BUVL": {
+      "type": "insight-highlight-2",
+      "disabled": true,
+      "name": "Insight Highlight 2",
+      "settings": {
+        "content": "<p>This is an optional content block for featured messaging. Featured quote, key fact, or supporting text goes here, such as a quote, statistic, or clinical claims. Can also be center justified.</p>"
+      }
+    },
+    "divider_h9LUMF": {
+      "type": "divider",
+      "name": "Divider",
+      "settings": {}
+    },
+    "insight_call_to_action_XJNjNr": {
+      "type": "insight-call-to-action",
+      "disabled": true,
+      "name": "Insight Call To Action",
+      "settings": {
+        "call_to_action_link": "https://google.com",
+        "call_to_action_text": "Call To Action"
+      }
+    },
+    "divider_Wxcphd": {
+      "type": "divider",
+      "disabled": true,
+      "name": "Divider",
+      "settings": {}
+    },
+    "insight_disclaimer_xC8hHD": {
+      "type": "insight-disclaimer",
+      "disabled": true,
+      "name": "Insight Disclaimer",
+      "settings": {
+        "content": "<p>This article is protected by copyright. To share or copy this article, please visit copyright.com. Use ISSN#1078-6791. To subscribe, visit alternative-therapies.com<br/><br/>Sheldon Baker is an InnoVision contributing editor. His freelance editorial content can also be found in several lifestyle publications, and as CEO of Baker Dillon Group LLC, he has created numerous brand marketing communications and public relations campaigns for health and wellness organizations. Contact him at Sheldon@NutraInk.com.</p>"
+      }
+    },
+    "featured_insights_DHtrKT": {
+      "type": "featured-insights",
+      "name": "Featured Insights",
+      "settings": {}
+    },
+    "article_pagination_7yGMMW": {
+      "type": "article-pagination",
+      "name": "Article Pagination",
+      "settings": {}
+    }
+  },
+  "order": [
+    "main",
+    "insight_copy_section_XiW4Vn",
+    "divider_BHLrMx",
+    "insight_copy_section_xMkWci",
+    "insight_pull_out_mYWrEd",
+    "insight_image_QdahEx",
+    "divider_BfwW6P",
+    "insight_copy_section_mw8cE4",
+    "insight_arrow_links_LhxfXX",
+    "insight_image_eTnEqt",
+    "divider_mVT7Lx",
+    "insight_copy_section_G6tzyd",
+    "insight_highlight_1_dNA9VY",
+    "insight_copy_section_GHXkmT",
+    "insight_highlight_2_X7BUVL",
+    "divider_h9LUMF",
+    "insight_call_to_action_XJNjNr",
+    "divider_Wxcphd",
+    "insight_disclaimer_xC8hHD",
+    "featured_insights_DHtrKT",
+    "article_pagination_7yGMMW"
+  ]
+}

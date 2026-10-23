@@ -1,0 +1,36 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-article",
+      "settings": {}
+    },
+    "full_width_text_tWcnEC": {
+      "type": "full-width-text",
+      "name": "Full Width Text",
+      "settings": {
+        "headline": "",
+        "large_headline": "",
+        "copy": "<p><em><strong>Coming soon</strong></em></p><p>Subscribe below to receive priority access</p><p></p>"
+      }
+    },
+    "article_pagination_TzjBW3": {
+      "type": "article-pagination",
+      "name": "Article Pagination",
+      "settings": {}
+    }
+  },
+  "order": [
+    "main",
+    "full_width_text_tWcnEC",
+    "article_pagination_TzjBW3"
+  ]
+}

@@ -1,0 +1,131 @@
+<div class="full-width-media:{{ section.settings.layout_alignment }}">
+	<figure class="ar ar:full">
+		{% if section.settings.video != blank %}
+		    {{ section.settings.video | video_tag: image_size: '400x', loop: true, autoplay: true, muted: true, class: 'cover desktop' }}
+		{% else %}
+			{% if section.settings.image != blank %}
+				{% render 'lazy-image', img: section.settings.image, class: 'cover desktop' %}
+			{% endif %}
+		{% endif %}
+
+		{% if section.settings.video_mobile != blank %}
+		    {{ section.settings.video_mobile | video_tag: image_size: '400x', loop: true, autoplay: true, muted: true, class: 'cover mobile' }}
+		{% else %}
+			{% if section.settings.image_mobile != blank %}
+					{% render 'lazy-image', img: section.settings.image_mobile, class: 'cover mobile' %}
+			{% endif %}
+		{% endif %}
+
+		<!-- {% if section.settings.video != blank %}
+		    {{ section.settings.video | video_tag: image_size: '400x', loop: true, autoplay: true, muted: true }}
+		{% else %}
+			{% if section.settings.image_mobile != blank %}
+				{% if section.settings.image != blank %}
+					{% render 'lazy-image', img: section.settings.image, class: 'cover desktop' %}
+				{% endif %}
+
+				{% if section.settings.image_mobile != blank %}
+					{% render 'lazy-image', img: section.settings.image_mobile, class: 'cover mobile' %}
+				{% endif %}
+			{% else %}
+				{% if section.settings.image != blank %}
+					{% render 'lazy-image', img: section.settings.image, class: 'cover' %}
+				{% endif %}
+			{% endif %}
+		{% endif %} -->
+	</figure>
+
+	<figcaption>
+		{% if section.settings.small_heading != blank %}
+			<p data-reveal class="full-width-media__eyebrow text:eyebrow font:regular uppercase colour:base-white">{{ section.settings.small_heading }}</p>
+		{% endif %}
+
+		{% if section.settings.headline != blank %}
+			<p data-reveal class="full-width-media__headline font:fine colour:base-white text:heading-display">{{ section.settings.headline }}</p>
+		{% endif %}
+
+		{% if section.settings.copy != blank %}
+			<p data-reveal class="full-width-media__copy colour:base-white text:body-l font:regular">{{ section.settings.copy }}</p>
+		{% endif %}
+
+		{% if section.settings.button_text != blank %}
+			<a data-reveal href="{{ section.settings.button }}" class="button colour:base-white"><span class="font:medium uppercase text:cta-primary">{{ section.settings.button_text }}</span></a>
+		{% endif %}
+	</figcaption>
+</div>
+
+{% schema %}
+{
+  "name": "Full Width Media",
+  "tag": "section",
+  "class": "section full-width-media border:bottom__grey",
+  "settings": [
+  		{
+  			"type": "text",
+  			"id": "small_heading",
+  			"label": "Small Heading"
+  		},
+	  	{
+	  		"type": "text",
+	  		"id": "headline",
+	  		"label": "Headline"	
+	  	},
+		{
+			"type": "text",
+			"id": "copy",
+			"label": "Copy"
+		},
+		{
+			"type": "text",
+			"id": "button_text",
+			"label": "Button Text"
+		},
+		{
+			"type": "url",
+			"id": "button",
+			"label": "Button Link"
+		},
+		{
+            "type": "select",
+            "id": "layout_alignment",
+            "label": "Layout Alignment",
+            "default": "center",
+            "options": [
+              {
+                "label": "Center",
+                "value": "center"
+              },
+              {
+                "value": "left",
+                "label": "Left"
+              },
+            ]
+        },
+		{
+			"type": "video",
+			"id": "video",
+			"label": "Video (Takes precedence over image)"
+		},
+		{
+			"type": "video",
+			"id": "video_mobile",
+			"label": "Video (Mobile, takes precedence over image)"
+		},
+		{
+			"type": "image_picker",
+			"id": "image",
+			"label": "Image"
+		},
+		{
+			"type": "image_picker",
+			"id": "image_mobile",
+			"label": "Image (Optional Mobile Crop)"
+		}
+	],
+  "presets": [
+	{
+  		"name": "Full Width Media"
+	}
+  ]
+}
+{% endschema %}

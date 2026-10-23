@@ -1,0 +1,93 @@
+{% if section.settings.page_links_heading != blank %}
+	<header class="wrap border:bottom__grey bg:base-white">
+		<h2 data-reveal class="font:fine text:heading-xl colour:grey wrap">{{ section.settings.page_links_heading }}</h2>
+	</header>
+{% endif %}
+<ul class="bg:grey">
+	{% 
+		render 'page-link', 
+		image: section.settings.page_link_image_one,
+		headline: section.settings.page_link_headline_one,
+		copy: section.settings.page_link_copy_one,
+		linktext: section.settings.page_link_link_text_one,
+		link: section.settings.page_link_link_one
+	%}
+	{% 
+		render 'page-link', 
+		image: section.settings.page_link_image_bottom,
+		headline: section.settings.page_link_headline_bottom,
+		copy: section.settings.page_link_copy_bottom,
+		linktext: section.settings.page_link_link_text_bottom,
+		link: section.settings.page_link_link_bottom
+	%}
+</ul>
+
+{% schema %}
+{
+  "name": "Page Links",
+  "tag": "section",
+  "class": "section page-links",
+  "settings": [
+  		{
+  			"type": "text",
+  			"id": "page_links_heading",
+  			"label": "Section Heading"
+  		},
+  		{
+	  		"type": "image_picker",
+	  		"id": "page_link_image_one",
+	  		"label": "Page Link Image (Top)"	
+	  	},
+	  	{
+	  		"type": "text",
+	  		"id": "page_link_headline_one",
+	  		"label": "Page Link Headline (Top)"	
+	  	},
+		{
+			"type": "richtext",
+			"id": "page_link_copy_one",
+			"label": "Page Link Copy (Top)"
+		},
+		{
+			"type": "text",
+			"id": "page_link_link_text_one",
+			"label": "Page Link Text (Top)"
+		},
+		{
+			"type": "url",
+			"id": "page_link_link_one",
+			"label": "Page Link (Top)"
+		},
+  		{
+	  		"type": "image_picker",
+	  		"id": "page_link_image_bottom",
+	  		"label": "Page Link Image (Bottom)"	
+	  	},
+	  	{
+	  		"type": "text",
+	  		"id": "page_link_headline_bottom",
+	  		"label": "Page Link Headline (Bottom)"	
+	  	},
+		{
+			"type": "richtext",
+			"id": "page_link_copy_bottom",
+			"label": "Page Link Copy (Bottom)"
+		},
+		{
+			"type": "text",
+			"id": "page_link_link_text_bottom",
+			"label": "Page Link Text (Bottom)"
+		},
+		{
+			"type": "url",
+			"id": "page_link_link_bottom",
+			"label": "Page Link (Bottom)"
+		}
+	],
+  "presets": [
+	{
+  		"name": "Page Links"
+	}
+  ]
+}
+{% endschema %}

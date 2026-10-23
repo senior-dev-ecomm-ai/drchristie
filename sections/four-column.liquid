@@ -1,0 +1,202 @@
+<div class="four-column__wrapper bg:grey">
+	<article class="four-column__article bg:greige">
+		<div class="flex spacious">
+			<div class="wrap">
+				{% if section.settings.heading_column_one != blank %}
+					<header data-reveal>
+						<h2 class="font:fine colour:bordeaux text:heading-xl">{{ section.settings.heading_column_one }}</h2>
+					</header>
+				{% endif %}
+
+				{% if section.settings.copy_column_one != blank %}
+					<div data-reveal class="font:regular text:body-m copy">
+						{{ section.settings.copy_column_one }}				
+					</div>
+				{% endif %}
+
+				{% if section.settings.link_text_column_one != blank %}
+					<p><a data-reveal class="colour:grey text:body-m font:regular underline" href="{{ section.settings.link_column_one }}">{{ section.settings.link_text_column_one }}</a></p>
+				{% endif %}			
+			</div>
+
+			{% if section.settings.image_column_one != blank %}
+				<figure class="ar">
+					{% render 'lazy-image',
+						img: section.settings.image_column_one,
+						classes: 'cover'
+					%}
+				</figure>
+			{% endif %}			
+		</div>
+	</article>
+	<article class="four-column__article flex bg:greige">
+		<div class="flex spacious">
+			{% if section.settings.image_column_two != blank %}
+				<figure class="ar">
+					{% render 'lazy-image',
+						img: section.settings.image_column_two,
+						classes: 'cover'
+					%}
+				</figure>
+			{% endif %}
+			<div class="wrap">
+				{% if section.settings.heading_column_two != blank %}
+					<header>
+						<h2 data-reveal class="font:fine colour:bordeaux text:heading-xl">{{ section.settings.heading_column_two }}</h2>
+					</header>
+				{% endif %}
+				{% if section.settings.copy_column_two != blank %}
+					<div data-reveal class="font:regular text:body-m copy">
+						{{ section.settings.copy_column_two }}				
+					</div>
+				{% endif %}
+			</div>
+		</div>
+	</article>
+	<article class="four-column__article bg:greige flex">
+		<div class="flex spacious">
+			<div class="wrap">
+				{% if section.settings.heading_column_three != blank %}
+					<header>
+						<h2 data-reveal class="font:fine colour:bordeaux text:heading-xl">{{ section.settings.heading_column_three }}</h2>
+					</header>
+				{% endif %}
+				{% if section.settings.copy_column_three != blank %}
+					<div data-reveal class="font:regular text:body-m copy">
+						{{ section.settings.copy_column_three }}				
+					</div>
+				{% endif %}
+			</div>
+			{% if section.settings.image_column_three != blank %}
+				<figure class="ar">
+					{% render 'lazy-image',
+						img: section.settings.image_column_three,
+						classes: 'cover'
+					%}
+				</figure>
+			{% endif %}
+		</div>
+	</article>
+	<article class="four-column__article bg:greige flex">
+		<div class="flex spacious">
+			{% if section.settings.image_column_four != blank %}
+				<figure class="ar">
+					{% render 'lazy-image',
+						img: section.settings.image_column_four,
+						classes: 'cover'
+					%}
+				</figure>
+			{% endif %}
+			<div class="wrap">
+				{% if section.settings.heading_column_four != blank %}
+					<header>
+						<h2 class="font:fine colour:bordeaux text:heading-xl">{{ section.settings.heading_column_four }}</h2>
+					</header>
+				{% endif %}
+				{% if section.settings.copy_column_four != blank %}
+					<div class="font:regular text:body-m copy">
+						{{ section.settings.copy_column_four }}				
+					</div>
+				{% endif %}
+				{% if section.settings.link_text_column_four != blank %}
+					<p><a class="colour:grey text:body-m font:regular underline" href="{{ section.settings.link_column_four }}">{{ section.settings.link_text_column_four }}</a></p>
+				{% endif %}
+			</div>
+		</div>
+	</article>
+</div>
+
+{% schema %}
+{
+  "name": "Four Column",
+  "tag": "section",
+  "class": "section four-column border:bottom__grey bg:grey",
+  "settings": [
+  		{
+	  		"type": "image_picker",
+	  		"id": "image_column_one",
+	  		"label": "Column One Image"	
+	  	},
+	  	{
+	  		"type": "text",
+	  		"id": "heading_column_one",
+	  		"label": "Column One Heading"	
+	  	},
+		{
+			"type": "richtext",
+			"id": "copy_column_one",
+	  		"label": "Column One Copy"	
+		},
+		{
+			"type": "text",
+			"id": "link_text_column_one",
+			"label": "Column One Link Text"
+		},
+		{
+			"type": "url",
+			"id": "link_column_one",
+			"label": "Column One Link"
+		},
+  		{
+	  		"type": "image_picker",
+	  		"id": "image_column_two",
+	  		"label": "Column Two Image"	
+	  	},
+	  	{
+	  		"type": "text",
+	  		"id": "heading_column_two",
+	  		"label": "Column Two Heading"	
+	  	},
+		{
+			"type": "richtext",
+			"id": "copy_column_two",
+	  		"label": "Column Two Copy"	
+		},
+		{
+	  		"type": "image_picker",
+	  		"id": "image_column_three",
+	  		"label": "Column Three Image"	
+	  	},
+	  	{
+	  		"type": "text",
+	  		"id": "heading_column_three",
+	  		"label": "Column Three Heading"	
+	  	},
+		{
+			"type": "richtext",
+			"id": "copy_column_three",
+	  		"label": "Column Three Copy"	
+		},
+		{
+	  		"type": "image_picker",
+	  		"id": "image_column_four",
+	  		"label": "Column Four Image"	
+	  	},
+	  	{
+	  		"type": "text",
+	  		"id": "heading_column_four",
+	  		"label": "Column Four Heading"	
+	  	},
+		{
+			"type": "richtext",
+			"id": "copy_column_four",
+	  		"label": "Column Four Copy"	
+		},
+		{
+			"type": "text",
+			"id": "link_text_column_four",
+			"label": "Column Four Link Text"
+		},
+		{
+			"type": "url",
+			"id": "link_column_four",
+			"label": "Column Four Link"
+		}
+	],
+  "presets": [
+	{
+  		"name": "Four Column"
+	}
+  ]
+}
+{% endschema %}

@@ -1,0 +1,38 @@
+<article class="bg:base-white wrap">
+    <div data-reveal class="insight-copy-section__container">
+      {% if section.settings.large_headline != blank %}
+        <h2 class="font:regular colour:bordeaux text:heading-display">{{ section.settings.large_headline }}</h2>
+      {% endif %}
+
+      {% if section.settings.copy != blank %}
+        <div class="copy font:regular text:copy-insight">
+          {{ section.settings.copy }}
+        </div>
+      {% endif %} 
+    </div>
+  </article>
+
+{% schema %}
+{
+  "name": "Insight Copy Section",
+  "tag": "section",
+  "class": "section insight-copy-section",
+  "settings": [
+	  {
+	  	"type": "text",
+	  	"id": "large_headline",
+	  	"label": "Large Headline"	
+	  },
+		{
+			"type": "richtext",
+			"id": "copy",
+			"label": "Copy"
+		}
+	],
+  "presets": [
+	{
+  		"name": "Insight Copy Section"
+	}
+  ]
+}
+{% endschema %}

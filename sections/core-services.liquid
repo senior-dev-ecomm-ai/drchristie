@@ -1,0 +1,118 @@
+<div data-reveal-service class="core-services border:bottom__grey bg:grey">
+	{% 
+		render 'core-service', 
+		image: section.settings.service_image_left,
+		heading: section.settings.service_headline_left,
+		copy: section.settings.service_copy_left,
+		linktext: section.settings.service_link_text_left,
+		link: section.settings.service_link_left 
+	%}
+
+	{% 
+		render 'core-service', 
+		image: section.settings.service_image_center,
+		heading: section.settings.service_headline_center,
+		copy: section.settings.service_copy_center,
+		linktext: section.settings.service_link_text_center,
+		link: section.settings.service_link_center 
+	%}
+
+	{% 
+		render 'core-service', 
+		image: section.settings.service_image_right,
+		heading: section.settings.service_headline_right,
+		copy: section.settings.service_copy_right,
+		linktext: section.settings.service_link_text_right,
+		link: section.settings.service_link_right 
+	%}
+</div>
+
+{% schema %}
+{
+  "name": "Core Services",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+  		{
+	  		"type": "image_picker",
+	  		"id": "service_image_left",
+	  		"label": "Service Image (Left)"	
+	  	},
+	  	{
+	  		"type": "text",
+	  		"id": "service_headline_left",
+	  		"label": "Service Headline (Left)"	
+	  	},
+		{
+			"type": "richtext",
+			"id": "service_copy_left",
+			"label": "Service Copy (Left)"
+		},
+		{
+			"type": "text",
+			"id": "service_link_text_left",
+			"label": "Link Text (Left)"
+		},
+		{
+			"type": "url",
+			"id": "service_link_left",
+			"label": "Link (Left)"
+		},
+  		{
+	  		"type": "image_picker",
+	  		"id": "service_image_center",
+	  		"label": "Service Image (Center)"	
+	  	},
+	  	{
+	  		"type": "text",
+	  		"id": "service_headline_center",
+	  		"label": "Service Headline (Center)"	
+	  	},
+		{
+			"type": "richtext",
+			"id": "service_copy_center",
+			"label": "Service Copy (Center)"
+		},
+		{
+			"type": "text",
+			"id": "service_link_text_center",
+			"label": "Link Text (Center)"
+		},
+		{
+			"type": "url",
+			"id": "service_link_center",
+			"label": "Link (Center)"
+		},
+  		{
+	  		"type": "image_picker",
+	  		"id": "service_image_right",
+	  		"label": "Service Image (Right)"	
+	  	},
+	  	{
+	  		"type": "text",
+	  		"id": "service_headline_right",
+	  		"label": "Service Headline (Right)"	
+	  	},
+		{
+			"type": "richtext",
+			"id": "service_copy_right",
+			"label": "Service Copy (Right)"
+		},
+		{
+			"type": "text",
+			"id": "service_link_text_right",
+			"label": "Link Text (Right)"
+		},
+		{
+			"type": "url",
+			"id": "service_link_right",
+			"label": "Link (Right)"
+		}
+	],
+  "presets": [
+	{
+  		"name": "Core Services"
+	}
+  ]
+}
+{% endschema %}
