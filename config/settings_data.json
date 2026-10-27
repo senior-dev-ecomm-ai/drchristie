@@ -29,6 +29,11 @@
     "enquiries_email": "hello@drchristie.co",
     "affiliates_text": "For partnerships/affiliates:",
     "affiliates_email": "hello@drchristie.co",
+    "mega_menu_background": "#F6FBEE",
+    "mega_menu_level_1_hover_background": "#FFFFFF",
+    "mega_menu_level_1_hover_text": "#66645E",
+    "mega_menu_child_hover_background": "#FFFFFF",
+    "mega_menu_child_hover_text": "#66645E",
     "sections": {
       "footer": {
         "type": "footer",

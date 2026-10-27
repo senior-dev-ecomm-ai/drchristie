@@ -6,8 +6,10 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>{{ page_title }}{% unless page_title contains shop.name %} &ndash; {{ shop.name }}{% endunless %}</title>
 
-    {% if page_description %}
+    {% if page_description != blank %}
         <meta name="description" content="{{ page_description | escape }}"/>
+    {% elsif request.page_type == 'metaobject' and metaobject.text_main.value != blank %}
+        <meta name="description" content="{{ metaobject.text_main | metafield_text | strip | truncate: 160 | escape }}"/>
     {% endif %}
 
     <link rel="canonical" href="{{ canonical_url }}">

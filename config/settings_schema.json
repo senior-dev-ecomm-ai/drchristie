@@ -146,5 +146,45 @@
         "label": "Affiliates Email Address"
       }
     ]
+  },
+  {
+    "name": "Mega menu",
+    "settings": [
+      {
+        "type": "color",
+        "id": "mega_menu_background",
+        "label": "Background",
+        "default": "#F6FBEE",
+        "info": "Used for the open dropdown and the main header while that dropdown is open."
+      },
+      {
+        "type": "color",
+        "id": "mega_menu_level_1_hover_background",
+        "label": "First-level hover background",
+        "default": "#FFFFFF",
+        "info": "Also stays on the selected first-level link."
+      },
+      {
+        "type": "color",
+        "id": "mega_menu_level_1_hover_text",
+        "label": "First-level hover text",
+        "default": "#66645E",
+        "info": "Also stays on the selected first-level link."
+      },
+      {
+        "type": "color",
+        "id": "mega_menu_child_hover_background",
+        "label": "Child link hover background",
+        "default": "#FFFFFF",
+        "info": "Second- and third-level links."
+      },
+      {
+        "type": "color",
+        "id": "mega_menu_child_hover_text",
+        "label": "Child link hover text",
+        "default": "#66645E",
+        "info": "Second- and third-level links."
+      }
+    ]
   }
 ]

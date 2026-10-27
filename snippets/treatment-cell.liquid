@@ -2,6 +2,7 @@
   Renders one treatment table cell from a treatment_info entry.
   @param {metaobject} treatment - treatment_info entry
   @param {number} index - Pair index from 1 to 10
+  @param {string} [heading_tag] - Use h2 for the cell label on the treatment page
 {% enddoc %}
 
 {% liquid
@@ -47,7 +48,11 @@
 
 {% if head_title != blank or text_field.value != blank %}
 	{% if head_title != blank %}
-		<p class="mega-menu__treatment-head">{{ head_title }}</p>
+		{% if heading_tag == 'h2' %}
+			<h2 class="mega-menu__treatment-head">{{ head_title }}</h2>
+		{% else %}
+			<p class="mega-menu__treatment-head">{{ head_title }}</p>
+		{% endif %}
 	{% endif %}
 	{% if text_field.value != blank %}
 		{{ text_field | metafield_tag }}

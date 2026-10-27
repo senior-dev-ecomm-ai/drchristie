@@ -1,0 +1,140 @@
+<article class="treatment-page wrap">
+	{% if metaobject.title.value != blank %}
+		<h1 class="font:fine text:heading-display">{{ metaobject.title.value }}</h1>
+	{% endif %}
+	{% if metaobject.subtitle.value != blank %}
+		<p class="treatment-page__subtitle uppercase text:eyebrow font:regular">{{ metaobject.subtitle.value }}</p>
+	{% endif %}
+	{% if metaobject.text_main.value != blank %}
+		<div class="treatment-page__copy copy font:regular text:body-article">
+			{{ metaobject.text_main | metafield_tag }}
+		</div>
+	{% endif %}
+
+	{% capture treatment_rows %}
+		{% for row_index in (1..5) %}
+			{% assign left_index = row_index | times: 2 | minus: 1 %}
+			{% assign right_index = row_index | times: 2 %}
+			{% capture left_cell %}{% render 'treatment-cell', treatment: metaobject, index: left_index, heading_tag: 'h2' %}{% endcapture %}
+			{% capture right_cell %}{% render 'treatment-cell', treatment: metaobject, index: right_index, heading_tag: 'h2' %}{% endcapture %}
+			{% assign left_cell = left_cell | strip %}
+			{% assign right_cell = right_cell | strip %}
+			{% if left_cell != blank or right_cell != blank %}
+				<tr>
+					<td>{{ left_cell }}</td>
+					<td>{{ right_cell }}</td>
+				</tr>
+			{% endif %}
+		{% endfor %}
+	{% endcapture %}
+	{% assign treatment_rows = treatment_rows | strip %}
+	{% if treatment_rows != blank %}
+		<table class="treatment-page__table">
+			{% if metaobject.title.value != blank %}
+				<caption class="visually-hidden">{{ metaobject.title.value }}</caption>
+			{% endif %}
+			<tbody>
+				{{ treatment_rows }}
+			</tbody>
+		</table>
+	{% endif %}
+
+	{% if metaobject.text_footer.value != blank %}
+		<div class="treatment-page__copy copy font:regular text:body-article">
+			{{ metaobject.text_footer | metafield_tag }}
+		</div>
+	{% endif %}
+</article>
+
+{% stylesheet %}
+	.treatment-page.wrap {
+		padding: 7.5rem 2.625rem 8.5rem;
+		overflow-wrap: anywhere;
+	}
+
+	.treatment-page h1 {
+		max-width: 100%;
+	}
+
+	.treatment-page .treatment-page__subtitle {
+		margin-top: 1rem;
+		font-size: 1.125rem;
+		line-height: 1.4;
+		letter-spacing: 0.04em;
+	}
+
+	.treatment-page__copy {
+		margin-top: 2rem;
+	}
+
+	.treatment-page__copy img {
+		max-width: 100%;
+		height: auto;
+	}
+
+	.treatment-page__table {
+		width: 100%;
+		margin-top: 2.5rem;
+		border-collapse: collapse;
+	}
+
+	.treatment-page__table td {
+		width: 50%;
+		padding: 1.25rem 1.5rem 1.25rem 0;
+		border-bottom: 1px solid #000;
+		vertical-align: top;
+	}
+
+	.treatment-page__table td:last-child {
+		padding-right: 0;
+		padding-left: 1.5rem;
+	}
+
+	.treatment-page .mega-menu__treatment-head {
+		margin: 0 0 0.5rem;
+		font-size: 0.8125rem;
+		letter-spacing: 0.06em;
+		line-height: 1.3;
+		text-transform: uppercase;
+	}
+
+	@media screen and (max-width: 859px) {
+		.treatment-page.wrap {
+			padding: 5.5rem 1.25rem 6.5rem;
+		}
+
+		.treatment-page .treatment-page__subtitle {
+			font-size: 1.0625rem;
+		}
+
+		.treatment-page__table,
+		.treatment-page__table tbody,
+		.treatment-page__table tr,
+		.treatment-page__table td {
+			display: block;
+			width: 100%;
+		}
+
+		.treatment-page__table td,
+		.treatment-page__table td:last-child {
+			padding: 1.15rem 0;
+		}
+	}
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "Treatment",
+  "tag": "section",
+  "class": "section treatment bg:base-white",
+  "enabled_on": {
+    "templates": ["metaobject"]
+  },
+  "settings": [],
+  "presets": [
+    {
+      "name": "Treatment"
+    }
+  ]
+}
+{% endschema %}
