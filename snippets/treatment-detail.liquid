@@ -1,0 +1,50 @@
+{% doc %}
+  Renders a treatment_info entry for the mega menu detail panel.
+  @param {metaobject} treatment - treatment_info entry
+  @param {string} title_id - Unique id for the treatment heading
+{% enddoc %}
+
+<article class="mega-menu__treatment" data-mega-treatment hidden>
+	{% if treatment.title.value != blank %}
+		<h2 id="{{ title_id }}" class="mega-menu__treatment-title">{{ treatment.title.value }}</h2>
+	{% endif %}
+	{% if treatment.subtitle.value != blank %}
+		<p class="mega-menu__treatment-subtitle">{{ treatment.subtitle.value }}</p>
+	{% endif %}
+	{% if treatment.text_main.value != blank %}
+		<div class="mega-menu__treatment-copy">
+			{{ treatment.text_main | metafield_tag }}
+		</div>
+	{% endif %}
+
+	{% capture treatment_rows %}
+		{% for row_index in (1..5) %}
+			{% assign left_index = row_index | times: 2 | minus: 1 %}
+			{% assign right_index = row_index | times: 2 %}
+			{% capture left_cell %}{% render 'treatment-cell', treatment: treatment, index: left_index %}{% endcapture %}
+			{% capture right_cell %}{% render 'treatment-cell', treatment: treatment, index: right_index %}{% endcapture %}
+			{% assign left_cell = left_cell | strip %}
+			{% assign right_cell = right_cell | strip %}
+			{% if left_cell != blank or right_cell != blank %}
+				<tr>
+					<td>{{ left_cell }}</td>
+					<td>{{ right_cell }}</td>
+				</tr>
+			{% endif %}
+		{% endfor %}
+	{% endcapture %}
+	{% assign treatment_rows = treatment_rows | strip %}
+	{% if treatment_rows != blank %}
+		<table class="mega-menu__treatment-table">
+			<tbody>
+				{{ treatment_rows }}
+			</tbody>
+		</table>
+	{% endif %}
+
+	{% if treatment.text_footer.value != blank %}
+		<div class="mega-menu__treatment-footer">
+			{{ treatment.text_footer | metafield_tag }}
+		</div>
+	{% endif %}
+</article>

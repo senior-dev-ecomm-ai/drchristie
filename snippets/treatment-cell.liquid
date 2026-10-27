@@ -1,0 +1,55 @@
+{% doc %}
+  Renders one treatment table cell from a treatment_info entry.
+  @param {metaobject} treatment - treatment_info entry
+  @param {number} index - Pair index from 1 to 10
+{% enddoc %}
+
+{% liquid
+  case index
+    when 1
+      assign head_field = treatment.item_head_1
+      assign text_field = treatment.item_text_1
+    when 2
+      assign head_field = treatment.item_head_2
+      assign text_field = treatment.item_text_2
+    when 3
+      assign head_field = treatment.item_head_3
+      assign text_field = treatment.item_text_3
+    when 4
+      assign head_field = treatment.item_head_4
+      assign text_field = treatment.item_text_4
+    when 5
+      assign head_field = treatment.item_head_5
+      assign text_field = treatment.item_text_5
+    when 6
+      assign head_field = treatment.item_head_6
+      assign text_field = treatment.item_text_6
+    when 7
+      assign head_field = treatment.item_head_7
+      assign text_field = treatment.item_text_7
+    when 8
+      assign head_field = treatment.item_head_8
+      assign text_field = treatment.item_text_8
+    when 9
+      assign head_field = treatment.item_head_9
+      assign text_field = treatment.item_text_9
+    when 10
+      assign head_field = treatment.item_head_10
+      assign text_field = treatment.item_text_10
+  endcase
+
+  assign head_entry = head_field.value
+  assign head_title = blank
+  if head_entry != blank
+    assign head_title = head_entry.title.value | default: head_entry.title
+  endif
+%}
+
+{% if head_title != blank or text_field.value != blank %}
+	{% if head_title != blank %}
+		<p class="mega-menu__treatment-head">{{ head_title }}</p>
+	{% endif %}
+	{% if text_field.value != blank %}
+		{{ text_field | metafield_tag }}
+	{% endif %}
+{% endif %}

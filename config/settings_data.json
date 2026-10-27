@@ -9,7 +9,6 @@
  */
 {
   "current": {
-    "ticker": "Precision Medicine  |  Regenerative Aesthetics  |  Plastic Surgery",
     "footer_headline": "Not sure where to start?",
     "footer_copy": "Book an initial consultation to explore how we can help.",
     "footer_link_text": "Book An Inquiry",
@@ -31,10 +30,6 @@
     "affiliates_text": "For partnerships/affiliates:",
     "affiliates_email": "hello@drchristie.co",
     "sections": {
-      "header": {
-        "type": "header",
-        "settings": {}
-      },
       "footer": {
         "type": "footer",
         "settings": {

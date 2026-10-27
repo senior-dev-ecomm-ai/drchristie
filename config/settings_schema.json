@@ -11,11 +11,6 @@
     "name": "Site Settings",
     "settings": [
       {
-        "type": "text",
-        "id": "ticker",
-        "label": "Ticker Text"
-      },
-      {
         "type": "url",
         "id": "instagram",
         "label": "Instagram URL"

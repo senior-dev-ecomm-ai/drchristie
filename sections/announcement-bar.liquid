@@ -1,0 +1,31 @@
+{% if section.settings.text != blank %}
+	<div class="site-header__ticker site-header__ticker-wrapper bg:soft-lime">
+		<div class="site-header__ticker-track">
+			<div class="site-header__ticker-item colour:grey font:regular">{{ section.settings.text }}</div>
+			<div class="site-header__ticker-item colour:grey font:regular" aria-hidden="true">{{ section.settings.text }}</div>
+		</div>
+	</div>
+{% endif %}
+
+{% schema %}
+	{
+	  "name": "Announcement bar",
+	  "tag": "div",
+	  "enabled_on": {
+	    "groups": ["header"]
+	  },
+	  "settings": [
+	    {
+	      "type": "richtext",
+	      "id": "text",
+	      "label": "Text",
+	      "default": "<p>Precision Medicine  |  Regenerative Aesthetics  |  Plastic Surgery</p>"
+	    }
+	  ],
+	  "presets": [
+	    {
+	      "name": "Announcement bar"
+	    }
+	  ]
+	}
+{% endschema %}

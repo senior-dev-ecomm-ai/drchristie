@@ -1,5 +1,116 @@
-{% for link in linklists.main-menu.links %}
-	<li>
-      <a class="colour:grey text:nav font:medium uppercase" href="{{ link.url }}"><span>{{ link.title }}</span></a>
-	</li>
-{% endfor %}
+{% doc %}
+  Renders the main header links. Each item opens a mega menu from the menu whose handle matches the link handle.
+  @param {linklist} menu - Menu selected in the header section
+  @param {block[]} [blocks] - Mega menu blocks from the header section
+  @example
+  {% render 'nav-links', menu: section.settings.menu, blocks: section.blocks %}
+{% enddoc %}
+
+{% if menu != blank %}
+	{% for link in menu.links %}
+		{% capture mega_handle %}{{ link.handle }}{% endcapture %}
+		{% assign mega_menu = linklists[mega_handle] %}
+		{% assign mega_id = 'MegaMenu-' | append: mega_handle | append: '-' | append: forloop.index %}
+		{% assign mega_block = nil %}
+		{% assign wanted_handle = mega_handle | strip | handleize %}
+		{% if blocks != blank %}
+			{% for block in blocks %}
+				{% assign candidate_handle = block.settings.parent_handle | strip | handleize %}
+				{% if block.type == 'mega_menu' and candidate_handle == wanted_handle %}
+					{% assign mega_block = block %}
+				{% endif %}
+			{% endfor %}
+		{% endif %}
+		<li class="mega-nav__item"{% if mega_menu.links.size > 0 %} data-mega-nav{% endif %}>
+			<a
+				class="colour:grey text:nav font:medium uppercase"
+				href="{{ link.url }}"
+				{% if mega_menu.links.size > 0 %}
+					aria-expanded="false"
+					aria-controls="{{ mega_id }}"
+					aria-haspopup="true"
+				{% endif %}
+			><span>{{ link.title }}</span></a>
+			{% if mega_menu.links.size > 0 %}
+				<div class="mega-menu" id="{{ mega_id }}" inert{% if mega_block != blank %} {{ mega_block.shopify_attributes }}{% endif %}>
+					<div class="mega-menu__clip">
+						<div class="mega-menu__panel">
+							<div class="mega-menu__primary">
+								<button type="button" class="mega-menu__back colour:grey text:nav font:medium uppercase" data-mega-back hidden>
+									{{ 'header.back' | t }}
+								</button>
+								<ul class="mega-menu__level" data-mega-level="1">
+									{% for item in mega_menu.links %}
+										{% assign level_one_index = forloop.index %}
+										<li class="mega-menu__item" data-mega-item="1"{% if item.links.size > 0 %} data-mega-parent{% endif %}>
+											<a class="mega-menu__link" href="{{ item.url }}"{% if item.links.size > 0 %} aria-expanded="false"{% endif %}>{{ item.title }}</a>
+											{% if item.links.size > 0 %}
+												<ul class="mega-menu__level mega-menu__level--nested" data-mega-level="2" hidden>
+													{% for child in item.links %}
+														{% assign preview_image = nil %}
+														{% if mega_block != blank and level_one_index <= 8 %}
+															{% assign image_id = 'images_' | append: level_one_index | append: '_' | append: forloop.index %}
+															{% assign preview_image = mega_block.settings[image_id] %}
+														{% endif %}
+														<li class="mega-menu__item" data-mega-item="2"{% if child.links.size > 0 %} data-mega-parent{% endif %}>
+															<a class="mega-menu__link" href="{{ child.url }}"{% if child.links.size > 0 %} aria-expanded="false"{% endif %}>{{ child.title }}</a>
+															{% if preview_image != blank %}
+																<div class="mega-menu__preview" aria-hidden="true">
+																	{{ preview_image | image_url: width: 1400, height: 1400, crop: 'center' | image_tag: class: 'mega-menu__preview-image', widths: '400, 600, 800, 1000, 1400', sizes: '(min-width: 860px) min(50vw, calc(100dvh - 13rem)), 100vw', loading: 'lazy' }}
+																</div>
+															{% endif %}
+															{% if child.links.size > 0 %}
+																<ul class="mega-menu__level" data-mega-level="3" hidden>
+																	{% for grandchild in child.links %}
+																		{% liquid
+																			assign treatment_entry = nil
+																			if grandchild.url contains '/pages/treatment/'
+																				assign treatment_handle = grandchild.url | split: '/pages/treatment/' | last | split: '?' | first | split: '#' | first | split: '/' | first
+																				assign treatment_entry = metaobjects.treatment_info[treatment_handle]
+																			endif
+																			assign treatment_title_id = mega_id | append: '-title-' | append: level_one_index | append: '-' | append: forloop.parentloop.index | append: '-' | append: forloop.index
+																		%}
+																		<li class="mega-menu__item" data-mega-item="3">
+																			<a
+																				class="mega-menu__link"
+																				href="{{ grandchild.url }}"
+																				{% if treatment_entry != blank %}
+																					aria-haspopup="dialog"
+																					aria-expanded="false"
+																					aria-controls="{{ mega_id }}-treatment"
+																				{% endif %}
+																			>{{ grandchild.title }}</a>
+																			{% if treatment_entry != blank %}
+																				{% render 'treatment-detail', treatment: treatment_entry, title_id: treatment_title_id %}
+																			{% endif %}
+																		</li>
+																	{% endfor %}
+																</ul>
+															{% endif %}
+														</li>
+													{% endfor %}
+												</ul>
+											{% endif %}
+										</li>
+									{% endfor %}
+								</ul>
+								<a class="mega-menu__enquiry colour:grey text:nav font:medium uppercase" href="{{ pages.contact.url | default: '/pages/contact' }}">{{ 'header.enquiry' | t }}</a>
+							</div>
+							<div class="mega-menu__aside" data-mega-aside></div>
+							<div class="mega-menu__detail" id="{{ mega_id }}-treatment" data-mega-detail role="dialog" aria-modal="true" aria-hidden="true">
+								<div class="mega-menu__detail-overlay" data-mega-detail-close></div>
+								<div class="mega-menu__detail-panel">
+									<button type="button" class="mega-menu__detail-close" data-mega-detail-close>
+										<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 17 17" fill="none" aria-hidden="true"><path stroke="currentColor" stroke-width="1.083" d="m1 1 15 15m0-15L1 16"/></svg>
+										<span class="visually-hidden">{{ 'header.close' | t }}</span>
+									</button>
+									<div class="mega-menu__detail-body" data-mega-detail-body></div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			{% endif %}
+		</li>
+	{% endfor %}
+{% endif %}

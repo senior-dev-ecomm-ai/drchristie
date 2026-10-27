@@ -1,0 +1,33 @@
+{
+  "type": "header",
+  "name": "Header",
+  "sections": {
+    "announcement-bar": {
+      "type": "announcement-bar",
+      "settings": {
+        "text": "<p>Precision Medicine  |  Regenerative Aesthetics  |  Plastic Surgery</p>"
+      }
+    },
+    "header": {
+      "type": "header",
+      "blocks": {
+        "mega_menu_services": {
+          "type": "mega_menu",
+          "settings": {
+            "parent_handle": "services"
+          }
+        }
+      },
+      "block_order": [
+        "mega_menu_services"
+      ],
+      "settings": {
+        "menu": "main-menu"
+      }
+    }
+  },
+  "order": [
+    "announcement-bar",
+    "header"
+  ]
+}

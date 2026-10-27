@@ -7,4 +7,12 @@
  * made to this file may be overwritten.
  * ------------------------------------------------------------
  */
-{}
+{
+  "header": {
+    "back": "< Back",
+    "book": "Book an Inquiry",
+    "enquiry": "Book an Enquiry -->",
+    "close": "Close",
+    "practice": "Practice"
+  }
+}

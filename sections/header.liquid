@@ -1,18 +1,26 @@
-{% if settings.ticker != blank %}
-	<div class="site-header__ticker site-header__ticker-wrapper bg:soft-lime">
-		<div class="site-header__ticker-track">
-			<p class="site-header__ticker-item colour:grey font:regular">{{ settings.ticker | replace: " | ", ' <span class="pipe">|</span> ' }}</p>
-			<p class="site-header__ticker-item colour:grey font:regular">{{ settings.ticker | replace: " | ", ' <span class="pipe">|</span> ' }}</p>			
-		</div>
-	</div>
-{% endif %}
-
 <div class="site-header__main bg:base-white">
 	<div class="wrap flex spacious">
 		<nav class="desktop">
+			<button type="button" class="mega-nav__close" data-mega-close>
+				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 17 17" fill="none" aria-hidden="true"><path stroke="currentColor" stroke-width="1.083" d="m1 1 15 15m0-15L1 16"/></svg>
+				<span class="visually-hidden">{{ 'header.close' | t }}</span>
+			</button>
 			<ul class="flex spacious">
-				{% render 'nav-links' %}
+				{% render 'nav-links', menu: section.settings.menu, blocks: section.blocks %}
 			</ul>
+			{% if linklists.clinic.links.size > 0 %}
+				<div class="mega-nav__more">
+					<p class="mega-nav__more-title colour:grey text:nav font:medium uppercase">{{ 'header.practice' | t }}</p>
+					<ul>
+						{% for link in linklists.clinic.links %}
+							<li>
+								<a class="colour:grey text:nav font:medium" href="{{ link.url }}"><span>{{ link.title }}</span></a>
+							</li>
+						{% endfor %}
+					</ul>
+					<a class="mega-nav__book colour:grey text:nav font:medium uppercase" href="/pages/contact">{{ 'header.book' | t }}</a>
+				</div>
+			{% endif %}
 		</nav>
 
 		<a href="#" class="navicon"></a>
@@ -74,11 +82,1358 @@
 	
 </div>
 
-{% schema %}
-	{
-	  "name": "Header",
-	  "tag": "header",
-	  "class": "site-header border:bottom__grey",
-	  "settings": []
+{% stylesheet %}
+	.mega-nav__item {
+		position: static;
 	}
+
+	.mega-menu {
+		--mega-pad: clamp(1.25rem, 3vw, 2.625rem);
+		position: absolute;
+		left: 0;
+		right: 0;
+		top: 100%;
+		z-index: 8;
+		display: grid;
+		grid-template-rows: 0fr;
+		background: #fff;
+		border-top: 1px solid #000;
+		pointer-events: none;
+		visibility: hidden;
+		transition: grid-template-rows 0.45s ease, visibility 0s linear 0.45s;
+	}
+
+	.mega-nav__item.is-open > .mega-menu {
+		grid-template-rows: 1fr;
+		pointer-events: auto;
+		visibility: visible;
+		transition: grid-template-rows 0.45s ease, visibility 0s linear 0s;
+	}
+
+	.mega-menu__clip {
+		overflow: hidden;
+		min-height: 0;
+	}
+
+	.mega-menu__panel {
+		display: grid;
+		grid-template-columns: minmax(0, min(100%, 26rem));
+		align-items: stretch;
+		position: relative;
+		container-type: inline-size;
+		padding: clamp(1.25rem, 3vw, 2rem) 0 0;
+		background: #fff;
+		border-bottom: 1px solid #66645e;
+	}
+
+	.mega-menu.is-drilled .mega-menu__panel {
+		grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+		padding: 0;
+		min-height: calc(min(50cqw, calc(100dvh - 13rem)) + 5rem);
+	}
+
+	.mega-menu__primary {
+		display: flex;
+		flex-direction: column;
+		min-height: 100%;
+	}
+
+	.mega-menu.is-drilled .mega-menu__primary,
+	.mega-menu.is-drilled .mega-menu__aside {
+		width: 100%;
+		min-width: 0;
+		padding: clamp(1.25rem, 3vw, 2rem) 0 0;
+	}
+
+	.mega-menu__aside {
+		display: none;
+	}
+
+	.mega-menu.is-drilled .mega-menu__aside {
+		display: flex;
+		flex-direction: column;
+		position: relative;
+		z-index: 6;
+		min-height: 100%;
+	}
+
+	.mega-menu.is-drilled .mega-menu__aside:has([data-mega-level="3"]) {
+		background: #fff;
+		border-left: 1px solid #000;
+	}
+
+	.mega-menu__preview {
+		position: absolute;
+		top: 0;
+		right: 0;
+		width: min(50cqw, calc(100dvh - 13rem));
+		aspect-ratio: 1;
+		height: auto;
+		overflow: hidden;
+		opacity: 0;
+		visibility: hidden;
+		pointer-events: none;
+		border-left: 1px solid #000;
+		z-index: 5;
+		transition: opacity 0.3s ease, visibility 0s linear 0.3s;
+	}
+
+	.mega-menu__item[data-mega-item="2"]:hover > .mega-menu__preview,
+	.mega-menu__item[data-mega-item="2"]:focus-within > .mega-menu__preview {
+		opacity: 1;
+		visibility: visible;
+		transition: opacity 0.3s ease, visibility 0s linear 0s;
+	}
+
+	.mega-menu__item[data-mega-item="2"].is-active > .mega-menu__preview,
+	.mega-menu__item[data-mega-item="2"].is-active:hover > .mega-menu__preview,
+	.mega-menu__item[data-mega-item="2"].is-active:focus-within > .mega-menu__preview {
+		opacity: 0;
+		visibility: hidden;
+		transition: opacity 0.3s ease, visibility 0s linear 0.3s;
+	}
+
+	.mega-menu__preview-image {
+		display: block;
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+	}
+
+	.mega-menu__level {
+		display: flex;
+		flex-direction: column;
+		gap: 0.85rem;
+		margin: 0;
+		padding: 0;
+		list-style: none;
+	}
+
+	.mega-menu__level[hidden],
+	.mega-menu__item[hidden],
+	.mega-menu__back[hidden] {
+		display: none;
+	}
+
+	.mega-menu__level--nested {
+		margin-top: 1rem;
+	}
+
+	.mega-menu__level[data-mega-level="3"] {
+		padding: 0;
+	}
+
+	.mega-menu__link {
+		color: #66645e;
+		font-family: UntitledSansRegular, sans-serif;
+		font-size: clamp(1rem, 0.4vw + 0.95rem, 1.125rem);
+		line-height: 1.3;
+		text-decoration: none;
+		display: inline-block;
+		max-width: 100%;
+		overflow-wrap: break-word;
+	}
+
+	.mega-menu__level[data-mega-level="1"] > .mega-menu__item > .mega-menu__link {
+		display: block;
+		position: relative;
+		width: 100%;
+		padding: 0 var(--mega-pad) 0.85rem;
+	}
+
+	.mega-menu__level[data-mega-level="2"] > .mega-menu__item > .mega-menu__link,
+	.mega-menu__level[data-mega-level="3"] > .mega-menu__item > .mega-menu__link {
+		display: block;
+		position: relative;
+		width: 100%;
+		padding: 0 var(--mega-pad) 0.85rem;
+	}
+
+	.mega-menu__level[data-mega-level="2"] > .mega-menu__item > .mega-menu__link,
+	.mega-menu__level[data-mega-level="3"] .mega-menu__link {
+		font-size: 0.9875rem;
+	}
+
+	.site-header__main nav.desktop .mega-menu a::after {
+		content: none;
+		display: none;
+	}
+
+	.mega-menu__back::after,
+	.site-header__main nav.desktop .mega-menu .mega-menu__level[data-mega-level="1"] > .mega-menu__item > .mega-menu__link::after,
+	.site-header__main nav.desktop .mega-menu .mega-menu__level[data-mega-level="2"] > .mega-menu__item > .mega-menu__link::after,
+	.site-header__main nav.desktop .mega-menu .mega-menu__level[data-mega-level="3"] > .mega-menu__item > .mega-menu__link::after {
+		content: "";
+		display: block;
+		position: absolute;
+		left: 0;
+		bottom: 0;
+		width: 100cqw;
+		height: 0;
+		border-bottom: 1px solid #000;
+		pointer-events: none;
+		z-index: 3;
+	}
+
+	.site-header__main nav.desktop .mega-menu .mega-menu__level[data-mega-level="3"] > .mega-menu__item > .mega-menu__link::after {
+		width: 100%;
+	}
+
+	.site-header__main nav.desktop .mega-menu a:hover {
+		color: #66645e;
+	}
+
+	.mega-menu__level[data-mega-level="1"] > .mega-menu__item > .mega-menu__link:hover,
+	.mega-menu__level[data-mega-level="2"] > .mega-menu__item > .mega-menu__link:hover,
+	.mega-menu__item.is-active > .mega-menu__link {
+		font-style: italic;
+	}
+
+	.mega-menu__item.is-selected > .mega-menu__link {
+		font-family: UntitledSansMedium, sans-serif;
+	}
+
+	.mega-menu__back {
+		display: block;
+		position: relative;
+		width: 100%;
+		margin: 0 0 0.85rem;
+		padding: 0 var(--mega-pad) 0.85rem;
+		border: 0;
+		background: none;
+		cursor: pointer;
+		text-align: left;
+	}
+
+	.mega-menu__back:hover {
+		color: #580712;
+	}
+
+	.site-header__main nav.desktop .mega-menu .mega-menu__enquiry {
+		display: block;
+		position: relative;
+		z-index: 7;
+		width: 100cqw;
+		min-width: 0;
+		margin-top: auto;
+		padding: 1.15rem var(--mega-pad);
+		background: transparent;
+		font-size: 0.875rem;
+		line-height: 1.3;
+		letter-spacing: 0.04em;
+		text-align: left;
+		text-decoration: none;
+	}
+
+	.site-header__main nav.desktop .mega-menu .mega-menu__enquiry:hover,
+	.site-header__main nav.desktop .mega-menu .mega-menu__enquiry:focus-visible {
+		background: #f1f4e2;
+		color: #66645e;
+	}
+
+	html.has-treatment {
+		overflow: hidden;
+	}
+
+	.mega-menu__detail {
+		--mega-pad: clamp(1.25rem, 3vw, 2.625rem);
+		position: fixed;
+		inset: 0;
+		z-index: 1000;
+		width: 100%;
+		height: 100dvh;
+		visibility: hidden;
+		pointer-events: none;
+		transition: visibility 0s linear 0.45s;
+	}
+
+	.mega-menu__detail.is-open {
+		visibility: visible;
+		pointer-events: auto;
+		transition: visibility 0s linear 0s;
+	}
+
+	.mega-menu__detail-overlay {
+		position: absolute;
+		inset: 0;
+		background: rgba(102, 100, 94, 0.45);
+		opacity: 0;
+		transition: opacity 0.45s ease;
+	}
+
+	.mega-menu__detail.is-open .mega-menu__detail-overlay {
+		opacity: 1;
+	}
+
+	.mega-menu__detail-panel {
+		position: absolute;
+		top: 0;
+		right: 0;
+		width: 50%;
+		height: 100dvh;
+		background: #fff;
+		overflow: auto;
+		transform: translateX(100%);
+		transition: transform 0.45s ease;
+	}
+
+	.mega-menu__detail.is-open .mega-menu__detail-panel {
+		transform: translateX(0);
+	}
+
+	.mega-menu__detail-close {
+		position: sticky;
+		top: 0;
+		z-index: 1;
+		display: flex;
+		align-items: center;
+		justify-content: flex-end;
+		width: 100%;
+		height: 3.25rem;
+		margin: 0;
+		padding: 0 1.25rem;
+		border: 0;
+		background: #fff;
+		color: #66645e;
+		cursor: pointer;
+	}
+
+	.mega-menu__detail-close svg {
+		display: block;
+		width: 0.9375rem;
+		height: 0.9375rem;
+	}
+
+	.mega-menu__detail-close:hover {
+		color: #580712;
+	}
+
+	.mega-menu__detail-body {
+		padding: 0 var(--mega-pad) 2rem;
+	}
+
+	.mega-menu__treatment[hidden] {
+		display: none;
+	}
+
+	.mega-menu__treatment-title {
+		margin: 0 0 0.4rem;
+		color: #66645e;
+		font-family: UntitledSansMedium, sans-serif;
+		font-size: clamp(1.25rem, 0.6vw + 1.05rem, 1.75rem);
+		font-weight: 500;
+		line-height: 1.25;
+	}
+
+	.mega-menu__treatment-subtitle {
+		margin: 0 0 1.25rem;
+		color: #66645e;
+		font-family: UntitledSansRegular, sans-serif;
+		font-size: 0.9875rem;
+		line-height: 1.4;
+	}
+
+	.mega-menu__treatment-copy,
+	.mega-menu__treatment-footer,
+	.mega-menu__treatment-table {
+		color: #66645e;
+		font-family: UntitledSansRegular, sans-serif;
+		font-size: 0.9875rem;
+		line-height: 1.5;
+	}
+
+	.mega-menu__treatment-copy {
+		margin-bottom: 1.5rem;
+	}
+
+	.mega-menu__treatment-copy p,
+	.mega-menu__treatment-footer p,
+	.mega-menu__treatment-table p {
+		margin: 0 0 0.75rem;
+	}
+
+	.mega-menu__treatment-table {
+		width: 100%;
+		margin: 0 0 1.5rem;
+		border-collapse: collapse;
+		table-layout: fixed;
+	}
+
+	.mega-menu__treatment-table td {
+		width: 50%;
+		vertical-align: top;
+		border: 1px solid #000;
+		padding: 0.85rem 1rem;
+	}
+
+	.mega-menu__treatment-head {
+		margin: 0 0 0.5rem;
+		font-family: UntitledSansMedium, sans-serif;
+	}
+
+	.mega-menu__treatment-footer {
+		margin-top: 0.5rem;
+	}
+
+	.mega-nav__item.is-open > a::after {
+		width: 100%;
+	}
+
+	.mega-nav__close,
+	.mega-nav__more {
+		display: none;
+	}
+
+	.visually-hidden {
+		position: absolute;
+		width: 1px;
+		height: 1px;
+		padding: 0;
+		margin: -1px;
+		overflow: hidden;
+		clip: rect(0, 0, 0, 0);
+		white-space: nowrap;
+		border: 0;
+	}
+
+	@media screen and (min-width: 860px) {
+		.mega-nav__item.is-open > .mega-menu {
+			max-height: calc(100dvh - 7.25rem);
+			overflow-y: auto;
+		}
+
+		.mega-menu__level[data-mega-level="3"] {
+			padding-bottom: 3.75rem;
+		}
+	}
+
+	@media screen and (max-width: 859px) {
+		.mega-menu,
+		.mega-menu__detail {
+			--mega-pad: 1.25rem;
+		}
+
+		.site-nav,
+		.site-nav__underlay {
+			display: none;
+		}
+
+		html.has-nav .site-header__main nav.desktop {
+			display: block;
+			position: fixed;
+			top: 0;
+			left: 0;
+			z-index: 30;
+			width: 100%;
+			max-width: none;
+			height: 100dvh;
+			background: #fff;
+			overflow: auto;
+			padding: 4.25rem 0 2.5rem;
+		}
+
+		.mega-nav__close {
+			position: absolute;
+			top: 1.15rem;
+			right: 1.25rem;
+			z-index: 2;
+			display: block;
+			width: 0.9375rem;
+			height: 0.9375rem;
+			padding: 0;
+			border: 0;
+			background: none;
+			color: #66645e;
+			cursor: pointer;
+		}
+
+		.mega-nav__close svg {
+			display: block;
+			width: 100%;
+			height: 100%;
+		}
+
+		html.has-nav .site-header__main nav.desktop > ul {
+			flex-direction: column;
+			justify-content: flex-start;
+			align-items: stretch;
+		}
+
+		html.has-nav .site-header__main nav.desktop .mega-nav__item > a {
+			display: block;
+			padding: 1rem 1.25rem;
+		}
+
+		.mega-menu {
+			position: static;
+			left: auto;
+			right: auto;
+			top: auto;
+		}
+
+		.mega-menu__panel,
+		.mega-menu.is-drilled .mega-menu__panel {
+			grid-template-columns: minmax(0, 1fr);
+			min-height: 0;
+			padding: 0.25rem 0 0;
+		}
+
+		.mega-menu.is-drilled .mega-menu__primary,
+		.mega-menu.is-drilled .mega-menu__aside {
+			padding: 0.25rem 0 0;
+		}
+
+		.mega-menu.is-drilled .mega-menu__aside:has([data-mega-level="3"]) {
+			border-left: 0;
+			border-top: 1px solid #000;
+			padding-top: 1rem;
+		}
+
+		.mega-menu__preview {
+			position: relative;
+			top: auto;
+			right: auto;
+			width: 100%;
+			margin-top: 0.75rem;
+			border-left: 0;
+			border-top: 1px solid #000;
+		}
+
+		.mega-menu__detail-panel {
+			width: 100%;
+		}
+
+		.mega-nav__more {
+			display: block;
+			margin-top: 1.5rem;
+			padding: 0 1.25rem 1rem;
+		}
+
+		.mega-nav__more-title {
+			margin: 0 0 0.75rem;
+		}
+
+		.mega-nav__more ul {
+			display: flex;
+			flex-direction: column;
+			gap: 0.85rem;
+			margin: 0;
+			padding: 0;
+			list-style: none;
+		}
+
+		.mega-nav__more a {
+			text-decoration: none;
+		}
+
+		.mega-nav__book {
+			display: inline-block;
+			margin-top: 1.75rem;
+		}
+	}
+
+	@media (prefers-reduced-motion: reduce) {
+		.mega-menu,
+		.mega-menu__detail,
+		.mega-menu__detail-overlay,
+		.mega-menu__detail-panel {
+			transition: none;
+		}
+	}
+{% endstylesheet %}
+
+{% javascript %}
+	(function () {
+		var CLOSE_DELAY = 200;
+		var RESET_DELAY = 450;
+
+		function restoreLevel3(menu) {
+			var aside = menu.querySelector('[data-mega-aside]');
+			if (!aside) return;
+			aside.querySelectorAll('[data-mega-level="3"]').forEach(function (list) {
+				list.hidden = true;
+				if (list._megaHome) list._megaHome.appendChild(list);
+			});
+			menu.classList.remove('has-aside');
+		}
+
+		function getDetail(menu) {
+			return (menu && menu._megaDetail) || (menu && menu.querySelector('[data-mega-detail]'));
+		}
+
+		function treatmentIsOpen(menu) {
+			var detail = getDetail(menu);
+			return !!(detail && detail.classList.contains('is-open'));
+		}
+
+		function setBackgroundInert(detail, isInert) {
+			Array.prototype.forEach.call(document.body.children, function (node) {
+				if (node === detail) return;
+				if (isInert) {
+					if (node.hasAttribute('inert')) {
+						if (!node.dataset.megaInert) node.dataset.megaInert = 'keep';
+					} else {
+						node.setAttribute('inert', '');
+						node.dataset.megaInert = 'added';
+					}
+				} else if (node.dataset.megaInert === 'added') {
+					node.removeAttribute('inert');
+					delete node.dataset.megaInert;
+				} else if (node.dataset.megaInert) {
+					delete node.dataset.megaInert;
+				}
+			});
+		}
+
+		function closeTreatment(menu, immediate, restoreFocus) {
+			var detail = getDetail(menu);
+			if (!detail) return;
+			if (restoreFocus === undefined) restoreFocus = true;
+			var body = detail.querySelector('[data-mega-detail-body]');
+			var navItem = menu && menu.closest('[data-mega-nav]');
+
+			function restore() {
+				var article = body.querySelector('[data-mega-treatment]');
+				if (article && article._megaHome) {
+					article.hidden = true;
+					article._megaHome.appendChild(article);
+				}
+				if (detail._megaSlot && detail.parentNode !== detail._megaSlot) {
+					detail._megaSlot.appendChild(detail);
+				}
+				if (!document.querySelector('[data-mega-detail].is-open')) {
+					document.documentElement.classList.remove('has-treatment');
+				}
+			}
+
+			function release() {
+				setBackgroundInert(detail, false);
+				detail.setAttribute('aria-hidden', 'true');
+				if (!restoreFocus || !detail._megaTrigger) return;
+				detail._megaTrigger.setAttribute('aria-expanded', 'false');
+				if (navItem) window.clearTimeout(navItem._megaCloseTimer);
+				detail._megaTrigger.focus();
+			}
+
+			if (!detail.classList.contains('is-open')) {
+				restore();
+				return;
+			}
+
+			detail.classList.remove('is-open');
+			window.clearTimeout(detail._megaTimer);
+			release();
+			if (immediate) restore();
+			else detail._megaTimer = window.setTimeout(restore, 450);
+		}
+
+		function focusableIn(detail) {
+			return Array.prototype.filter.call(
+				detail.querySelectorAll('a[href], button:not([disabled]), input:not([disabled]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"])'),
+				function (element) {
+					return !element.closest('[hidden]') && element.getClientRects().length > 0;
+				}
+			);
+		}
+
+		function openTreatment(menu, row) {
+			var detail = getDetail(menu);
+			var article = row.querySelector('[data-mega-treatment]');
+			if (!article && detail) {
+				var parked = detail.querySelector('[data-mega-detail-body] [data-mega-treatment]');
+				if (parked && parked._megaHome === row) article = parked;
+			}
+			if (!article) return;
+			var body = detail.querySelector('[data-mega-detail-body]');
+			var navItem = menu.closest('[data-mega-nav]');
+			document.querySelectorAll('[data-mega-detail].is-open').forEach(function (other) {
+				if (other !== detail && other._megaMenu) closeTreatment(other._megaMenu, true, false);
+			});
+			window.clearTimeout(detail._megaTimer);
+			if (navItem) {
+				window.clearTimeout(navItem._megaCloseTimer);
+				if (!navItem.classList.contains('is-open')) openItem(navItem);
+			}
+			var current = body.querySelector('[data-mega-treatment]');
+			if (current && current !== article && current._megaHome) {
+				current.hidden = true;
+				current._megaHome.appendChild(current);
+			}
+			article._megaHome = row;
+			article.hidden = false;
+			body.appendChild(article);
+			if (!detail._megaSlot) detail._megaSlot = detail.parentNode;
+			detail._megaMenu = menu;
+			detail._megaTrigger = row.querySelector(':scope > a');
+			menu._megaDetail = detail;
+			document.body.appendChild(detail);
+			document.documentElement.classList.add('has-treatment');
+			setBackgroundInert(detail, true);
+			menu.querySelectorAll('[data-mega-item="3"].is-active').forEach(function (entry) {
+				if (entry !== row) entry.classList.remove('is-active');
+			});
+			row.classList.add('is-active');
+			if (detail._megaTrigger) detail._megaTrigger.setAttribute('aria-expanded', 'true');
+			var title = article.querySelector('.mega-menu__treatment-title');
+			if (title && title.id) {
+				detail.setAttribute('aria-labelledby', title.id);
+				detail.removeAttribute('aria-label');
+			} else if (detail._megaTrigger) {
+				detail.removeAttribute('aria-labelledby');
+				detail.setAttribute('aria-label', detail._megaTrigger.textContent.trim());
+			}
+			detail.setAttribute('aria-hidden', 'false');
+			detail.classList.add('is-open');
+			detail.querySelector('.mega-menu__detail-panel').scrollTop = 0;
+			var closeButton = detail.querySelector('.mega-menu__detail-close');
+			if (closeButton) closeButton.focus();
+		}
+
+		function resetMenu(item) {
+			var menu = item.querySelector('.mega-menu');
+			if (!menu) return;
+			restoreLevel3(menu);
+			menu.classList.remove('is-drilled');
+			var back = menu.querySelector('[data-mega-back]');
+			if (back) back.hidden = true;
+			menu.querySelectorAll('[data-mega-item]').forEach(function (entry) {
+				entry.hidden = false;
+				entry.classList.remove('is-selected', 'is-active');
+				var link = entry.querySelector(':scope > a');
+				if (link && entry.hasAttribute('data-mega-parent')) {
+					link.setAttribute('aria-expanded', 'false');
+				}
+			});
+			menu.querySelectorAll('[data-mega-level="2"], [data-mega-level="3"]').forEach(function (list) {
+				list.hidden = true;
+			});
+		}
+
+		function setOpen(item, isOpen) {
+			var menu = item.querySelector('.mega-menu');
+			var trigger = item.querySelector(':scope > a');
+			item.classList.toggle('is-open', isOpen);
+			if (trigger) trigger.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+			if (menu) menu.inert = !isOpen;
+		}
+
+		function closeItem(item) {
+			if (!item.classList.contains('is-open')) return;
+			setOpen(item, false);
+			window.setTimeout(function () {
+				if (!item.classList.contains('is-open')) resetMenu(item);
+			}, RESET_DELAY);
+		}
+
+		function openItem(item) {
+			document.querySelectorAll('[data-mega-nav].is-open').forEach(function (other) {
+				if (other !== item) closeItem(other);
+			});
+			setOpen(item, true);
+		}
+
+		function drillLevel1(item, row) {
+			var menu = item.querySelector('.mega-menu');
+			restoreLevel3(menu);
+			menu.classList.add('is-drilled');
+			var back = menu.querySelector('[data-mega-back]');
+			if (back) back.hidden = false;
+			menu.querySelectorAll('[data-mega-item="1"]').forEach(function (entry) {
+				var selected = entry === row;
+				entry.hidden = !selected;
+				entry.classList.toggle('is-selected', selected);
+				var nested = entry.querySelector(':scope > [data-mega-level="2"]');
+				if (nested) nested.hidden = !selected;
+				var link = entry.querySelector(':scope > a');
+				if (link && entry.hasAttribute('data-mega-parent')) {
+					link.setAttribute('aria-expanded', selected ? 'true' : 'false');
+				}
+			});
+		}
+
+		function showLevel3(item, row) {
+			var menu = item.querySelector('.mega-menu');
+			restoreLevel3(menu);
+			var list = row.querySelector(':scope > [data-mega-level="3"]');
+			menu.querySelectorAll('[data-mega-item="2"]').forEach(function (entry) {
+				entry.classList.remove('is-active');
+				var link = entry.querySelector(':scope > a');
+				if (link && entry.hasAttribute('data-mega-parent')) {
+					link.setAttribute('aria-expanded', 'false');
+				}
+			});
+			if (!list) return;
+			row.classList.add('is-active');
+			var trigger = row.querySelector(':scope > a');
+			if (trigger) trigger.setAttribute('aria-expanded', 'true');
+			list.hidden = false;
+			list._megaHome = row;
+			menu.querySelector('[data-mega-aside]').appendChild(list);
+			menu.classList.add('has-aside');
+		}
+
+		function isNarrow() {
+			return window.matchMedia('(max-width: 859px)').matches;
+		}
+
+		function bindItem(item) {
+			if (item.dataset.megaReady === 'true') return;
+			item.dataset.megaReady = 'true';
+			var menu = item.querySelector('.mega-menu');
+			var trigger = item.querySelector(':scope > a');
+
+			function scheduleClose() {
+				if (treatmentIsOpen(menu)) return;
+				window.clearTimeout(item._megaCloseTimer);
+				item._megaCloseTimer = window.setTimeout(function () {
+					if (treatmentIsOpen(menu)) return;
+					closeItem(item);
+				}, CLOSE_DELAY);
+			}
+
+			item.addEventListener('mouseenter', function () {
+				if (isNarrow()) return;
+				window.clearTimeout(item._megaCloseTimer);
+				openItem(item);
+			});
+
+			item.addEventListener('mouseleave', function () {
+				if (isNarrow()) return;
+				scheduleClose();
+			});
+
+			item.addEventListener('focusin', function () {
+				if (isNarrow()) return;
+				window.clearTimeout(item._megaCloseTimer);
+				openItem(item);
+			});
+
+			item.addEventListener('focusout', function (event) {
+				if (isNarrow()) return;
+				if (treatmentIsOpen(menu)) return;
+				var detail = getDetail(menu);
+				if (detail && detail.contains(event.relatedTarget)) return;
+				if (!item.contains(event.relatedTarget)) scheduleClose();
+			});
+
+			if (trigger) {
+				trigger.addEventListener('click', function (event) {
+					if (!isNarrow()) return;
+					event.preventDefault();
+					if (item.classList.contains('is-open')) closeItem(item);
+					else openItem(item);
+				});
+			}
+
+			var detail = menu.querySelector('[data-mega-detail]');
+			if (detail && detail.dataset.megaBound !== 'true') {
+				detail.dataset.megaBound = 'true';
+				detail._megaMenu = menu;
+				menu._megaDetail = detail;
+				detail.addEventListener('click', function (event) {
+					if (!event.target.closest('[data-mega-detail-close]')) return;
+					event.preventDefault();
+					closeTreatment(menu);
+				});
+				detail.addEventListener('keydown', function (event) {
+					if (event.key !== 'Tab' || !detail.classList.contains('is-open')) return;
+					var focusable = focusableIn(detail);
+					if (!focusable.length) return;
+					var first = focusable[0];
+					var last = focusable[focusable.length - 1];
+					if (event.shiftKey && document.activeElement === first) {
+						event.preventDefault();
+						last.focus();
+					} else if (!event.shiftKey && document.activeElement === last) {
+						event.preventDefault();
+						first.focus();
+					}
+				});
+			}
+
+			menu.addEventListener('click', function (event) {
+				var back = event.target.closest('[data-mega-back]');
+				if (back) {
+					event.preventDefault();
+					var selected = menu.querySelector('[data-mega-item="1"].is-selected > a');
+					resetMenu(item);
+					if (selected) selected.focus();
+					return;
+				}
+
+				var link = event.target.closest('a');
+				if (!link || !menu.contains(link)) return;
+				var row = link.parentElement;
+				if (row && row.dataset.megaItem === '3' && (row.querySelector('[data-mega-treatment]') || link.getAttribute('aria-haspopup') === 'dialog')) {
+					event.preventDefault();
+					openTreatment(menu, row);
+					return;
+				}
+				if (!row || !row.hasAttribute('data-mega-parent')) return;
+				event.preventDefault();
+				if (row.dataset.megaItem === '1') drillLevel1(item, row);
+				if (row.dataset.megaItem === '2') showLevel3(item, row);
+			});
+		}
+
+		function init(root) {
+			(root || document).querySelectorAll('[data-mega-nav]').forEach(bindItem);
+		}
+
+		init(document);
+
+		if (!document.documentElement.dataset.megaKeys) {
+			document.documentElement.dataset.megaKeys = 'true';
+			document.addEventListener('click', function (event) {
+				if (!event.target.closest('[data-mega-close]')) return;
+				document.documentElement.classList.remove('has-nav');
+			});
+			document.addEventListener('keydown', function (event) {
+				if (event.key !== 'Escape') return;
+				var treatment = document.querySelector('[data-mega-detail].is-open');
+				if (treatment && treatment._megaMenu) {
+					closeTreatment(treatment._megaMenu);
+					return;
+				}
+				var open = document.querySelector('[data-mega-nav].is-open');
+				if (open) {
+					closeItem(open);
+					var trigger = open.querySelector(':scope > a');
+					if (trigger) trigger.focus();
+					return;
+				}
+				if (isNarrow()) document.documentElement.classList.remove('has-nav');
+			});
+			document.addEventListener('shopify:section:load', function (event) {
+				init(event.target);
+			});
+			window.matchMedia('(max-width: 859px)').addEventListener('change', function (event) {
+				if (!event.matches) document.documentElement.classList.remove('has-nav');
+			});
+		}
+	})();
+{% endjavascript %}
+
+{% schema %}
+{
+  "name": "Header",
+  "tag": "header",
+  "class": "site-header border:bottom__grey",
+  "enabled_on": {
+    "groups": [
+      "header"
+    ]
+  },
+  "settings": [
+    {
+      "type": "link_list",
+      "id": "menu",
+      "label": "Menu",
+      "default": "main-menu"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "mega_menu",
+      "name": "Mega menu",
+      "settings": [
+        {
+          "type": "text",
+          "id": "parent_handle",
+          "label": "Parent menu item handle",
+          "info": "Handle of the main navigation item this block belongs to. In Shopify admin, go to Content > Menus and open the menu selected in this header. The handle is that item's name in lowercase, with spaces replaced by hyphens. For example, Services becomes services."
+        },
+        {
+          "type": "header",
+          "content": "List of images 1"
+        },
+        {
+          "type": "paragraph",
+          "content": "Images for the 1st item in this menu's first level. Image 1 shows when its 1st second-level item is hovered, image 2 when the 2nd is hovered, and so on."
+        },
+        {
+          "type": "image_picker",
+          "id": "images_1_1",
+          "label": "Image 1"
+        },
+        {
+          "type": "image_picker",
+          "id": "images_1_2",
+          "label": "Image 2"
+        },
+        {
+          "type": "image_picker",
+          "id": "images_1_3",
+          "label": "Image 3"
+        },
+        {
+          "type": "image_picker",
+          "id": "images_1_4",
+          "label": "Image 4"
+        },
+        {
+          "type": "image_picker",
+          "id": "images_1_5",
+          "label": "Image 5"
+        },
+        {
+          "type": "image_picker",
+          "id": "images_1_6",
+          "label": "Image 6"
+        },
+        {
+          "type": "image_picker",
+          "id": "images_1_7",
+          "label": "Image 7"
+        },
+        {
+          "type": "image_picker",
+          "id": "images_1_8",
+          "label": "Image 8"
+        },
+        {
+          "type": "header",
+          "content": "List of images 2"
+        },
+        {
+          "type": "paragraph",
+          "content": "Images for the 2nd item in this menu's first level. Image 1 shows when its 1st second-level item is hovered, image 2 when the 2nd is hovered, and so on."
+        },
+        {
+          "type": "image_picker",
+          "id": "images_2_1",
+          "label": "Image 1"
+        },
+        {
+          "type": "image_picker",
+          "id": "images_2_2",
+          "label": "Image 2"
+        },
+        {
+          "type": "image_picker",
+          "id": "images_2_3",
+          "label": "Image 3"
+        },
+        {
+          "type": "image_picker",
+          "id": "images_2_4",
+          "label": "Image 4"
+        },
+        {
+          "type": "image_picker",
+          "id": "images_2_5",
+          "label": "Image 5"
+        },
+        {
+          "type": "image_picker",
+          "id": "images_2_6",
+          "label": "Image 6"
+        },
+        {
+          "type": "image_picker",
+          "id": "images_2_7",
+          "label": "Image 7"
+        },
+        {
+          "type": "image_picker",
+          "id": "images_2_8",
+          "label": "Image 8"
+        },
+        {
+          "type": "header",
+          "content": "List of images 3"
+        },
+        {
+          "type": "paragraph",
+          "content": "Images for the 3rd item in this menu's first level. Image 1 shows when its 1st second-level item is hovered, image 2 when the 2nd is hovered, and so on."
+        },
+        {
+          "type": "image_picker",
+          "id": "images_3_1",
+          "label": "Image 1"
+        },
+        {
+          "type": "image_picker",
+          "id": "images_3_2",
+          "label": "Image 2"
+        },
+        {
+          "type": "image_picker",
+          "id": "images_3_3",
+          "label": "Image 3"
+        },
+        {
+          "type": "image_picker",
+          "id": "images_3_4",
+          "label": "Image 4"
+        },
+        {
+          "type": "image_picker",
+          "id": "images_3_5",
+          "label": "Image 5"
+        },
+        {
+          "type": "image_picker",
+          "id": "images_3_6",
+          "label": "Image 6"
+        },
+        {
+          "type": "image_picker",
+          "id": "images_3_7",
+          "label": "Image 7"
+        },
+        {
+          "type": "image_picker",
+          "id": "images_3_8",
+          "label": "Image 8"
+        },
+        {
+          "type": "header",
+          "content": "List of images 4"
+        },
+        {
+          "type": "paragraph",
+          "content": "Images for the 4th item in this menu's first level. Image 1 shows when its 1st second-level item is hovered, image 2 when the 2nd is hovered, and so on."
+        },
+        {
+          "type": "image_picker",
+          "id": "images_4_1",
+          "label": "Image 1"
+        },
+        {
+          "type": "image_picker",
+          "id": "images_4_2",
+          "label": "Image 2"
+        },
+        {
+          "type": "image_picker",
+          "id": "images_4_3",
+          "label": "Image 3"
+        },
+        {
+          "type": "image_picker",
+          "id": "images_4_4",
+          "label": "Image 4"
+        },
+        {
+          "type": "image_picker",
+          "id": "images_4_5",
+          "label": "Image 5"
+        },
+        {
+          "type": "image_picker",
+          "id": "images_4_6",
+          "label": "Image 6"
+        },
+        {
+          "type": "image_picker",
+          "id": "images_4_7",
+          "label": "Image 7"
+        },
+        {
+          "type": "image_picker",
+          "id": "images_4_8",
+          "label": "Image 8"
+        },
+        {
+          "type": "header",
+          "content": "List of images 5"
+        },
+        {
+          "type": "paragraph",
+          "content": "Images for the 5th item in this menu's first level. Image 1 shows when its 1st second-level item is hovered, image 2 when the 2nd is hovered, and so on."
+        },
+        {
+          "type": "image_picker",
+          "id": "images_5_1",
+          "label": "Image 1"
+        },
+        {
+          "type": "image_picker",
+          "id": "images_5_2",
+          "label": "Image 2"
+        },
+        {
+          "type": "image_picker",
+          "id": "images_5_3",
+          "label": "Image 3"
+        },
+        {
+          "type": "image_picker",
+          "id": "images_5_4",
+          "label": "Image 4"
+        },
+        {
+          "type": "image_picker",
+          "id": "images_5_5",
+          "label": "Image 5"
+        },
+        {
+          "type": "image_picker",
+          "id": "images_5_6",
+          "label": "Image 6"
+        },
+        {
+          "type": "image_picker",
+          "id": "images_5_7",
+          "label": "Image 7"
+        },
+        {
+          "type": "image_picker",
+          "id": "images_5_8",
+          "label": "Image 8"
+        },
+        {
+          "type": "header",
+          "content": "List of images 6"
+        },
+        {
+          "type": "paragraph",
+          "content": "Images for the 6th item in this menu's first level. Image 1 shows when its 1st second-level item is hovered, image 2 when the 2nd is hovered, and so on."
+        },
+        {
+          "type": "image_picker",
+          "id": "images_6_1",
+          "label": "Image 1"
+        },
+        {
+          "type": "image_picker",
+          "id": "images_6_2",
+          "label": "Image 2"
+        },
+        {
+          "type": "image_picker",
+          "id": "images_6_3",
+          "label": "Image 3"
+        },
+        {
+          "type": "image_picker",
+          "id": "images_6_4",
+          "label": "Image 4"
+        },
+        {
+          "type": "image_picker",
+          "id": "images_6_5",
+          "label": "Image 5"
+        },
+        {
+          "type": "image_picker",
+          "id": "images_6_6",
+          "label": "Image 6"
+        },
+        {
+          "type": "image_picker",
+          "id": "images_6_7",
+          "label": "Image 7"
+        },
+        {
+          "type": "image_picker",
+          "id": "images_6_8",
+          "label": "Image 8"
+        },
+        {
+          "type": "header",
+          "content": "List of images 7"
+        },
+        {
+          "type": "paragraph",
+          "content": "Images for the 7th item in this menu's first level. Image 1 shows when its 1st second-level item is hovered, image 2 when the 2nd is hovered, and so on."
+        },
+        {
+          "type": "image_picker",
+          "id": "images_7_1",
+          "label": "Image 1"
+        },
+        {
+          "type": "image_picker",
+          "id": "images_7_2",
+          "label": "Image 2"
+        },
+        {
+          "type": "image_picker",
+          "id": "images_7_3",
+          "label": "Image 3"
+        },
+        {
+          "type": "image_picker",
+          "id": "images_7_4",
+          "label": "Image 4"
+        },
+        {
+          "type": "image_picker",
+          "id": "images_7_5",
+          "label": "Image 5"
+        },
+        {
+          "type": "image_picker",
+          "id": "images_7_6",
+          "label": "Image 6"
+        },
+        {
+          "type": "image_picker",
+          "id": "images_7_7",
+          "label": "Image 7"
+        },
+        {
+          "type": "image_picker",
+          "id": "images_7_8",
+          "label": "Image 8"
+        },
+        {
+          "type": "header",
+          "content": "List of images 8"
+        },
+        {
+          "type": "paragraph",
+          "content": "Images for the 8th item in this menu's first level. Image 1 shows when its 1st second-level item is hovered, image 2 when the 2nd is hovered, and so on."
+        },
+        {
+          "type": "image_picker",
+          "id": "images_8_1",
+          "label": "Image 1"
+        },
+        {
+          "type": "image_picker",
+          "id": "images_8_2",
+          "label": "Image 2"
+        },
+        {
+          "type": "image_picker",
+          "id": "images_8_3",
+          "label": "Image 3"
+        },
+        {
+          "type": "image_picker",
+          "id": "images_8_4",
+          "label": "Image 4"
+        },
+        {
+          "type": "image_picker",
+          "id": "images_8_5",
+          "label": "Image 5"
+        },
+        {
+          "type": "image_picker",
+          "id": "images_8_6",
+          "label": "Image 6"
+        },
+        {
+          "type": "image_picker",
+          "id": "images_8_7",
+          "label": "Image 7"
+        },
+        {
+          "type": "image_picker",
+          "id": "images_8_8",
+          "label": "Image 8"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Header"
+    }
+  ]
+}
 {% endschema %}
