@@ -1,0 +1,56 @@
+{% doc %}
+  Renders a mobile navigation list. Items with children are buttons that expand. Leaf links stay real URLs.
+  @param {link[]} links - Navigation links for this level
+  @param {number} [depth] - Nesting level, starting at 1
+  @param {string} prefix - Unique id prefix for this list
+  @param {string} [list_id] - Id for a nested list, referenced by its toggle
+  @example
+  {% render 'site-nav-links', links: linklists.services.links, depth: 1, prefix: 'SiteNav-services' %}
+{% enddoc %}
+
+{% liquid
+	assign list_depth = depth | default: 1
+	assign next_depth = list_depth | plus: 1
+%}
+
+{% if links != blank and list_depth <= 3 %}
+	<ul
+		class="site-nav__list{% if list_depth > 1 %} site-nav__children{% endif %}"
+		{% if list_id != blank %}id="{{ list_id }}"{% endif %}
+		{% if list_depth > 1 %}hidden{% endif %}
+	>
+		{% for link in links %}
+			{% assign item_id = prefix | append: '-' | append: forloop.index %}
+			<li class="site-nav__item{% if link.links.size > 0 and list_depth < 3 %} site-nav__item--parent{% endif %}">
+				{% if link.links.size > 0 and list_depth < 3 %}
+					<button
+						type="button"
+						class="site-nav__toggle"
+						aria-expanded="false"
+						aria-controls="{{ item_id }}"
+					>
+						<span>{{ link.title }}</span>
+						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 8" fill="none" aria-hidden="true"><path stroke="currentColor" stroke-width="1.2" d="M1 1.5 6 6.5 11 1.5"/></svg>
+					</button>
+					<a class="site-nav__url" href="{{ link.url }}" tabindex="-1" aria-hidden="true">{{ link.title }}</a>
+					{% render 'site-nav-links', links: link.links, depth: next_depth, prefix: item_id, list_id: item_id %}
+				{% else %}
+					{% liquid
+						assign treatment_entry = nil
+						if link.url contains '/pages/treatment/'
+							assign treatment_handle = link.url | split: '/pages/treatment/' | last | split: '?' | first | split: '#' | first | split: '/' | first
+							assign treatment_entry = metaobjects.treatment_info[treatment_handle]
+						endif
+					%}
+					<a
+						href="{{ link.url }}"
+						{% if treatment_entry != blank %}
+							aria-haspopup="dialog"
+							aria-expanded="false"
+						{% endif %}
+					><span>{{ link.title }}</span></a>
+				{% endif %}
+			</li>
+		{% endfor %}
+	</ul>
+{% endif %}

@@ -53,32 +53,21 @@
 	</div>	
 </div>
 
-<nav class="site-nav bg:bordeaux">
+<nav class="site-nav bg:bordeaux" aria-label="{{ 'header.menu' | t }}">
 	<header class="wrap">
 		<a href="#" class="site-nav__close">
-			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 17 17" fill="none"><path stroke="#fff" stroke-width="1.083" d="m1 1 15 15m0-15L1 16"/></svg>
+			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 17 17" fill="none" aria-hidden="true"><path stroke="#fff" stroke-width="1.083" d="m1 1 15 15m0-15L1 16"/></svg>
+			<span class="visually-hidden">{{ 'header.close' | t }}</span>
 		</a>
 	</header>
 	<div class="site-nav__wrapper">
 		<div class="site-nav__section">
-			<h2 class="colour:base-white uppercase text:heading-s font:medium wrap">Services</h2>
-			<ul>
-				{% for link in linklists.services.links %}
-					<li>
-				      <a class="text:body-m colour:base-white" href="{{ link.url }}"><span>{{ link.title }}</span></a>
-					</li>
-				{% endfor %}
-			</ul>
+			<h2 class="colour:base-white uppercase text:heading-s font:medium wrap">{{ 'header.services' | t }}</h2>
+			{% render 'site-nav-links', links: linklists.services.links, depth: 1, prefix: 'SiteNav-services' %}
 		</div>
 		<div class="site-nav__section">
-			<h2 class="colour:base-white uppercase text:heading-s font:medium wrap">Practice</h2>
-			<ul>
-				{% for link in linklists.clinic.links %}
-					<li>
-				      <a class="text:body-m colour:base-white" href="{{ link.url }}"><span>{{ link.title }}</span></a>
-					</li>
-				{% endfor %}
-			</ul>
+			<h2 class="colour:base-white uppercase text:heading-s font:medium wrap">{{ 'header.practice' | t }}</h2>
+			{% render 'site-nav-links', links: linklists.clinic.links, depth: 1, prefix: 'SiteNav-practice' %}
 		</div>
 	</div>
 	<footer class="site-nav__footer bg:soft-lime">
@@ -561,6 +550,93 @@
 		display: none;
 	}
 
+	.site-nav__children > .site-nav__item > a,
+	.site-nav__children > .site-nav__item > .site-nav__toggle {
+		padding-left: 3.25rem;
+	}
+
+	.site-nav__children .site-nav__children > .site-nav__item > a,
+	.site-nav__children .site-nav__children > .site-nav__item > .site-nav__toggle {
+		padding-left: 4.5rem;
+	}
+
+	@media screen and (min-width: 860px) {
+		.site-nav__toggle {
+			padding-left: 4.125rem;
+			padding-right: 4.125rem;
+		}
+
+		.site-nav__children > .site-nav__item > a,
+		.site-nav__children > .site-nav__item > .site-nav__toggle {
+			padding-left: 5.25rem;
+		}
+
+		.site-nav__children .site-nav__children > .site-nav__item > a,
+		.site-nav__children .site-nav__children > .site-nav__item > .site-nav__toggle {
+			padding-left: 6.5rem;
+		}
+	}
+
+	@media (hover: hover) {
+		.site-nav__toggle:hover {
+			background: #fff;
+			color: #580712;
+		}
+	}
+
+	.site-nav a.site-nav__url {
+		position: absolute;
+		width: 1px;
+		height: 1px;
+		padding: 0;
+		margin: -1px;
+		overflow: hidden;
+		clip: rect(0, 0, 0, 0);
+		white-space: nowrap;
+		border: 0;
+	}
+
+	.site-nav__children[hidden] {
+		display: none;
+	}
+
+	.site-nav__toggle {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: 1rem;
+		width: 100%;
+		margin: 0;
+		padding: 1.0625rem 2.0625rem 1rem;
+		border: 0;
+		border-bottom: 0.4px solid #fff;
+		background: transparent;
+		color: #fff;
+		font: inherit;
+		font-size: 0.8125rem;
+		letter-spacing: -0.008125rem;
+		line-height: 1.3;
+		text-align: left;
+		cursor: pointer;
+	}
+
+	.site-nav__toggle svg {
+		display: block;
+		flex: 0 0 auto;
+		width: 0.75rem;
+		height: 0.5rem;
+		transition: transform 0.2s ease;
+	}
+
+	.site-nav__toggle[aria-expanded="true"] svg {
+		transform: rotate(180deg);
+	}
+
+	.site-nav__toggle:focus-visible {
+		outline: 2px solid #fff;
+		outline-offset: -4px;
+	}
+
 	.visually-hidden {
 		position: absolute;
 		width: 1px;
@@ -590,127 +666,8 @@
 			--mega-pad: 1.25rem;
 		}
 
-		.site-nav,
-		.site-nav__underlay {
-			display: none;
-		}
-
-		html.has-nav .site-header__main nav.desktop {
-			display: block;
-			position: fixed;
-			top: 0;
-			left: 0;
-			z-index: 30;
-			width: 100%;
-			max-width: none;
-			height: 100dvh;
-			background: #fff;
-			overflow: auto;
-			padding: 4.25rem 0 2.5rem;
-		}
-
-		.mega-nav__close {
-			position: absolute;
-			top: 1.15rem;
-			right: 1.25rem;
-			z-index: 2;
-			display: block;
-			width: 0.9375rem;
-			height: 0.9375rem;
-			padding: 0;
-			border: 0;
-			background: none;
-			color: #66645e;
-			cursor: pointer;
-		}
-
-		.mega-nav__close svg {
-			display: block;
-			width: 100%;
-			height: 100%;
-		}
-
-		html.has-nav .site-header__main nav.desktop > ul {
-			flex-direction: column;
-			justify-content: flex-start;
-			align-items: stretch;
-		}
-
-		html.has-nav .site-header__main nav.desktop .mega-nav__item > a {
-			display: block;
-			padding: 1rem 1.25rem;
-		}
-
-		.mega-menu {
-			position: static;
-			left: auto;
-			right: auto;
-			top: auto;
-		}
-
-		.mega-menu__panel,
-		.mega-menu.is-drilled .mega-menu__panel {
-			grid-template-columns: minmax(0, 1fr);
-			min-height: 0;
-			padding: 0;
-		}
-
-		.mega-menu.is-drilled .mega-menu__primary {
-			padding: 0;
-		}
-
-		.mega-menu.is-drilled .mega-menu__aside {
-			padding: 0;
-		}
-
-		.mega-menu.is-drilled .mega-menu__aside:has([data-mega-level="3"]) {
-			border-left: 0;
-			border-top: 1px solid #000;
-			padding-top: 0;
-		}
-
-		.mega-menu__preview {
-			position: relative;
-			top: auto;
-			right: auto;
-			width: 100%;
-			height: auto;
-			aspect-ratio: 1;
-			margin-top: 0.75rem;
-			border-left: 0;
-			border-top: 1px solid #000;
-		}
-
 		.mega-menu__detail-panel {
 			width: 100%;
-		}
-
-		.mega-nav__more {
-			display: block;
-			margin-top: 1.5rem;
-			padding: 0 1.25rem 1rem;
-		}
-
-		.mega-nav__more-title {
-			margin: 0 0 0.75rem;
-		}
-
-		.mega-nav__more ul {
-			display: flex;
-			flex-direction: column;
-			gap: 0.85rem;
-			margin: 0;
-			padding: 0;
-			list-style: none;
-		}
-
-		.mega-nav__more a {
-			text-decoration: none;
-		}
-
-		.mega-nav__book {
-			display: inline-block;
-			margin-top: 1.75rem;
 		}
 	}
 
@@ -818,7 +775,7 @@
 			);
 		}
 
-		function openTreatment(menu, row) {
+		function openTreatment(menu, row, trigger) {
 			var detail = getDetail(menu);
 			var article = row.querySelector('[data-mega-treatment]');
 			if (!article && detail) {
@@ -846,7 +803,7 @@
 			body.appendChild(article);
 			if (!detail._megaSlot) detail._megaSlot = detail.parentNode;
 			detail._megaMenu = menu;
-			detail._megaTrigger = row.querySelector(':scope > a');
+			detail._megaTrigger = trigger || row.querySelector(':scope > a');
 			menu._megaDetail = detail;
 			document.body.appendChild(detail);
 			document.documentElement.classList.add('has-treatment');
@@ -1092,6 +1049,78 @@
 			window.matchMedia('(max-width: 859px)').addEventListener('change', function (event) {
 				if (!event.matches) document.documentElement.classList.remove('has-nav');
 			});
+			document.addEventListener('click', function (event) {
+				var treatmentLink = event.target.closest('.site-nav a[aria-haspopup="dialog"]');
+				if (treatmentLink) {
+					if (openSiteNavTreatment(treatmentLink)) event.preventDefault();
+					return;
+				}
+				var button = event.target.closest('.site-nav__toggle');
+				if (button) {
+					var list = document.getElementById(button.getAttribute('aria-controls'));
+					if (!list) return;
+					var willOpen = button.getAttribute('aria-expanded') !== 'true';
+					var parentList = button.closest('ul');
+					if (willOpen && parentList) {
+						parentList.querySelectorAll(':scope > .site-nav__item > .site-nav__toggle').forEach(function (other) {
+							if (other === button) return;
+							setSiteNavOpen(other, false);
+						});
+					}
+					setSiteNavOpen(button, willOpen);
+					return;
+				}
+				if (event.target.closest('.site-nav__close') || event.target.closest('.site-nav__underlay')) {
+					collapseSiteNav();
+				}
+			});
+		}
+
+		function setSiteNavOpen(button, isOpen) {
+			button.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+			var list = document.getElementById(button.getAttribute('aria-controls'));
+			if (list) list.hidden = !isOpen;
+			if (!isOpen && list) {
+				list.querySelectorAll('.site-nav__toggle').forEach(function (child) {
+					setSiteNavOpen(child, false);
+				});
+			}
+		}
+
+		function collapseSiteNav() {
+			document.querySelectorAll('.site-nav__toggle[aria-expanded="true"]').forEach(function (button) {
+				setSiteNavOpen(button, false);
+			});
+		}
+
+		function sameNavPath(left, right) {
+			if (!left || !right) return false;
+			return left.split('?')[0].split('#')[0].replace(/\/$/, '') === right.split('?')[0].split('#')[0].replace(/\/$/, '');
+		}
+
+		function openSiteNavTreatment(link) {
+			var href = link.getAttribute('href');
+			var desktop = null;
+			document.querySelectorAll('nav.desktop a[aria-haspopup="dialog"]').forEach(function (candidate) {
+				if (!desktop && sameNavPath(candidate.getAttribute('href'), href)) desktop = candidate;
+			});
+			if (!desktop) return false;
+			var row = desktop.parentElement;
+			var menu = desktop.closest('.mega-menu');
+			if (!row || !menu) return false;
+			var article = row.querySelector('[data-mega-treatment]');
+			if (!article && menu._megaDetail) {
+				var parked = menu._megaDetail.querySelector('[data-mega-treatment]');
+				if (parked && parked._megaHome === row) article = parked;
+			}
+			if (!article) return false;
+			var detail = menu._megaDetail || menu.querySelector('[data-mega-detail]');
+			if (detail && detail.id) link.setAttribute('aria-controls', detail.id);
+			document.querySelectorAll('.site-nav a[aria-expanded="true"]').forEach(function (other) {
+				if (other !== link) other.setAttribute('aria-expanded', 'false');
+			});
+			openTreatment(menu, row, link);
+			return true;
 		}
 	})();
 {% endjavascript %}
