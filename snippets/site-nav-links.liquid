@@ -1,13 +1,3 @@
-{% doc %}
-  Renders a mobile navigation list. Items with children are buttons that expand. Leaf links stay real URLs.
-  @param {link[]} links - Navigation links for this level
-  @param {number} [depth] - Nesting level, starting at 1
-  @param {string} prefix - Unique id prefix for this list
-  @param {string} [list_id] - Id for a nested list, referenced by its toggle
-  @example
-  {% render 'site-nav-links', links: linklists.services.links, depth: 1, prefix: 'SiteNav-services' %}
-{% enddoc %}
-
 {% liquid
 	assign list_depth = depth | default: 1
 	assign next_depth = list_depth | plus: 1

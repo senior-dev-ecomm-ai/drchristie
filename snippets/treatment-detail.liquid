@@ -1,9 +1,3 @@
-{% doc %}
-  Renders a treatment_info entry for the mega menu detail panel.
-  @param {metaobject} treatment - treatment_info entry
-  @param {string} title_id - Unique id for the treatment heading
-{% enddoc %}
-
 <article class="mega-menu__treatment" data-mega-treatment hidden>
 	{% if treatment.title.value != blank %}
 		<h2 id="{{ title_id }}" class="mega-menu__treatment-title">{{ treatment.title.value }}</h2>

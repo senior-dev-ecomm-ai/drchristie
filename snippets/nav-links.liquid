@@ -1,11 +1,3 @@
-{% doc %}
-  Renders the main header links. Each item opens a mega menu from the menu whose handle matches the link handle.
-  @param {linklist} menu - Menu selected in the header section
-  @param {block[]} [blocks] - Mega menu blocks from the header section
-  @example
-  {% render 'nav-links', menu: section.settings.menu, blocks: section.blocks %}
-{% enddoc %}
-
 {% if menu != blank %}
 	{% for link in menu.links %}
 		{% capture mega_handle %}{{ link.handle }}{% endcapture %}
