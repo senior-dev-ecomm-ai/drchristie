@@ -14,7 +14,7 @@
     "announcement-bar": {
       "type": "announcement-bar",
       "settings": {
-        "text": "<p>Precision Medicine  |  Regenerative Aesthetics  |  Plastic Surgery</p>"
+        "text": "<p>Plastic Surgery &nbsp;| &nbsp;Regenerative Aesthetics &nbsp;| &nbsp;Precision Medicine</p>"
       }
     },
     "header": {
@@ -26,7 +26,8 @@
             "parent_handle": "services",
             "images_1_1": "shopify://shop_images/DTS_DEEP_SPA_Fanette_Guilloud_Photos_ID10967_1707ef39-f8bc-49a3-92aa-2915416074da.png",
             "images_1_2": "shopify://shop_images/oppp.jpg",
-            "images_1_3": "shopify://shop_images/LAD_Y.jpg"
+            "images_1_3": "shopify://shop_images/LAD_Y.jpg",
+            "images_1_4": "shopify://shop_images/H2-Absorb-WEB_png.webp"
           }
         }
       },
