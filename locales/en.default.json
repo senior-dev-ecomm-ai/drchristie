@@ -9,9 +9,9 @@
  */
 {
   "header": {
-    "back": "< Back",
+    "back": "Back",
     "book": "Book an Inquiry",
-    "enquiry": "Book an Enquiry",
+    "enquiry": "Book an Inquiry",
     "close": "Close",
     "menu": "Menu",
     "practice": "Practice",

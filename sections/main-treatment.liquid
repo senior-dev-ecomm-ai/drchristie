@@ -39,9 +39,11 @@
 		</table>
 	{% endif %}
 
-	{% if metaobject.text_footer.value != blank %}
+	{% capture treatment_footers %}{% render 'treatment-footers', treatment: metaobject, heading_tag: 'h2' %}{% endcapture %}
+	{% assign treatment_footers = treatment_footers | strip %}
+	{% if treatment_footers != blank %}
 		<div class="treatment-page__copy copy font:regular text:body-article">
-			{{ metaobject.text_footer | metafield_tag }}
+			{{ treatment_footers }}
 		</div>
 	{% endif %}
 </article>
@@ -65,6 +67,10 @@
 
 	.treatment-page__copy {
 		margin-top: 2rem;
+	}
+
+	.treatment-page .treatment-footer + .treatment-footer {
+		margin-top: 1.5rem;
 	}
 
 	.treatment-page__copy img {

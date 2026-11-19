@@ -151,39 +151,70 @@
     "name": "Mega menu",
     "settings": [
       {
-        "type": "color",
-        "id": "mega_menu_background",
-        "label": "Background",
-        "default": "#F6FBEE",
-        "info": "Used for the open dropdown and the main header while that dropdown is open."
+        "type": "select",
+        "id": "mega_menu_font_family_1",
+        "label": "First-level font",
+        "default": "UntitledSansRegular",
+        "options": [
+          { "value": "UntitledSansLight", "label": "Untitled Sans Light" },
+          { "value": "UntitledSansRegular", "label": "Untitled Sans Regular" },
+          { "value": "UntitledSansMedium", "label": "Untitled Sans Medium" },
+          { "value": "TiemposFine", "label": "Tiempos Fine" }
+        ]
       },
       {
-        "type": "color",
-        "id": "mega_menu_level_1_hover_background",
-        "label": "First-level hover background",
-        "default": "#FFFFFF",
-        "info": "Also stays on the selected first-level link."
+        "type": "range",
+        "id": "mega_menu_font_size_1",
+        "label": "First-level font size",
+        "min": 12,
+        "max": 80,
+        "step": 1,
+        "unit": "px",
+        "default": 16
       },
       {
-        "type": "color",
-        "id": "mega_menu_level_1_hover_text",
-        "label": "First-level hover text",
-        "default": "#66645E",
-        "info": "Also stays on the selected first-level link."
+        "type": "select",
+        "id": "mega_menu_font_family_2",
+        "label": "Second-level font",
+        "default": "UntitledSansRegular",
+        "options": [
+          { "value": "UntitledSansLight", "label": "Untitled Sans Light" },
+          { "value": "UntitledSansRegular", "label": "Untitled Sans Regular" },
+          { "value": "UntitledSansMedium", "label": "Untitled Sans Medium" },
+          { "value": "TiemposFine", "label": "Tiempos Fine" }
+        ]
       },
       {
-        "type": "color",
-        "id": "mega_menu_child_hover_background",
-        "label": "Child link hover background",
-        "default": "#FFFFFF",
-        "info": "Second- and third-level links."
+        "type": "range",
+        "id": "mega_menu_font_size_2",
+        "label": "Second-level font size",
+        "min": 12,
+        "max": 32,
+        "step": 1,
+        "unit": "px",
+        "default": 14
       },
       {
-        "type": "color",
-        "id": "mega_menu_child_hover_text",
-        "label": "Child link hover text",
-        "default": "#66645E",
-        "info": "Second- and third-level links."
+        "type": "select",
+        "id": "mega_menu_font_family_3",
+        "label": "Third-level font",
+        "default": "UntitledSansRegular",
+        "options": [
+          { "value": "UntitledSansLight", "label": "Untitled Sans Light" },
+          { "value": "UntitledSansRegular", "label": "Untitled Sans Regular" },
+          { "value": "UntitledSansMedium", "label": "Untitled Sans Medium" },
+          { "value": "TiemposFine", "label": "Tiempos Fine" }
+        ]
+      },
+      {
+        "type": "range",
+        "id": "mega_menu_font_size_3",
+        "label": "Third-level font size",
+        "min": 12,
+        "max": 32,
+        "step": 1,
+        "unit": "px",
+        "default": 14
       }
     ]
   }

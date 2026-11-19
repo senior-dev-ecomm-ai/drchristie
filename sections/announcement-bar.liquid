@@ -7,6 +7,25 @@
 	</div>
 {% endif %}
 
+{% style %}
+	#shopify-section-{{ section.id }} {
+		--announcement-menu-background: {{ section.settings.menu_background }};
+		--announcement-menu-text: {{ section.settings.menu_text }};
+	}
+{% endstyle %}
+
+{% stylesheet %}
+	.site-header-group:has(.mega-nav__item.is-open) .site-header__ticker-wrapper {
+		background: var(--announcement-menu-background, #580712);
+		background-color: var(--announcement-menu-background, #580712);
+	}
+
+	.site-header-group:has(.mega-nav__item.is-open) .site-header__ticker-item,
+	.site-header-group:has(.mega-nav__item.is-open) .site-header__ticker-item p {
+		color: var(--announcement-menu-text, #FFFFFF);
+	}
+{% endstylesheet %}
+
 {% schema %}
 	{
 	  "name": "Announcement bar",
@@ -20,6 +39,24 @@
 	      "id": "text",
 	      "label": "Text",
 	      "default": "<p>Precision Medicine  |  Regenerative Aesthetics  |  Plastic Surgery</p>"
+	    },
+	    {
+	      "type": "header",
+	      "content": "Mega menu"
+	    },
+	    {
+	      "type": "color",
+	      "id": "menu_background",
+	      "label": "Background",
+	      "default": "#580712",
+	      "info": "Used while the mega menu is open."
+	    },
+	    {
+	      "type": "color",
+	      "id": "menu_text",
+	      "label": "Text",
+	      "default": "#FFFFFF",
+	      "info": "Used while the mega menu is open."
 	    }
 	  ],
 	  "presets": [

@@ -39,7 +39,12 @@
 						assign treatment_entry = nil
 						if link.url contains '/pages/treatment/'
 							assign treatment_handle = link.url | split: '/pages/treatment/' | last | split: '?' | first | split: '#' | first | split: '/' | first
-							assign treatment_entry = metaobjects.treatment_info[treatment_handle]
+							for treatment_candidate in metaobjects.treatment_info.values
+								if treatment_candidate.system.handle == treatment_handle
+									assign treatment_entry = treatment_candidate
+									break
+								endif
+							endfor
 						endif
 					%}
 					<a

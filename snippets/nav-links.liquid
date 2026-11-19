@@ -37,13 +37,47 @@
 						<div class="mega-menu__panel">
 							<div class="mega-menu__primary">
 								<button type="button" class="mega-menu__back colour:grey text:nav font:medium uppercase" data-mega-back hidden>
+									<svg class="mega-menu__back-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 37 12" fill="none" aria-hidden="true"><path fill="currentColor" d="M.47 5.47a.75.75 0 0 0 0 1.06l4.773 4.773a.75.75 0 1 0 1.06-1.06L2.061 6l4.242-4.243a.75.75 0 0 0-1.06-1.06L.47 5.47ZM37 6v-.75H1v1.5h36V6Z"/></svg>
 									{{ 'header.back' | t }}
 								</button>
 								<ul class="mega-menu__level" data-mega-level="1">
 									{% for item in mega_menu.links %}
 										{% assign level_one_index = forloop.index %}
-										<li class="mega-menu__item" data-mega-item="1"{% if item.links.size > 0 %} data-mega-parent{% endif %}>
-											<a class="mega-menu__link" href="{{ item.url }}"{% if item.links.size > 0 %} aria-expanded="false"{% endif %}>{{ item.title }}</a>
+										{% assign item_number = level_one_index | prepend: '0' | slice: -2, 2 %}
+										{% assign hover_background = '#6E1616' %}
+										{% assign hover_text = '#FFFFFF' %}
+										{% assign hover_description = '' %}
+										{% assign hover_cta = '' %}
+										{% assign child_hover_background = '#A4CED6' %}
+										{% assign child_hover_text = '#66645E' %}
+										{% if mega_block != blank and level_one_index <= 8 %}
+											{% assign hover_background_id = 'hover_background_' | append: level_one_index %}
+											{% assign hover_text_id = 'hover_text_' | append: level_one_index %}
+											{% assign hover_description_id = 'hover_description_' | append: level_one_index %}
+											{% assign hover_cta_id = 'hover_cta_' | append: level_one_index %}
+											{% assign child_hover_background_id = 'child_hover_background_' | append: level_one_index %}
+											{% assign child_hover_text_id = 'child_hover_text_' | append: level_one_index %}
+											{% if mega_block.settings[hover_background_id] != blank %}
+												{% assign hover_background = mega_block.settings[hover_background_id] %}
+											{% endif %}
+											{% if mega_block.settings[hover_text_id] != blank %}
+												{% assign hover_text = mega_block.settings[hover_text_id] %}
+											{% endif %}
+											{% if mega_block.settings[hover_description_id] != blank %}
+												{% assign hover_description = mega_block.settings[hover_description_id] %}
+											{% endif %}
+											{% if mega_block.settings[hover_cta_id] != blank %}
+												{% assign hover_cta = mega_block.settings[hover_cta_id] %}
+											{% endif %}
+											{% if mega_block.settings[child_hover_background_id] != blank %}
+												{% assign child_hover_background = mega_block.settings[child_hover_background_id] %}
+											{% endif %}
+											{% if mega_block.settings[child_hover_text_id] != blank %}
+												{% assign child_hover_text = mega_block.settings[child_hover_text_id] %}
+											{% endif %}
+										{% endif %}
+										<li class="mega-menu__item" data-mega-item="1"{% if item.links.size > 0 %} data-mega-parent{% endif %} style="--item-hover-bg: {{ hover_background }}; --item-hover-text: {{ hover_text }}; --item-child-hover-bg: {{ child_hover_background }}; --item-child-hover-text: {{ child_hover_text }};">
+											<a class="mega-menu__link" href="{{ item.url }}"{% if item.links.size > 0 %} aria-expanded="false"{% endif %}><span class="mega-menu__index" aria-hidden="true">{{ item_number }}</span><span class="mega-menu__label">{{ item.title }}</span>{% if hover_description != blank or hover_cta != blank %}<span class="mega-menu__hover-meta">{% if hover_description != blank %}<span class="mega-menu__hover-description">{{ hover_description }}</span>{% endif %}{% if hover_cta != blank %}<span class="mega-menu__hover-cta">{{ hover_cta }}</span>{% endif %}</span>{% endif %}</a>
 											{% if item.links.size > 0 %}
 												<ul class="mega-menu__level mega-menu__level--nested" data-mega-level="2" hidden>
 													{% for child in item.links %}
@@ -56,7 +90,7 @@
 															<a class="mega-menu__link" href="{{ child.url }}"{% if child.links.size > 0 %} aria-expanded="false"{% endif %}>{{ child.title }}</a>
 															{% if preview_image != blank %}
 																<div class="mega-menu__preview" aria-hidden="true">
-																	{{ preview_image | image_url: width: 1400, height: 1400, crop: 'center' | image_tag: class: 'mega-menu__preview-image', widths: '400, 600, 800, 1000, 1400', sizes: '(min-width: 860px) min(50vw, calc(100dvh - 13rem)), 100vw', loading: 'lazy' }}
+																	{{ preview_image | image_url: width: 1400, height: 1400, crop: 'center' | image_tag: class: 'mega-menu__preview-image', widths: '400, 600, 800, 1000, 1400', sizes: '(min-width: 860px) 50vw, 100vw', loading: 'lazy' }}
 																</div>
 															{% endif %}
 															{% if child.links.size > 0 %}
@@ -66,7 +100,12 @@
 																			assign treatment_entry = nil
 																			if grandchild.url contains '/pages/treatment/'
 																				assign treatment_handle = grandchild.url | split: '/pages/treatment/' | last | split: '?' | first | split: '#' | first | split: '/' | first
-																				assign treatment_entry = metaobjects.treatment_info[treatment_handle]
+																				for treatment_candidate in metaobjects.treatment_info.values
+																					if treatment_candidate.system.handle == treatment_handle
+																						assign treatment_entry = treatment_candidate
+																						break
+																					endif
+																				endfor
 																			endif
 																			assign treatment_title_id = mega_id | append: '-title-' | append: level_one_index | append: '-' | append: forloop.parentloop.index | append: '-' | append: forloop.index
 																		%}
@@ -94,16 +133,22 @@
 										</li>
 									{% endfor %}
 								</ul>
-								<a class="mega-menu__enquiry colour:grey text:nav font:medium uppercase" href="{{ pages.contact.url | default: '/pages/contact' }}">{{ 'header.enquiry' | t }} &rarr;</a>
 							</div>
 							<div class="mega-menu__aside" data-mega-aside></div>
+							<a class="mega-menu__enquiry colour:grey" href="{{ pages.contact.url | default: '/pages/contact' }}">
+								{{ 'header.enquiry' | t }}
+								<svg class="mega-menu__enquiry-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 37 12" fill="none" aria-hidden="true"><path fill="currentColor" d="M.47 5.47a.75.75 0 0 0 0 1.06l4.773 4.773a.75.75 0 1 0 1.06-1.06L2.061 6l4.242-4.243a.75.75 0 0 0-1.06-1.06L.47 5.47ZM37 6v-.75H1v1.5h36V6Z"/></svg>
+							</a>
 							<div class="mega-menu__detail" id="{{ mega_id }}-treatment" data-mega-detail role="dialog" aria-modal="true" aria-hidden="true">
 								<div class="mega-menu__detail-overlay" data-mega-detail-close></div>
 								<div class="mega-menu__detail-panel">
-									<button type="button" class="mega-menu__detail-close" data-mega-detail-close>
-										<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 17 17" fill="none" aria-hidden="true"><path stroke="currentColor" stroke-width="1.083" d="m1 1 15 15m0-15L1 16"/></svg>
-										<span class="visually-hidden">{{ 'header.close' | t }}</span>
-									</button>
+									<div class="mega-menu__detail-head">
+										<div class="mega-menu__detail-title" data-mega-detail-title></div>
+										<button type="button" class="mega-menu__detail-close" data-mega-detail-close>
+											<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 17 17" fill="none" aria-hidden="true"><path stroke="currentColor" stroke-width="1.083" d="m1 1 15 15m0-15L1 16"/></svg>
+											<span class="visually-hidden">{{ 'header.close' | t }}</span>
+										</button>
+									</div>
 									<div class="mega-menu__detail-body" data-mega-detail-body></div>
 								</div>
 							</div>

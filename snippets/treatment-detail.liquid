@@ -42,9 +42,11 @@
 		</table>
 	{% endif %}
 
-	{% if treatment.text_footer.value != blank %}
+	{% capture treatment_footers %}{% render 'treatment-footers', treatment: treatment %}{% endcapture %}
+	{% assign treatment_footers = treatment_footers | strip %}
+	{% if treatment_footers != blank %}
 		<div class="mega-menu__treatment-footer">
-			{{ treatment.text_footer | metafield_tag }}
+			{{ treatment_footers }}
 		</div>
 	{% endif %}
 </article>

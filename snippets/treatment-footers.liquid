@@ -1,0 +1,47 @@
+{% doc %}
+  Renders footer title and rich text pairs from a treatment_info entry.
+  @param {metaobject} treatment - treatment_info entry
+  @param {string} [heading_tag] - Use h2 for the footer label on the treatment page
+{% enddoc %}
+
+{% for index in (1..5) %}
+	{% liquid
+		case index
+			when 1
+				assign title_field = treatment.footer_title_1
+				assign text_field = treatment.footer_text_1
+			when 2
+				assign title_field = treatment.footer_title_2
+				assign text_field = treatment.footer_text_2
+			when 3
+				assign title_field = treatment.footer_title_3
+				assign text_field = treatment.footer_text_3
+			when 4
+				assign title_field = treatment.footer_title_4
+				assign text_field = treatment.footer_text_4
+			when 5
+				assign title_field = treatment.footer_title_5
+				assign text_field = treatment.footer_text_5
+		endcase
+
+		assign title_entry = title_field.value
+		assign title_text = blank
+		if title_entry != blank
+			assign title_text = title_entry.title.value | default: title_entry.title
+		endif
+	%}
+	{% if title_text != blank or text_field.value != blank %}
+		<div class="treatment-footer">
+			{% if title_text != blank %}
+				{% if heading_tag == 'h2' %}
+					<h2 class="mega-menu__treatment-head">{{ title_text }}</h2>
+				{% else %}
+					<p class="mega-menu__treatment-head">{{ title_text }}</p>
+				{% endif %}
+			{% endif %}
+			{% if text_field.value != blank %}
+				{{ text_field | metafield_tag }}
+			{% endif %}
+		</div>
+	{% endif %}
+{% endfor %}

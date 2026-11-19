@@ -1,11 +1,12 @@
 {% style %}
 	.site-header,
 	.mega-menu__detail {
-		--mega-menu-background: {{ settings.mega_menu_background }};
-		--mega-menu-level-1-hover-background: {{ settings.mega_menu_level_1_hover_background }};
-		--mega-menu-level-1-hover-text: {{ settings.mega_menu_level_1_hover_text }};
-		--mega-menu-child-hover-background: {{ settings.mega_menu_child_hover_background }};
-		--mega-menu-child-hover-text: {{ settings.mega_menu_child_hover_text }};
+		--mega-font-1: {{ settings.mega_menu_font_family_1 | default: 'UntitledSansRegular' }}, sans-serif;
+		--mega-size-1: {{ settings.mega_menu_font_size_1 | default: 16 }}px;
+		--mega-font-2: {{ settings.mega_menu_font_family_2 | default: 'UntitledSansRegular' }}, sans-serif;
+		--mega-size-2: {{ settings.mega_menu_font_size_2 | default: 14 }}px;
+		--mega-font-3: {{ settings.mega_menu_font_family_3 | default: 'UntitledSansRegular' }}, sans-serif;
+		--mega-size-3: {{ settings.mega_menu_font_size_3 | default: 14 }}px;
 	}
 {% endstyle %}
 
@@ -96,8 +97,9 @@
 		z-index: 8;
 		display: grid;
 		grid-template-rows: 0fr;
-		background: var(--mega-menu-background, #F6FBEE);
+		background: #FDFBF5;
 		border-top: 1px solid #000;
+		max-height: var(--mega-available, 100dvh);
 		pointer-events: none;
 		visibility: hidden;
 		transition: grid-template-rows 0.45s ease, visibility 0s linear 0.45s;
@@ -105,6 +107,9 @@
 
 	.mega-nav__item.is-open > .mega-menu {
 		grid-template-rows: 1fr;
+		height: var(--mega-available, calc(100dvh - 7.25rem));
+		max-height: var(--mega-available, calc(100dvh - 7.25rem));
+		overflow: hidden;
 		pointer-events: auto;
 		visibility: visible;
 		transition: grid-template-rows 0.45s ease, visibility 0s linear 0s;
@@ -112,32 +117,53 @@
 
 	.mega-menu__clip {
 		overflow: hidden;
+		height: 100%;
 		min-height: 0;
+		max-height: 100%;
 	}
 
 	.mega-menu__panel {
 		display: grid;
-		grid-template-columns: minmax(0, min(100%, 26rem));
+		grid-template-columns: minmax(0, 1fr);
+		grid-template-rows: minmax(0, 1fr) auto;
 		align-items: stretch;
 		position: relative;
 		container-type: inline-size;
 		padding: 0;
-		min-height: 450px;
-		background: var(--mega-menu-background, #F6FBEE);
+		height: 100%;
+		min-height: 0;
+		max-height: 100%;
+		overflow: hidden;
+		background: #FDFBF5;
 		border-bottom: 1px solid #66645e;
 	}
 
+	.mega-menu.is-drilled,
 	.mega-menu.is-drilled .mega-menu__panel {
-		grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+		background: var(--mega-selected-background, #FDFBF5);
+		color: var(--mega-selected-text, #66645e);
+	}
+
+	.mega-menu.is-drilled .mega-menu__panel {
+		grid-template-columns: minmax(0, 1fr);
 		padding: 0;
-		min-height: max(450px, 50vw);
+		height: 100%;
+		min-height: 0;
+	}
+
+	.mega-menu.is-drilled.is-split .mega-menu__panel {
+		grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
 	}
 
 	.mega-menu__primary {
 		display: flex;
 		flex-direction: column;
-		min-height: 100%;
+		grid-row: 1;
+		grid-column: 1;
+		min-height: 0;
+		height: 100%;
 		padding: 0;
+		overflow: auto;
 	}
 
 	.mega-menu.is-drilled .mega-menu__primary,
@@ -158,21 +184,25 @@
 		display: none;
 	}
 
-	.mega-menu.is-drilled .mega-menu__aside {
+	.mega-menu.is-drilled.is-split .mega-menu__aside {
 		display: flex;
 		flex-direction: column;
+		grid-row: 1;
+		grid-column: 2;
 		position: relative;
 		z-index: 6;
-		min-height: 100%;
+		min-height: 0;
+		height: 100%;
 	}
 
 	.mega-menu.is-drilled .mega-menu__aside:has([data-mega-level="3"]) {
-		background: var(--mega-menu-background, #F6FBEE);
+		align-self: end;
+		height: calc(100% - 59px);
+		min-height: 0;
+		overflow: auto;
+		background: var(--mega-selected-background, #FDFBF5);
+		border-top: 1px solid #000;
 		border-left: 1px solid #000;
-	}
-
-	.site-header:has(.mega-nav__item.is-open) .site-header__main {
-		background: var(--mega-menu-background, #F6FBEE);
 	}
 
 	.mega-menu__preview {
@@ -180,30 +210,21 @@
 		top: 0;
 		right: 0;
 		width: 50vw;
-		height: 50vw;
-		aspect-ratio: 1;
+		height: 100%;
 		overflow: hidden;
+		background: var(--mega-selected-background, #FDFBF5);
 		opacity: 0;
 		visibility: hidden;
 		pointer-events: none;
 		border-left: 1px solid #000;
-		z-index: 5;
+		z-index: 8;
 		transition: opacity 0.3s ease, visibility 0s linear 0.3s;
 	}
 
-	.mega-menu__item[data-mega-item="2"]:hover > .mega-menu__preview,
-	.mega-menu__item[data-mega-item="2"]:focus-within > .mega-menu__preview {
+	.mega-menu__preview.is-shown {
 		opacity: 1;
 		visibility: visible;
 		transition: opacity 0.3s ease, visibility 0s linear 0s;
-	}
-
-	.mega-menu__item[data-mega-item="2"].is-active > .mega-menu__preview,
-	.mega-menu__item[data-mega-item="2"].is-active:hover > .mega-menu__preview,
-	.mega-menu__item[data-mega-item="2"].is-active:focus-within > .mega-menu__preview {
-		opacity: 0;
-		visibility: hidden;
-		transition: opacity 0.3s ease, visibility 0s linear 0.3s;
 	}
 
 	.mega-menu__preview-image {
@@ -242,10 +263,21 @@
 		padding: 0;
 	}
 
+	.mega-menu__index {
+		display: inline-block;
+		margin-right: 2.5rem;
+		vertical-align: top;
+		font-family: UntitledSansMedium, sans-serif;
+		font-size: 11px;
+		font-style: normal;
+		letter-spacing: 0.04em;
+		line-height: 1;
+	}
+
 	.mega-menu__link {
 		color: #66645e;
-		font-family: UntitledSansRegular, sans-serif;
-		font-size: clamp(1rem, 0.4vw + 0.95rem, 1.125rem);
+		font-family: var(--mega-font-1, UntitledSansRegular, sans-serif);
+		font-size: var(--mega-size-1, 16px);
 		line-height: 1.3;
 		text-decoration: none;
 		display: inline-block;
@@ -259,22 +291,25 @@
 		display: block;
 		position: relative;
 		width: 100%;
-		padding: 0.85rem var(--mega-pad);
-	}
-
-	.mega-menu:not(:has([data-mega-aside] [data-mega-level="3"])) .mega-menu__level[data-mega-level="1"] > .mega-menu__item > .mega-menu__link,
-	.mega-menu:not(:has([data-mega-aside] [data-mega-level="3"])) .mega-menu__item[data-mega-item="2"]:not(:has(> .mega-menu__preview)) > .mega-menu__link {
-		width: 100cqw;
-		max-width: 100cqw;
-	}
-
-	.mega-menu__level[data-mega-level="2"] > .mega-menu__item > .mega-menu__link,
-	.mega-menu__level[data-mega-level="3"] .mega-menu__link {
-		font-size: 0.9875rem;
+		padding: 20px var(--mega-pad);
 	}
 
 	.mega-menu__level[data-mega-level="2"] > .mega-menu__item > .mega-menu__link {
-		padding-left: calc(var(--mega-pad) + 2rem);
+		font-family: var(--mega-font-2, UntitledSansRegular, sans-serif);
+		font-size: var(--mega-size-2, 14px);
+		line-height: 0.8;
+	}
+
+	.mega-menu__level[data-mega-level="3"] > .mega-menu__item > .mega-menu__link {
+		font-family: var(--mega-font-3, UntitledSansRegular, sans-serif);
+		font-size: var(--mega-size-3, 14px);
+		line-height: 0.8;
+		padding-top: 18px;
+		padding-bottom: 18px;
+	}
+
+	.mega-menu__level[data-mega-level="2"] > .mega-menu__item > .mega-menu__link {
+		padding-left: calc(var(--mega-pad) + 6.5rem);
 	}
 
 	.site-header__main nav.desktop .mega-menu a::after {
@@ -291,7 +326,7 @@
 		position: absolute;
 		left: 0;
 		bottom: 0;
-		width: 100cqw;
+		width: 100%;
 		height: 0;
 		border-bottom: 1px solid #000;
 		pointer-events: none;
@@ -308,8 +343,8 @@
 
 	.site-header__main nav.desktop .mega-menu .mega-menu__level[data-mega-level="1"] > .mega-menu__item > .mega-menu__link:hover,
 	.site-header__main nav.desktop .mega-menu .mega-menu__level[data-mega-level="1"] > .mega-menu__item > .mega-menu__link:focus-visible {
-		background: var(--mega-menu-level-1-hover-background, #FFFFFF);
-		color: var(--mega-menu-level-1-hover-text, #66645E);
+		background: var(--item-hover-bg, #6E1616);
+		color: var(--item-hover-text, #FFFFFF);
 	}
 
 	.site-header__main nav.desktop .mega-menu .mega-menu__level[data-mega-level="1"] > .mega-menu__item > .mega-menu__link:hover,
@@ -317,13 +352,59 @@
 		font-style: italic;
 	}
 
+	.mega-menu__hover-meta {
+		display: none;
+	}
+
+	.site-header__main nav.desktop .mega-menu .mega-menu__level[data-mega-level="1"] > .mega-menu__item > .mega-menu__link:hover .mega-menu__hover-meta,
+	.site-header__main nav.desktop .mega-menu .mega-menu__level[data-mega-level="1"] > .mega-menu__item > .mega-menu__link:focus-visible .mega-menu__hover-meta {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: 2.5rem;
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		width: 50vw;
+		margin: 0;
+		padding: 0 var(--mega-pad);
+		font-style: normal;
+	}
+
+	.mega-menu__hover-description {
+		max-width: 360px;
+		font-family: UntitledSansRegular, sans-serif;
+		font-size: 14px;
+		font-weight: 400;
+		font-style: normal;
+		line-height: 130%;
+	}
+
+	.mega-menu__hover-cta {
+		flex: 0 0 auto;
+		margin-left: auto;
+		font-family: UntitledSansRegular, sans-serif;
+		font-size: 13px;
+		font-weight: 400;
+		font-style: normal;
+		line-height: 1;
+		white-space: nowrap;
+		text-decoration: underline;
+	}
+
+	.site-header__main nav.desktop .mega-menu .mega-menu__level[data-mega-level="1"] > .mega-menu__item.is-selected > .mega-menu__link:hover .mega-menu__hover-meta,
+	.site-header__main nav.desktop .mega-menu .mega-menu__level[data-mega-level="1"] > .mega-menu__item.is-selected > .mega-menu__link:focus-visible .mega-menu__hover-meta {
+		display: none;
+	}
+
 	.site-header__main nav.desktop .mega-menu .mega-menu__level[data-mega-level="2"] > .mega-menu__item > .mega-menu__link:hover,
 	.site-header__main nav.desktop .mega-menu .mega-menu__level[data-mega-level="2"] > .mega-menu__item > .mega-menu__link:focus-visible,
 	.site-header__main nav.desktop .mega-menu .mega-menu__level[data-mega-level="2"] > .mega-menu__item.is-active > .mega-menu__link,
 	.site-header__main nav.desktop .mega-menu .mega-menu__level[data-mega-level="3"] > .mega-menu__item > .mega-menu__link:hover,
 	.site-header__main nav.desktop .mega-menu .mega-menu__level[data-mega-level="3"] > .mega-menu__item > .mega-menu__link:focus-visible {
-		background: var(--mega-menu-child-hover-background, #FFFFFF);
-		color: var(--mega-menu-child-hover-text, #66645E);
+		background: var(--item-child-hover-bg, #A4CED6);
+		color: var(--item-child-hover-text, #66645E);
 	}
 
 	.mega-menu__level[data-mega-level="2"] > .mega-menu__item > .mega-menu__link:hover,
@@ -339,23 +420,41 @@
 	.site-header__main nav.desktop .mega-menu .mega-menu__level[data-mega-level="1"] > .mega-menu__item.is-selected > .mega-menu__link:hover,
 	.site-header__main nav.desktop .mega-menu .mega-menu__level[data-mega-level="1"] > .mega-menu__item.is-selected > .mega-menu__link:focus-visible {
 		background: transparent;
-		color: #66645e;
-		font-family: UntitledSansMedium, sans-serif;
+		color: var(--item-hover-text, #FFFFFF);
+		font-family: var(--mega-font-1, UntitledSansRegular, sans-serif);
 		font-style: normal;
 	}
 
+	.mega-menu.is-drilled .mega-menu__link,
+	.mega-menu.is-drilled .mega-menu__back {
+		color: var(--mega-selected-text, #66645e);
+	}
+
 	.site-header__main nav.desktop .mega-menu .mega-menu__back {
-		display: block;
 		position: relative;
 		width: 100%;
 		margin: 0;
-		padding: 0.85rem var(--mega-pad);
+		height: 60px;
+		min-height: 60px;
+		flex: 0 0 60px;
+		padding: 0 var(--mega-pad);
 		border: 0;
 		background: none;
 		cursor: pointer;
+		display: flex;
+		align-items: center;
+		gap: 0.65rem;
 		text-align: left;
-		font-size: clamp(1rem, 0.4vw + 0.95rem, 1.125rem);
-		line-height: 1.3;
+		font-family: UntitledSansMedium, sans-serif;
+		font-size: 11px;
+		line-height: 1;
+	}
+
+	.mega-menu__back-icon {
+		display: block;
+		width: 27px;
+		height: auto;
+		flex: none;
 	}
 
 	.mega-menu__back:hover {
@@ -363,29 +462,51 @@
 	}
 
 	.site-header__main nav.desktop .mega-menu .mega-menu__enquiry {
-		display: block;
+		display: flex;
+		align-items: center;
+		gap: 0.85rem;
+		grid-row: 2;
+		grid-column: 1 / -1;
 		position: relative;
 		z-index: 7;
 		width: 100cqw;
 		min-width: 0;
-		margin-top: auto;
-		padding: 1.15rem var(--mega-pad);
-		background: transparent;
-		font-size: 0.875rem;
-		line-height: 1.3;
-		letter-spacing: 0.04em;
+		height: 60px;
+		min-height: 60px;
+		margin: 0;
+		padding: 0 var(--mega-pad);
+		border-top: 1px solid #000;
+		background: var(--mega-selected-background, #FDFBF5);
+		color: #580712;
+		font-family: UntitledSansRegular, sans-serif;
+		font-size: 18px;
+		font-weight: 400;
+		font-style: normal;
+		line-height: 1;
+		letter-spacing: 0;
 		text-align: left;
+		text-transform: none;
 		text-decoration: none;
+	}
+
+	.mega-menu__enquiry-icon {
+		display: block;
+		width: 36px;
+		height: auto;
+		flex: none;
+		transform: scaleX(-1);
 	}
 
 	.site-header__main nav.desktop .mega-menu .mega-menu__enquiry:hover,
 	.site-header__main nav.desktop .mega-menu .mega-menu__enquiry:focus-visible {
 		background: #f1f4e2;
-		color: #66645e;
+		color: #580712;
 	}
 
-	html.has-treatment {
-		overflow: hidden;
+	@media screen and (max-width: 859px) {
+		html.has-treatment {
+			overflow: hidden;
+		}
 	}
 
 	.mega-menu__detail {
@@ -424,37 +545,56 @@
 		right: 0;
 		width: 50%;
 		height: 100dvh;
-		background: var(--mega-menu-background, #F6FBEE);
+		background: var(--item-child-hover-bg, #A4CED6);
+		color: var(--item-child-hover-text, #66645E);
 		overflow: auto;
-		transform: translateX(100%);
-		transition: transform 0.45s ease;
+		opacity: 0;
+		transition: opacity 0.45s ease;
 	}
 
 	.mega-menu__detail.is-open .mega-menu__detail-panel {
-		transform: translateX(0);
+		opacity: 1;
+	}
+
+	.mega-menu__detail-head {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: 1rem;
+		position: sticky;
+		top: 0;
+		z-index: 2;
+		flex: 0 0 auto;
+		margin: 0;
+		padding: 22px 33px;
+		background: var(--item-child-hover-bg, #A4CED6);
+		border-bottom: 1px solid #000;
+	}
+
+	.mega-menu__detail-title {
+		flex: 1 1 auto;
+		min-width: 0;
 	}
 
 	.mega-menu__detail-close {
-		position: sticky;
-		top: 0;
-		z-index: 1;
 		display: flex;
 		align-items: center;
-		justify-content: flex-end;
-		width: 100%;
-		height: 3.25rem;
+		justify-content: center;
+		flex: 0 0 15px;
+		width: 15px;
+		height: 15px;
 		margin: 0;
-		padding: 0 1.25rem;
+		padding: 0;
 		border: 0;
-		background: var(--mega-menu-background, #F6FBEE);
-		color: #66645e;
+		background: transparent;
+		color: var(--item-child-hover-text, #66645E);
 		cursor: pointer;
 	}
 
 	.mega-menu__detail-close svg {
 		display: block;
-		width: 0.9375rem;
-		height: 0.9375rem;
+		width: 15px;
+		height: 15px;
 	}
 
 	.mega-menu__detail-close:hover {
@@ -462,50 +602,59 @@
 	}
 
 	.mega-menu__detail-body {
-		padding: 0 var(--mega-pad) 2rem;
+		padding: 33px;
 	}
 
 	.mega-menu__treatment[hidden] {
 		display: none;
 	}
 
-	.mega-menu__treatment-title {
-		position: relative;
-		margin: 0 0 1.15rem;
-		padding-bottom: 0.85rem;
-		color: #66645e;
-		font-family: UntitledSansMedium, sans-serif;
-		font-size: clamp(1.25rem, 0.6vw + 1.05rem, 1.75rem);
-		font-weight: 500;
-		line-height: 1.25;
+	.mega-menu__detail .mega-menu__treatment-title {
+		position: static;
+		margin: 0;
+		padding: 0;
+		background: transparent;
+		color: var(--item-child-hover-text, #66645E);
+		font-family: UntitledSansRegular, sans-serif;
+		font-size: 25px;
+		font-weight: 400;
+		line-height: 1;
 	}
 
-	.mega-menu__treatment-title::after {
-		content: "";
-		position: absolute;
-		left: calc(var(--mega-pad) * -1);
-		bottom: 0;
-		width: calc(100% + var(--mega-pad) * 2);
-		border-bottom: 1px solid #000;
-		pointer-events: none;
+	.mega-menu__detail .mega-menu__treatment-title::after {
+		content: none;
 	}
 
 	.mega-menu__treatment-subtitle {
 		margin: 0 0 1.25rem;
-		color: #66645e;
-		font-family: UntitledSansMedium, sans-serif;
-		font-size: 1.1875rem;
-		font-weight: 500;
-		line-height: 1.4;
+		color: var(--item-child-hover-text, #66645E);
+	}
+
+	.mega-menu__detail .mega-menu__treatment-subtitle,
+	.mega-menu__detail .mega-menu__treatment-footer .mega-menu__treatment-head {
+		color: var(--item-child-hover-text, #66645E);
+		font-family: UntitledSansRegular, sans-serif;
+		font-size: 18px;
+		font-weight: 400;
+		line-height: 130%;
+	}
+
+	.mega-menu__detail .mega-menu__treatment-copy,
+	.mega-menu__detail .mega-menu__treatment-copy p,
+	.mega-menu__detail .mega-menu__treatment-footer,
+	.mega-menu__detail .mega-menu__treatment-footer p {
+		color: var(--item-child-hover-text, #66645E);
+		font-family: UntitledSansRegular, sans-serif;
+		font-size: 14px;
+		font-weight: 400;
+		line-height: 130%;
 	}
 
 	.mega-menu__treatment-copy,
 	.mega-menu__treatment-footer,
 	.mega-menu__treatment-table {
-		color: #66645e;
+		color: var(--item-child-hover-text, #66645E);
 		font-family: UntitledSansRegular, sans-serif;
-		font-size: 0.9875rem;
-		line-height: 1.5;
 	}
 
 	.mega-menu__treatment-copy {
@@ -518,18 +667,94 @@
 		margin: 0 0 0.75rem;
 	}
 
-	.mega-menu__treatment-table {
+	.mega-menu__detail .mega-menu__treatment-table {
+		display: grid;
+		grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+		grid-auto-flow: dense;
+		column-gap: 40px;
 		width: 100%;
-		margin: 0 0 1.5rem;
-		border-collapse: collapse;
-		table-layout: fixed;
+		max-width: 605px;
+		margin: 45px 0;
+		border: 0;
 	}
 
-	.mega-menu__treatment-table td {
-		width: 50%;
-		vertical-align: top;
-		border: 1px solid #000;
-		padding: 0.85rem 1rem;
+	.mega-menu__detail .mega-menu__treatment-table tbody,
+	.mega-menu__detail .mega-menu__treatment-table tr,
+	.mega-menu__detail .mega-menu__treatment-table td {
+		display: contents;
+		color: var(--item-child-hover-text, #66645E);
+		font-family: UntitledSansRegular, sans-serif;
+		font-size: 11px;
+		font-weight: 400;
+		line-height: 130%;
+	}
+
+	.mega-menu__detail .mega-menu__treatment-table td:first-child .mega-menu__treatment-head,
+	.mega-menu__detail .mega-menu__treatment-table td:first-child > .metafield-rich_text_field {
+		grid-column: 1;
+	}
+
+	.mega-menu__detail .mega-menu__treatment-table td:last-child .mega-menu__treatment-head,
+	.mega-menu__detail .mega-menu__treatment-table td:last-child > .metafield-rich_text_field {
+		grid-column: 2;
+	}
+
+	.mega-menu__detail .mega-menu__treatment-table .metafield-rich_text_field {
+		margin-bottom: 25px;
+	}
+
+	.mega-menu__detail .mega-menu__treatment-table tr:last-child .metafield-rich_text_field {
+		margin-bottom: 0;
+	}
+
+	.mega-menu__detail .mega-menu__treatment-table td p:last-child {
+		margin-bottom: 0;
+	}
+
+	.mega-menu__detail .mega-menu__treatment-table td p {
+		font-family: UntitledSansRegular, sans-serif;
+		font-size: 11px;
+		font-weight: 400;
+		line-height: 130%;
+	}
+
+	.mega-menu__detail .mega-menu__treatment-table ul {
+		margin: 0;
+		padding-left: 1.25em;
+		list-style: disc;
+	}
+
+	.mega-menu__detail .mega-menu__treatment-table li {
+		display: list-item;
+		list-style: disc;
+	}
+
+	.mega-menu__detail .mega-menu__treatment-table li + li {
+		margin-top: 4px;
+	}
+
+	.mega-menu__detail .mega-menu__treatment-table .mega-menu__treatment-head {
+		align-self: end;
+		position: relative;
+		padding-bottom: 6px;
+		border-bottom: 1px solid #000;
+		font-family: UntitledSansRegular, sans-serif;
+		font-size: 12px;
+		font-weight: 400;
+		line-height: 130%;
+	}
+
+	.mega-menu__detail .mega-menu__treatment-table td:first-child .mega-menu__treatment-head {
+		border-bottom: 0;
+	}
+
+	.mega-menu__detail .mega-menu__treatment-table td:first-child .mega-menu__treatment-head::after {
+		content: "";
+		position: absolute;
+		left: 0;
+		right: -40px;
+		bottom: 0;
+		border-bottom: 1px solid #000;
 	}
 
 	.mega-menu__treatment-head {
@@ -539,6 +764,10 @@
 
 	.mega-menu__treatment-footer {
 		margin-top: 0.5rem;
+	}
+
+	.mega-menu__treatment-footer .treatment-footer + .treatment-footer {
+		margin-top: 1.25rem;
 	}
 
 	.mega-nav__item.is-open > a::after {
@@ -649,14 +878,47 @@
 		border: 0;
 	}
 
+	.site-header:has(.mega-nav__item.is-open) .site-header__main {
+		background: #FDFBF5;
+	}
+
 	@media screen and (min-width: 860px) {
 		.mega-nav__item.is-open > .mega-menu {
-			max-height: calc(100dvh - 7.25rem);
-			overflow-y: auto;
+			height: var(--mega-available, calc(100dvh - 7.25rem));
+			max-height: var(--mega-available, calc(100dvh - 7.25rem));
+			overflow: hidden;
 		}
 
 		.mega-menu__level[data-mega-level="3"] {
 			padding-bottom: 3.75rem;
+		}
+
+		.mega-menu__detail {
+			position: absolute;
+			inset: 59px 0 0 auto;
+			z-index: 9;
+			width: 50%;
+			height: auto;
+		}
+
+		.mega-menu__detail-overlay {
+			display: none;
+		}
+
+		.mega-menu__detail-panel {
+			display: flex;
+			flex-direction: column;
+			width: 100%;
+			height: 100%;
+			overflow: hidden;
+			border-top: 1px solid #000;
+			border-left: 1px solid #000;
+		}
+
+		.mega-menu__detail-body {
+			flex: 1 1 auto;
+			min-height: 0;
+			overflow: auto;
 		}
 	}
 
@@ -724,6 +986,22 @@
 			});
 		}
 
+		function restoreDetailTitle(detail) {
+			var slot = detail.querySelector('[data-mega-detail-title]');
+			if (!slot) return;
+			var title = slot.querySelector('.mega-menu__treatment-title');
+			if (title && title._megaArticle) title._megaArticle.insertBefore(title, title._megaArticle.firstChild);
+		}
+
+		function placeDetailTitle(detail, article) {
+			restoreDetailTitle(detail);
+			var slot = detail.querySelector('[data-mega-detail-title]');
+			var title = article.querySelector('.mega-menu__treatment-title');
+			if (!slot || !title) return;
+			title._megaArticle = article;
+			slot.appendChild(title);
+		}
+
 		function closeTreatment(menu, immediate, restoreFocus) {
 			var detail = getDetail(menu);
 			if (!detail) return;
@@ -732,6 +1010,7 @@
 			var navItem = menu && menu.closest('[data-mega-nav]');
 
 			function restore() {
+				restoreDetailTitle(detail);
 				var article = body.querySelector('[data-mega-treatment]');
 				if (article && article._megaHome) {
 					article.hidden = true;
@@ -793,6 +1072,7 @@
 				window.clearTimeout(navItem._megaCloseTimer);
 				if (!navItem.classList.contains('is-open')) openItem(navItem);
 			}
+			restoreDetailTitle(detail);
 			var current = body.querySelector('[data-mega-treatment]');
 			if (current && current !== article && current._megaHome) {
 				current.hidden = true;
@@ -801,19 +1081,30 @@
 			article._megaHome = row;
 			article.hidden = false;
 			body.appendChild(article);
+			placeDetailTitle(detail, article);
 			if (!detail._megaSlot) detail._megaSlot = detail.parentNode;
 			detail._megaMenu = menu;
 			detail._megaTrigger = trigger || row.querySelector(':scope > a');
 			menu._megaDetail = detail;
-			document.body.appendChild(detail);
-			document.documentElement.classList.add('has-treatment');
-			setBackgroundInert(detail, true);
+			var colorSource = row.closest('[data-mega-item="1"]') || menu;
+			var childBg = colorSource.style.getPropertyValue('--item-child-hover-bg').trim() || menu.style.getPropertyValue('--item-child-hover-bg').trim();
+			var childText = colorSource.style.getPropertyValue('--item-child-hover-text').trim() || menu.style.getPropertyValue('--item-child-hover-text').trim();
+			if (childBg) detail.style.setProperty('--item-child-hover-bg', childBg);
+			if (childText) detail.style.setProperty('--item-child-hover-text', childText);
+			if (isNarrow()) {
+				document.body.appendChild(detail);
+				document.documentElement.classList.add('has-treatment');
+				setBackgroundInert(detail, true);
+			} else if (detail.parentNode !== detail._megaSlot) {
+				detail._megaSlot.appendChild(detail);
+				setBackgroundInert(detail, false);
+			}
 			menu.querySelectorAll('[data-mega-item="3"].is-active').forEach(function (entry) {
 				if (entry !== row) entry.classList.remove('is-active');
 			});
 			row.classList.add('is-active');
 			if (detail._megaTrigger) detail._megaTrigger.setAttribute('aria-expanded', 'true');
-			var title = article.querySelector('.mega-menu__treatment-title');
+			var title = detail.querySelector('[data-mega-detail-title] .mega-menu__treatment-title');
 			if (title && title.id) {
 				detail.setAttribute('aria-labelledby', title.id);
 				detail.removeAttribute('aria-label');
@@ -823,6 +1114,8 @@
 			}
 			detail.setAttribute('aria-hidden', 'false');
 			detail.classList.add('is-open');
+			var scroller = detail.querySelector('[data-mega-detail-body]');
+			if (scroller) scroller.scrollTop = 0;
 			detail.querySelector('.mega-menu__detail-panel').scrollTop = 0;
 			var closeButton = detail.querySelector('.mega-menu__detail-close');
 			if (closeButton) closeButton.focus();
@@ -831,8 +1124,13 @@
 		function resetMenu(item) {
 			var menu = item.querySelector('.mega-menu');
 			if (!menu) return;
+			closeTreatment(menu, true, false);
 			restoreLevel3(menu);
-			menu.classList.remove('is-drilled');
+			menu.classList.remove('is-drilled', 'is-split');
+			menu.querySelectorAll('.mega-menu__preview.is-shown').forEach(function (preview) {
+				preview.classList.remove('is-shown');
+			});
+			clearSelectedColors(item);
 			var back = menu.querySelector('[data-mega-back]');
 			if (back) back.hidden = true;
 			menu.querySelectorAll('[data-mega-item]').forEach(function (entry) {
@@ -869,12 +1167,46 @@
 				if (other !== item) closeItem(other);
 			});
 			setOpen(item, true);
+			fitMenu(item.querySelector('.mega-menu'));
+		}
+
+		function fitMenu(menu) {
+			if (!menu) return;
+			var available = Math.max(160, window.innerHeight - menu.getBoundingClientRect().top);
+			menu.style.setProperty('--mega-available', available + 'px');
+		}
+
+		function applySelectedColors(item, row) {
+			var menu = item.querySelector('.mega-menu');
+			if (!menu) return;
+			var bg = row.style.getPropertyValue('--item-hover-bg').trim();
+			var text = row.style.getPropertyValue('--item-hover-text').trim();
+			var childBg = row.style.getPropertyValue('--item-child-hover-bg').trim();
+			var childText = row.style.getPropertyValue('--item-child-hover-text').trim();
+			if (bg) menu.style.setProperty('--mega-selected-background', bg);
+			if (text) menu.style.setProperty('--mega-selected-text', text);
+			if (childBg) menu.style.setProperty('--item-child-hover-bg', childBg);
+			if (childText) menu.style.setProperty('--item-child-hover-text', childText);
+		}
+
+		function clearSelectedColors(item) {
+			var menu = item.querySelector('.mega-menu');
+			var header = item.closest('.site-header');
+			[menu, header].forEach(function (node) {
+				if (!node) return;
+				node.style.removeProperty('--mega-selected-background');
+				node.style.removeProperty('--mega-selected-text');
+				node.style.removeProperty('--item-child-hover-bg');
+				node.style.removeProperty('--item-child-hover-text');
+			});
 		}
 
 		function drillLevel1(item, row) {
 			var menu = item.querySelector('.mega-menu');
 			restoreLevel3(menu);
 			menu.classList.add('is-drilled');
+			menu.classList.remove('is-split');
+			applySelectedColors(item, row);
 			var back = menu.querySelector('[data-mega-back]');
 			if (back) back.hidden = false;
 			menu.querySelectorAll('[data-mega-item="1"]').forEach(function (entry) {
@@ -901,6 +1233,9 @@
 					link.setAttribute('aria-expanded', 'false');
 				}
 			});
+			menu.querySelectorAll('.mega-menu__preview.is-shown').forEach(function (preview) {
+				preview.classList.remove('is-shown');
+			});
 			if (!list) return;
 			row.classList.add('is-active');
 			var trigger = row.querySelector(':scope > a');
@@ -908,7 +1243,7 @@
 			list.hidden = false;
 			list._megaHome = row;
 			menu.querySelector('[data-mega-aside]').appendChild(list);
-			menu.classList.add('has-aside');
+			menu.classList.add('has-aside', 'is-split');
 		}
 
 		function isNarrow() {
@@ -920,6 +1255,41 @@
 			item.dataset.megaReady = 'true';
 			var menu = item.querySelector('.mega-menu');
 			var trigger = item.querySelector(':scope > a');
+			var panel = menu.querySelector('.mega-menu__panel');
+			if (panel) {
+				menu.querySelectorAll('.mega-menu__preview').forEach(function (preview) {
+					var row = preview.parentElement;
+					if (!row) return;
+					panel.appendChild(preview);
+					function showPreview() {
+						if (row.classList.contains('is-active')) return;
+						preview.classList.add('is-shown');
+					}
+					function hidePreview() {
+						preview.classList.remove('is-shown');
+					}
+					row.addEventListener('mouseenter', showPreview);
+					row.addEventListener('mouseleave', hidePreview);
+					row.addEventListener('focusin', showPreview);
+					row.addEventListener('focusout', function (event) {
+						if (!row.contains(event.relatedTarget)) hidePreview();
+					});
+				});
+				menu.querySelectorAll('[data-mega-item="2"]').forEach(function (row) {
+					row.addEventListener('mouseenter', function () {
+						menu.classList.add('is-split');
+					});
+					row.addEventListener('focusin', function () {
+						menu.classList.add('is-split');
+					});
+					row.addEventListener('mouseleave', function (event) {
+						var next = event.relatedTarget && event.relatedTarget.closest ? event.relatedTarget.closest('[data-mega-item="2"]') : null;
+						if (next && menu.contains(next)) return;
+						if (menu.querySelector('[data-mega-item="2"].is-active')) return;
+						menu.classList.remove('is-split');
+					});
+				});
+			}
 
 			function scheduleClose() {
 				if (treatmentIsOpen(menu)) return;
@@ -975,7 +1345,7 @@
 					closeTreatment(menu);
 				});
 				detail.addEventListener('keydown', function (event) {
-					if (event.key !== 'Tab' || !detail.classList.contains('is-open')) return;
+					if (event.key !== 'Tab' || !detail.classList.contains('is-open') || !isNarrow()) return;
 					var focusable = focusableIn(detail);
 					if (!focusable.length) return;
 					var first = focusable[0];
@@ -1020,9 +1390,13 @@
 		}
 
 		init(document);
+		document.querySelectorAll('.mega-menu').forEach(fitMenu);
 
 		if (!document.documentElement.dataset.megaKeys) {
 			document.documentElement.dataset.megaKeys = 'true';
+			window.addEventListener('resize', function () {
+				document.querySelectorAll('.mega-menu').forEach(fitMenu);
+			});
 			document.addEventListener('click', function (event) {
 				if (!event.target.closest('[data-mega-close]')) return;
 				document.documentElement.classList.remove('has-nav');
@@ -1156,16 +1530,47 @@
         },
         {
           "type": "header",
-          "content": "List of images 1"
+          "content": "Item 1"
         },
         {
-          "type": "paragraph",
-          "content": "Images for the 1st item in this menu's first level. Image 1 shows when its 1st second-level item is hovered, image 2 when the 2nd is hovered, and so on."
+          "type": "color",
+          "id": "hover_background_1",
+          "label": "First-level hover background",
+          "default": "#6E1616"
+        },
+        {
+          "type": "color",
+          "id": "hover_text_1",
+          "label": "First-level hover text",
+          "default": "#FFFFFF"
+        },
+        {
+          "type": "text",
+          "id": "hover_description_1",
+          "label": "Hover description"
+        },
+        {
+          "type": "text",
+          "id": "hover_cta_1",
+          "label": "Hover CTA text"
+        },
+        {
+          "type": "color",
+          "id": "child_hover_background_1",
+          "label": "Second- and third-level hover background",
+          "default": "#A4CED6"
+        },
+        {
+          "type": "color",
+          "id": "child_hover_text_1",
+          "label": "Second- and third-level hover text",
+          "default": "#66645E"
         },
         {
           "type": "image_picker",
           "id": "images_1_1",
-          "label": "Image 1"
+          "label": "Image 1",
+          "info": "Image 1 shows when the 1st second-level item is hovered. Image 2 shows for the 2nd, and so on."
         },
         {
           "type": "image_picker",
@@ -1204,16 +1609,47 @@
         },
         {
           "type": "header",
-          "content": "List of images 2"
+          "content": "Item 2"
         },
         {
-          "type": "paragraph",
-          "content": "Images for the 2nd item in this menu's first level. Image 1 shows when its 1st second-level item is hovered, image 2 when the 2nd is hovered, and so on."
+          "type": "color",
+          "id": "hover_background_2",
+          "label": "First-level hover background",
+          "default": "#6E1616"
+        },
+        {
+          "type": "color",
+          "id": "hover_text_2",
+          "label": "First-level hover text",
+          "default": "#FFFFFF"
+        },
+        {
+          "type": "text",
+          "id": "hover_description_2",
+          "label": "Hover description"
+        },
+        {
+          "type": "text",
+          "id": "hover_cta_2",
+          "label": "Hover CTA text"
+        },
+        {
+          "type": "color",
+          "id": "child_hover_background_2",
+          "label": "Second- and third-level hover background",
+          "default": "#A4CED6"
+        },
+        {
+          "type": "color",
+          "id": "child_hover_text_2",
+          "label": "Second- and third-level hover text",
+          "default": "#66645E"
         },
         {
           "type": "image_picker",
           "id": "images_2_1",
-          "label": "Image 1"
+          "label": "Image 1",
+          "info": "Image 1 shows when the 1st second-level item is hovered. Image 2 shows for the 2nd, and so on."
         },
         {
           "type": "image_picker",
@@ -1252,16 +1688,47 @@
         },
         {
           "type": "header",
-          "content": "List of images 3"
+          "content": "Item 3"
         },
         {
-          "type": "paragraph",
-          "content": "Images for the 3rd item in this menu's first level. Image 1 shows when its 1st second-level item is hovered, image 2 when the 2nd is hovered, and so on."
+          "type": "color",
+          "id": "hover_background_3",
+          "label": "First-level hover background",
+          "default": "#6E1616"
+        },
+        {
+          "type": "color",
+          "id": "hover_text_3",
+          "label": "First-level hover text",
+          "default": "#FFFFFF"
+        },
+        {
+          "type": "text",
+          "id": "hover_description_3",
+          "label": "Hover description"
+        },
+        {
+          "type": "text",
+          "id": "hover_cta_3",
+          "label": "Hover CTA text"
+        },
+        {
+          "type": "color",
+          "id": "child_hover_background_3",
+          "label": "Second- and third-level hover background",
+          "default": "#A4CED6"
+        },
+        {
+          "type": "color",
+          "id": "child_hover_text_3",
+          "label": "Second- and third-level hover text",
+          "default": "#66645E"
         },
         {
           "type": "image_picker",
           "id": "images_3_1",
-          "label": "Image 1"
+          "label": "Image 1",
+          "info": "Image 1 shows when the 1st second-level item is hovered. Image 2 shows for the 2nd, and so on."
         },
         {
           "type": "image_picker",
@@ -1300,16 +1767,47 @@
         },
         {
           "type": "header",
-          "content": "List of images 4"
+          "content": "Item 4"
         },
         {
-          "type": "paragraph",
-          "content": "Images for the 4th item in this menu's first level. Image 1 shows when its 1st second-level item is hovered, image 2 when the 2nd is hovered, and so on."
+          "type": "color",
+          "id": "hover_background_4",
+          "label": "First-level hover background",
+          "default": "#6E1616"
+        },
+        {
+          "type": "color",
+          "id": "hover_text_4",
+          "label": "First-level hover text",
+          "default": "#FFFFFF"
+        },
+        {
+          "type": "text",
+          "id": "hover_description_4",
+          "label": "Hover description"
+        },
+        {
+          "type": "text",
+          "id": "hover_cta_4",
+          "label": "Hover CTA text"
+        },
+        {
+          "type": "color",
+          "id": "child_hover_background_4",
+          "label": "Second- and third-level hover background",
+          "default": "#A4CED6"
+        },
+        {
+          "type": "color",
+          "id": "child_hover_text_4",
+          "label": "Second- and third-level hover text",
+          "default": "#66645E"
         },
         {
           "type": "image_picker",
           "id": "images_4_1",
-          "label": "Image 1"
+          "label": "Image 1",
+          "info": "Image 1 shows when the 1st second-level item is hovered. Image 2 shows for the 2nd, and so on."
         },
         {
           "type": "image_picker",
@@ -1348,16 +1846,47 @@
         },
         {
           "type": "header",
-          "content": "List of images 5"
+          "content": "Item 5"
         },
         {
-          "type": "paragraph",
-          "content": "Images for the 5th item in this menu's first level. Image 1 shows when its 1st second-level item is hovered, image 2 when the 2nd is hovered, and so on."
+          "type": "color",
+          "id": "hover_background_5",
+          "label": "First-level hover background",
+          "default": "#6E1616"
+        },
+        {
+          "type": "color",
+          "id": "hover_text_5",
+          "label": "First-level hover text",
+          "default": "#FFFFFF"
+        },
+        {
+          "type": "text",
+          "id": "hover_description_5",
+          "label": "Hover description"
+        },
+        {
+          "type": "text",
+          "id": "hover_cta_5",
+          "label": "Hover CTA text"
+        },
+        {
+          "type": "color",
+          "id": "child_hover_background_5",
+          "label": "Second- and third-level hover background",
+          "default": "#A4CED6"
+        },
+        {
+          "type": "color",
+          "id": "child_hover_text_5",
+          "label": "Second- and third-level hover text",
+          "default": "#66645E"
         },
         {
           "type": "image_picker",
           "id": "images_5_1",
-          "label": "Image 1"
+          "label": "Image 1",
+          "info": "Image 1 shows when the 1st second-level item is hovered. Image 2 shows for the 2nd, and so on."
         },
         {
           "type": "image_picker",
@@ -1396,16 +1925,47 @@
         },
         {
           "type": "header",
-          "content": "List of images 6"
+          "content": "Item 6"
         },
         {
-          "type": "paragraph",
-          "content": "Images for the 6th item in this menu's first level. Image 1 shows when its 1st second-level item is hovered, image 2 when the 2nd is hovered, and so on."
+          "type": "color",
+          "id": "hover_background_6",
+          "label": "First-level hover background",
+          "default": "#6E1616"
+        },
+        {
+          "type": "color",
+          "id": "hover_text_6",
+          "label": "First-level hover text",
+          "default": "#FFFFFF"
+        },
+        {
+          "type": "text",
+          "id": "hover_description_6",
+          "label": "Hover description"
+        },
+        {
+          "type": "text",
+          "id": "hover_cta_6",
+          "label": "Hover CTA text"
+        },
+        {
+          "type": "color",
+          "id": "child_hover_background_6",
+          "label": "Second- and third-level hover background",
+          "default": "#A4CED6"
+        },
+        {
+          "type": "color",
+          "id": "child_hover_text_6",
+          "label": "Second- and third-level hover text",
+          "default": "#66645E"
         },
         {
           "type": "image_picker",
           "id": "images_6_1",
-          "label": "Image 1"
+          "label": "Image 1",
+          "info": "Image 1 shows when the 1st second-level item is hovered. Image 2 shows for the 2nd, and so on."
         },
         {
           "type": "image_picker",
@@ -1444,16 +2004,47 @@
         },
         {
           "type": "header",
-          "content": "List of images 7"
+          "content": "Item 7"
         },
         {
-          "type": "paragraph",
-          "content": "Images for the 7th item in this menu's first level. Image 1 shows when its 1st second-level item is hovered, image 2 when the 2nd is hovered, and so on."
+          "type": "color",
+          "id": "hover_background_7",
+          "label": "First-level hover background",
+          "default": "#6E1616"
+        },
+        {
+          "type": "color",
+          "id": "hover_text_7",
+          "label": "First-level hover text",
+          "default": "#FFFFFF"
+        },
+        {
+          "type": "text",
+          "id": "hover_description_7",
+          "label": "Hover description"
+        },
+        {
+          "type": "text",
+          "id": "hover_cta_7",
+          "label": "Hover CTA text"
+        },
+        {
+          "type": "color",
+          "id": "child_hover_background_7",
+          "label": "Second- and third-level hover background",
+          "default": "#A4CED6"
+        },
+        {
+          "type": "color",
+          "id": "child_hover_text_7",
+          "label": "Second- and third-level hover text",
+          "default": "#66645E"
         },
         {
           "type": "image_picker",
           "id": "images_7_1",
-          "label": "Image 1"
+          "label": "Image 1",
+          "info": "Image 1 shows when the 1st second-level item is hovered. Image 2 shows for the 2nd, and so on."
         },
         {
           "type": "image_picker",
@@ -1492,16 +2083,47 @@
         },
         {
           "type": "header",
-          "content": "List of images 8"
+          "content": "Item 8"
         },
         {
-          "type": "paragraph",
-          "content": "Images for the 8th item in this menu's first level. Image 1 shows when its 1st second-level item is hovered, image 2 when the 2nd is hovered, and so on."
+          "type": "color",
+          "id": "hover_background_8",
+          "label": "First-level hover background",
+          "default": "#6E1616"
+        },
+        {
+          "type": "color",
+          "id": "hover_text_8",
+          "label": "First-level hover text",
+          "default": "#FFFFFF"
+        },
+        {
+          "type": "text",
+          "id": "hover_description_8",
+          "label": "Hover description"
+        },
+        {
+          "type": "text",
+          "id": "hover_cta_8",
+          "label": "Hover CTA text"
+        },
+        {
+          "type": "color",
+          "id": "child_hover_background_8",
+          "label": "Second- and third-level hover background",
+          "default": "#A4CED6"
+        },
+        {
+          "type": "color",
+          "id": "child_hover_text_8",
+          "label": "Second- and third-level hover text",
+          "default": "#66645E"
         },
         {
           "type": "image_picker",
           "id": "images_8_1",
-          "label": "Image 1"
+          "label": "Image 1",
+          "info": "Image 1 shows when the 1st second-level item is hovered. Image 2 shows for the 2nd, and so on."
         },
         {
           "type": "image_picker",

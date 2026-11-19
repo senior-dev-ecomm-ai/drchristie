@@ -29,11 +29,12 @@
     "enquiries_email": "hello@drchristie.co",
     "affiliates_text": "For partnerships/affiliates:",
     "affiliates_email": "hello@drchristie.co",
-    "mega_menu_background": "#F6FBEE",
-    "mega_menu_level_1_hover_background": "#6E1616",
-    "mega_menu_level_1_hover_text": "#FFFFFF",
-    "mega_menu_child_hover_background": "#A4CED6",
-    "mega_menu_child_hover_text": "#66645E",
+    "mega_menu_font_family_1": "TiemposFine",
+    "mega_menu_font_size_1": 50,
+    "mega_menu_font_family_2": "TiemposFine",
+    "mega_menu_font_size_2": 30,
+    "mega_menu_font_family_3": "UntitledSansRegular",
+    "mega_menu_font_size_3": 17,
     "sections": {
       "footer": {
         "type": "footer",
